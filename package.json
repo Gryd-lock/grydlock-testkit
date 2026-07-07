@@ -1,0 +1,10 @@
+{
+  "name": "grydlock-testkit",
+  "version": "0.1.0",
+  "description": "Testnet fixtures and score stubs for evaluating Gryd Lock.",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "validate": "node scripts/validate-fixtures.mjs"
+  }
+}
