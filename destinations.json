@@ -49,6 +49,13 @@
       "address": "GCHYSQ57SVW6LFLGLQ4P77ZDQJ7BPQIM3QOCPIBIZKXGZGAQMJQZRFMS",
       "label": "suspicious",
       "notes": "Holds a trustline to the SCAM asset listed below; no other activity."
+    },
+    {
+      "id": "GD7XPB2A7CG5Z4ICV24B3LXCRHAEJRFEK4OEW3ZIOQAPJOHAXBB7QHGE",
+      "type": "account",
+      "address": "GD7XPB2A7CG5Z4ICV24B3LXCRHAEJRFEK4OEW3ZIOQAPJOHAXBB7QHGE",
+      "label": "malicious",
+      "notes": "Path-payment sweep pattern: drains newly funded wallets within seconds of receiving deposits."
     }
   ]
 }
