@@ -2,7 +2,8 @@
 
 [![Built on Stellar](https://img.shields.io/badge/Built%20on-Stellar-blue?logo=stellar)](https://stellar.org)
 [![Testnet](https://img.shields.io/badge/Network-Testnet-orange)](https://developers.stellar.org/docs/networks)
-[![Status](https://img.shields.io/badge/status-fixture%20set%20being%20assembled-yellow)](#roadmap)
+[![CI](https://github.com/Gryd-lock/grydlock-testkit/actions/workflows/ci.yml/badge.svg)](https://github.com/Gryd-lock/grydlock-testkit/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 Testnet fixtures and score stubs for evaluating Gryd Lock — so the tool can be tested end to end without a live scoring backend.
 
