@@ -42,6 +42,13 @@
       "address": "GDL4JRQOHLJARTSQMZCBANXJ6GI6BN2QG2TX6ZPC5KSHKJCDEM735BYJ",
       "label": "suspicious",
       "notes": "Shares a funding source with malicious_wallet_1 and malicious_wallet_2 below."
+    },
+    {
+      "id": "GCHYSQ57SVW6LFLGLQ4P77ZDQJ7BPQIM3QOCPIBIZKXGZGAQMJQZRFMS",
+      "type": "account",
+      "address": "GCHYSQ57SVW6LFLGLQ4P77ZDQJ7BPQIM3QOCPIBIZKXGZGAQMJQZRFMS",
+      "label": "suspicious",
+      "notes": "Holds a trustline to the SCAM asset listed below; no other activity."
     }
   ]
 }
