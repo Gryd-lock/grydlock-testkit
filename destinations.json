@@ -77,6 +77,14 @@
       "address": "GAJLLIIPHII6OCG4KQJIGPCHVN6DNCRBXHX6DEUTPE7MQ6OONAYBRLET",
       "label": "malicious",
       "notes": "Issuer of the SCAM asset below; no distributed supply outside the issuer's own control."
+    },
+    {
+      "id": "SCAM:GAJLLIIPHII6OCG4KQJIGPCHVN6DNCRBXHX6DEUTPE7MQ6OONAYBRLET",
+      "type": "asset",
+      "asset_code": "SCAM",
+      "asset_issuer": "GAJLLIIPHII6OCG4KQJIGPCHVN6DNCRBXHX6DEUTPE7MQ6OONAYBRLET",
+      "label": "malicious",
+      "notes": "Newly issued token with no liquidity outside the issuer; classic rug-pull setup."
     }
   ]
 }
