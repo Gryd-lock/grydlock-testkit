@@ -1,0 +1,4 @@
+{
+  "$schema": "Synthetic Stellar testnet fixtures for Gryd Lock evaluation. All addresses below are randomly generated (not real, funded, or attributable to any person or entity) \u2014 they exist only to give the evaluation a known ground truth to score against.",
+  "destinations": []
+}
