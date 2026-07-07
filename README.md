@@ -39,3 +39,9 @@ grydlock-testkit/
 ├── transactions/         # sample unsigned XDRs for the decode step
 └── README.md
 ```
+
+## How It's Used
+
+- **`grydlock-oracle-adapter`** loads `scores.json` in its `StubOracle` to return scores without a live backend
+- **The extension** is pointed at the stub oracle during development, so the full path — decode → score → tier → warning — runs entirely offline
+- **`grydlock-research`** runs the extension across every entry in `destinations.json` and measures how often the assigned tier matches the label, producing the accuracy and false-positive numbers
