@@ -65,12 +65,13 @@ Checks that every destination in `destinations.json` has a matching entry in `sc
 
 ### Phase 1 — Fixture Assembly
 
-- [ ] Assemble an initial labelled destination set on testnet
-- [ ] Fill `scores.json` so the stub oracle is deterministic
-- [ ] Add sample XDRs covering the common Stellar operation types
+- [x] Assemble an initial labelled destination set on testnet
+- [x] Fill `scores.json` so the stub oracle is deterministic
+- [x] Add sample XDRs covering the common Stellar operation types
 
 ### Phase 2 — Validation
 
+- [x] Wire `StubOracle` in `grydlock-oracle-adapter` to read `scores.json` from this repo
 - [ ] Once a live oracle exists, compare its scores against these stub labels to measure real accuracy
 
 ## Gryd Lock Organization
@@ -86,7 +87,7 @@ This repo is one of four in the [Gryd-lock](https://github.com/Gryd-lock) organi
 
 ## License
 
-Not yet specified in this repository.
+MIT
 
 ---
 
