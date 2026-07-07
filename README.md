@@ -21,3 +21,9 @@ At a high level, it does three things:
 - **🏷️ Labels** — tags a set of Stellar testnet addresses and assets as `clean`, `suspicious`, or `malicious`, giving the evaluation a known ground truth to score against
 - **📝 Stubs** — maps each labelled destination to a deterministic 0–100 score, so scoring can be tested without a live backend
 - **🔁 Exercises** — provides sample unsigned transaction XDRs covering common shapes, so the decode step can be run and tested offline
+
+## Features
+
+- **Labelled Destinations**: a set of Stellar testnet addresses and assets tagged `clean`, `suspicious`, or `malicious`, so warnings can be checked against a known ground truth
+- **Sample Transactions**: unsigned transaction XDRs covering common shapes (payment, path payment, change trust), used to test the decode step
+- **Score Stubs**: a lookup table mapping each labelled destination to a 0–100 score, so the `StubOracle` in [`grydlock-oracle-adapter`](../grydlock-oracle-adapter) can return deterministic results with no network
