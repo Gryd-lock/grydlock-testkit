@@ -60,13 +60,14 @@ grydlock-testkit/
 
 ## Gryd Lock Organization
 
-This repo supplies fixtures consumed by other repos in the Gryd Lock project:
+This repo is one of four in the [Gryd-lock](https://github.com/Gryd-lock) organization:
 
-| Repo                       | Role                                                                                   |
-| --------------------------- | --------------------------------------------------------------------------------------- |
-| **`grydlock-testkit`** _(this repo)_ | Testnet fixtures, labelled destinations, and score stubs used to test the full pipeline offline |
-| **`grydlock-oracle-adapter`** | Loads `scores.json` into a `StubOracle` so scoring can run without a live backend |
-| **`grydlock-research`**       | Runs the extension across `destinations.json` and measures warning accuracy against the labels |
+| Repo                                                                              | Role                                                                                             |
+| ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **[`grydlock-extension`](https://github.com/Gryd-lock/grydlock-extension)**       | Browser extension that warns you before you sign a risky Stellar transaction                     |
+| **[`grydlock-oracle-adapter`](https://github.com/Gryd-lock/grydlock-oracle-adapter)** | Fetches a 0–100 on-chain risk score for a Stellar address via Soroban; its `StubOracle` reads `scores.json` from this repo for deterministic offline scoring |
+| **[`grydlock-research`](https://github.com/Gryd-lock/grydlock-research)**         | Design study, threat model, and evaluation methodology; runs the extension across `destinations.json` and measures warning accuracy against the labels |
+| **[`grydlock-testkit`](https://github.com/Gryd-lock/grydlock-testkit)** _(this repo)_ | Testnet fixtures, labelled destinations, and score stubs used to test the full pipeline offline  |
 
 ## License
 
