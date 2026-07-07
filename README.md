@@ -67,3 +67,17 @@ This repo supplies fixtures consumed by other repos in the Gryd Lock project:
 | **`grydlock-testkit`** _(this repo)_ | Testnet fixtures, labelled destinations, and score stubs used to test the full pipeline offline |
 | **`grydlock-oracle-adapter`** | Loads `scores.json` into a `StubOracle` so scoring can run without a live backend |
 | **`grydlock-research`**       | Runs the extension across `destinations.json` and measures warning accuracy against the labels |
+
+## License
+
+Not yet specified in this repository.
+
+---
+
+<div align="center">
+
+**Gryd Lock Testkit** — Fixtures for a warning layer you can actually measure.
+
+_Built for Stellar testnet evaluation._
+
+</div>
