@@ -21,6 +21,13 @@
       "address": "GCER76PMMAKI2S6UUCPOFXC4SMY3IEILVE5MKSX4CTNDXXIZMFDXJJVS",
       "label": "clean",
       "notes": "Holds a USDC trustline against usdc_issuer below; normal trading activity."
+    },
+    {
+      "id": "GBWPMNXNRLA3VMBTWZHWN7VLUZPXBZUEOMPD6OIQKYCZNDJ2SY4ACC5B",
+      "type": "account",
+      "address": "GBWPMNXNRLA3VMBTWZHWN7VLUZPXBZUEOMPD6OIQKYCZNDJ2SY4ACC5B",
+      "label": "clean",
+      "notes": "Fixture stand-in for a well-known, long-lived asset issuer (issues USDC below)."
     }
   ]
 }
