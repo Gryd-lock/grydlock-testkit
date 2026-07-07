@@ -70,6 +70,13 @@
       "address": "GDQPZVGOJY6Q4PPASHZBIFN3PTIBD6WCRDCCAIFIPHZIYKSDQ7PZWPNJ",
       "label": "malicious",
       "notes": "Destination of multiple change-trust + immediate max-sell patterns typical of rug-pull collection wallets."
+    },
+    {
+      "id": "GAJLLIIPHII6OCG4KQJIGPCHVN6DNCRBXHX6DEUTPE7MQ6OONAYBRLET",
+      "type": "account",
+      "address": "GAJLLIIPHII6OCG4KQJIGPCHVN6DNCRBXHX6DEUTPE7MQ6OONAYBRLET",
+      "label": "malicious",
+      "notes": "Issuer of the SCAM asset below; no distributed supply outside the issuer's own control."
     }
   ]
 }
