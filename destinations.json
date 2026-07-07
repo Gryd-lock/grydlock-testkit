@@ -14,6 +14,13 @@
       "address": "GA4HFFSHZ7PADQWOFCZGYV2HE437LQ2WDILWCGC33BMJUQ6OBO5HKI5D",
       "label": "clean",
       "notes": "Long-lived wallet, low transaction velocity, no shared funding source with flagged accounts."
+    },
+    {
+      "id": "GCER76PMMAKI2S6UUCPOFXC4SMY3IEILVE5MKSX4CTNDXXIZMFDXJJVS",
+      "type": "account",
+      "address": "GCER76PMMAKI2S6UUCPOFXC4SMY3IEILVE5MKSX4CTNDXXIZMFDXJJVS",
+      "label": "clean",
+      "notes": "Holds a USDC trustline against usdc_issuer below; normal trading activity."
     }
   ]
 }
