@@ -45,3 +45,15 @@ grydlock-testkit/
 - **`grydlock-oracle-adapter`** loads `scores.json` in its `StubOracle` to return scores without a live backend
 - **The extension** is pointed at the stub oracle during development, so the full path — decode → score → tier → warning — runs entirely offline
 - **`grydlock-research`** runs the extension across every entry in `destinations.json` and measures how often the assigned tier matches the label, producing the accuracy and false-positive numbers
+
+## Roadmap
+
+### Phase 1 — Fixture Assembly
+
+- [ ] Assemble an initial labelled destination set on testnet
+- [ ] Fill `scores.json` so the stub oracle is deterministic
+- [ ] Add sample XDRs covering the common Stellar operation types
+
+### Phase 2 — Validation
+
+- [ ] Once a live oracle exists, compare its scores against these stub labels to measure real accuracy
