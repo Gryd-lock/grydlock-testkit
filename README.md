@@ -57,3 +57,13 @@ grydlock-testkit/
 ### Phase 2 — Validation
 
 - [ ] Once a live oracle exists, compare its scores against these stub labels to measure real accuracy
+
+## Gryd Lock Organization
+
+This repo supplies fixtures consumed by other repos in the Gryd Lock project:
+
+| Repo                       | Role                                                                                   |
+| --------------------------- | --------------------------------------------------------------------------------------- |
+| **`grydlock-testkit`** _(this repo)_ | Testnet fixtures, labelled destinations, and score stubs used to test the full pipeline offline |
+| **`grydlock-oracle-adapter`** | Loads `scores.json` into a `StubOracle` so scoring can run without a live backend |
+| **`grydlock-research`**       | Runs the extension across `destinations.json` and measures warning accuracy against the labels |
