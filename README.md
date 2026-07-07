@@ -31,15 +31,29 @@ At a high level, it does three things:
 
 ## Repository Structure
 
-> **Status:** Fixture set being assembled. The layout below describes the target shape.
-
 ```
 grydlock-testkit/
-├── destinations.json     # address / asset → label (clean | suspicious | malicious)
-├── scores.json           # destination → 0–100 stub score
-├── transactions/         # sample unsigned XDRs for the decode step
-└── README.md
+├── README.md
+├── LICENSE
+├── package.json               # npm scripts (validate)
+├── .github/workflows/ci.yml   # CI: runs the fixture validator
+├── destinations.json          # address / asset → label (clean | suspicious | malicious)
+├── scores.json                # destination → 0–100 stub score
+├── scripts/
+│   └── validate-fixtures.mjs  # checks destinations.json and scores.json are consistent
+└── transactions/               # sample unsigned XDRs for the decode step
+    ├── payment.xdr
+    ├── path_payment.xdr
+    └── change_trust.xdr
 ```
+
+## Validating Fixtures
+
+```bash
+npm run validate
+```
+
+Checks that every destination in `destinations.json` has a matching entry in `scores.json`, every score is an integer in `0–100`, and every label is one of `clean`, `suspicious`, or `malicious`. Runs in CI on every push and pull request.
 
 ## How It's Used
 
