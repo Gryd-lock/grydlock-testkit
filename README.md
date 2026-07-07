@@ -27,3 +27,15 @@ At a high level, it does three things:
 - **Labelled Destinations**: a set of Stellar testnet addresses and assets tagged `clean`, `suspicious`, or `malicious`, so warnings can be checked against a known ground truth
 - **Sample Transactions**: unsigned transaction XDRs covering common shapes (payment, path payment, change trust), used to test the decode step
 - **Score Stubs**: a lookup table mapping each labelled destination to a 0–100 score, so the `StubOracle` in [`grydlock-oracle-adapter`](../grydlock-oracle-adapter) can return deterministic results with no network
+
+## Repository Structure
+
+> **Status:** Fixture set being assembled. The layout below describes the target shape.
+
+```
+grydlock-testkit/
+├── destinations.json     # address / asset → label (clean | suspicious | malicious)
+├── scores.json           # destination → 0–100 stub score
+├── transactions/         # sample unsigned XDRs for the decode step
+└── README.md
+```
