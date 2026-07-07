@@ -1,4 +1,12 @@
 {
   "$schema": "Synthetic Stellar testnet fixtures for Gryd Lock evaluation. All addresses below are randomly generated (not real, funded, or attributable to any person or entity) \u2014 they exist only to give the evaluation a known ground truth to score against.",
-  "destinations": []
+  "destinations": [
+    {
+      "id": "GCRRYBV5IY7DSI54DKW33ZELC2LWYCAHC43TXAM2A2HTFN5GWOFWXPC2",
+      "type": "account",
+      "address": "GCRRYBV5IY7DSI54DKW33ZELC2LWYCAHC43TXAM2A2HTFN5GWOFWXPC2",
+      "label": "clean",
+      "notes": "Established testnet wallet with regular payment history; no red flags."
+    }
+  ]
 }
