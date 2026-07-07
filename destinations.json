@@ -35,6 +35,13 @@
       "address": "GCRNKXJJLZNDLK2EWPX25JISTORCXCF2HYUXMYKF7XWKHMEOHCXVGP4J",
       "label": "suspicious",
       "notes": "Funded seconds before a large outgoing payment burst; pattern consistent with a pass-through wallet."
+    },
+    {
+      "id": "GDL4JRQOHLJARTSQMZCBANXJ6GI6BN2QG2TX6ZPC5KSHKJCDEM735BYJ",
+      "type": "account",
+      "address": "GDL4JRQOHLJARTSQMZCBANXJ6GI6BN2QG2TX6ZPC5KSHKJCDEM735BYJ",
+      "label": "suspicious",
+      "notes": "Shares a funding source with malicious_wallet_1 and malicious_wallet_2 below."
     }
   ]
 }
