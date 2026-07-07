@@ -28,6 +28,13 @@
       "address": "GBWPMNXNRLA3VMBTWZHWN7VLUZPXBZUEOMPD6OIQKYCZNDJ2SY4ACC5B",
       "label": "clean",
       "notes": "Fixture stand-in for a well-known, long-lived asset issuer (issues USDC below)."
+    },
+    {
+      "id": "GCRNKXJJLZNDLK2EWPX25JISTORCXCF2HYUXMYKF7XWKHMEOHCXVGP4J",
+      "type": "account",
+      "address": "GCRNKXJJLZNDLK2EWPX25JISTORCXCF2HYUXMYKF7XWKHMEOHCXVGP4J",
+      "label": "suspicious",
+      "notes": "Funded seconds before a large outgoing payment burst; pattern consistent with a pass-through wallet."
     }
   ]
 }
