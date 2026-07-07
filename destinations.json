@@ -63,6 +63,13 @@
       "address": "GCAMGLMB5EN55ICM26RYDGZSE5P4GKMK6TD6ZB7LACMVE7IEDTWVYZDF",
       "label": "malicious",
       "notes": "Repeated small 'test' payments precede a large drain; matches a known phishing-drainer shape."
+    },
+    {
+      "id": "GDQPZVGOJY6Q4PPASHZBIFN3PTIBD6WCRDCCAIFIPHZIYKSDQ7PZWPNJ",
+      "type": "account",
+      "address": "GDQPZVGOJY6Q4PPASHZBIFN3PTIBD6WCRDCCAIFIPHZIYKSDQ7PZWPNJ",
+      "label": "malicious",
+      "notes": "Destination of multiple change-trust + immediate max-sell patterns typical of rug-pull collection wallets."
     }
   ]
 }
