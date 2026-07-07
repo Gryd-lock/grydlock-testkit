@@ -56,6 +56,13 @@
       "address": "GD7XPB2A7CG5Z4ICV24B3LXCRHAEJRFEK4OEW3ZIOQAPJOHAXBB7QHGE",
       "label": "malicious",
       "notes": "Path-payment sweep pattern: drains newly funded wallets within seconds of receiving deposits."
+    },
+    {
+      "id": "GCAMGLMB5EN55ICM26RYDGZSE5P4GKMK6TD6ZB7LACMVE7IEDTWVYZDF",
+      "type": "account",
+      "address": "GCAMGLMB5EN55ICM26RYDGZSE5P4GKMK6TD6ZB7LACMVE7IEDTWVYZDF",
+      "label": "malicious",
+      "notes": "Repeated small 'test' payments precede a large drain; matches a known phishing-drainer shape."
     }
   ]
 }
