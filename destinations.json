@@ -7,6 +7,13 @@
       "address": "GCRRYBV5IY7DSI54DKW33ZELC2LWYCAHC43TXAM2A2HTFN5GWOFWXPC2",
       "label": "clean",
       "notes": "Established testnet wallet with regular payment history; no red flags."
+    },
+    {
+      "id": "GA4HFFSHZ7PADQWOFCZGYV2HE437LQ2WDILWCGC33BMJUQ6OBO5HKI5D",
+      "type": "account",
+      "address": "GA4HFFSHZ7PADQWOFCZGYV2HE437LQ2WDILWCGC33BMJUQ6OBO5HKI5D",
+      "label": "clean",
+      "notes": "Long-lived wallet, low transaction velocity, no shared funding source with flagged accounts."
     }
   ]
 }
