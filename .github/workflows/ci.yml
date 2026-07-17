@@ -14,3 +14,52 @@ jobs:
         with:
           node-version: 20
       - run: npm run validate
+
+  validate-changelog:
+    name: Changelog updated
+    runs-on: ubuntu-latest
+    # Only run on pull requests — there's nothing to enforce on direct pushes to main.
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Fetch the base branch so we can diff against it.
+          fetch-depth: 0
+
+      - name: Check for fixture changes
+        id: fixture-diff
+        run: |
+          BASE=${{ github.event.pull_request.base.sha }}
+          HEAD=${{ github.event.pull_request.head.sha }}
+          CHANGED=$(git diff --name-only "$BASE" "$HEAD" -- \
+            destinations.json scores.json 'transactions/*.xdr')
+          if [ -n "$CHANGED" ]; then
+            echo "fixture_changed=true" >> "$GITHUB_OUTPUT"
+            echo "Changed fixture files:"
+            echo "$CHANGED"
+          else
+            echo "fixture_changed=false" >> "$GITHUB_OUTPUT"
+            echo "No fixture files changed — skipping changelog check."
+          fi
+
+      - name: Verify [Unreleased] section is populated
+        if: steps.fixture-diff.outputs.fixture_changed == 'true'
+        run: |
+          if [ ! -f CHANGELOG.md ]; then
+            echo "::error file=CHANGELOG.md::CHANGELOG.md is missing."
+            exit 1
+          fi
+
+          # Extract everything between ## [Unreleased] and the next ## heading.
+          UNRELEASED=$(awk '/^## \[Unreleased\]/{found=1; next} found && /^## /{exit} found{print}' CHANGELOG.md)
+
+          # Strip blank lines and the placeholder HTML comment.
+          CONTENT=$(echo "$UNRELEASED" | grep -v '^\s*$' | grep -v '^\s*<!--')
+
+          if [ -z "$CONTENT" ]; then
+            echo "::error file=CHANGELOG.md::This PR modifies fixture files but the [Unreleased] section of CHANGELOG.md is empty."
+            echo "Add an entry describing what changed and why. See CONTRIBUTING.md for the required format."
+            exit 1
+          fi
+
+          echo "CHANGELOG.md [Unreleased] section is populated — check passed."
