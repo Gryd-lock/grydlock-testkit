@@ -89,6 +89,10 @@ This repo is one of four in the [Gryd-lock](https://github.com/Gryd-lock) organi
 
 MIT
 
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for the labelling rubric, reviewer checklist, and PR workflow.
+
 ---
 
 <div align="center">
