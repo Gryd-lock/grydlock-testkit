@@ -26,6 +26,57 @@ for (const [id, score] of Object.entries(scores)) {
   }
 }
 
+// Golden-file assertions
+let expectedCounts;
+try {
+  expectedCounts = JSON.parse(
+    readFileSync(`${root}/scripts/__fixtures__/expected-counts.json`, 'utf-8')
+  );
+} catch (err) {
+  errors.push(`expected-counts.json error: ${err.message}`);
+}
+
+if (expectedCounts) {
+  // Total destination count check
+  if (destinations.length < expectedCounts.minTotal) {
+    errors.push(
+      `Total destination count (${destinations.length}) is below the expected minimum of ${expectedCounts.minTotal}`
+    );
+  }
+
+  // Count of each label check
+  const labelCounts = { clean: 0, suspicious: 0, malicious: 0 };
+  for (const d of destinations) {
+    if (labelCounts[d.label] !== undefined) {
+      labelCounts[d.label]++;
+    }
+  }
+
+  if (labelCounts.clean < expectedCounts.minClean) {
+    errors.push(
+      `Clean destination count (${labelCounts.clean}) is below the expected minimum of ${expectedCounts.minClean}`
+    );
+  }
+  if (labelCounts.suspicious < expectedCounts.minSuspicious) {
+    errors.push(
+      `Suspicious destination count (${labelCounts.suspicious}) is below the expected minimum of ${expectedCounts.minSuspicious}`
+    );
+  }
+  if (labelCounts.malicious < expectedCounts.minMalicious) {
+    errors.push(
+      `Malicious destination count (${labelCounts.malicious}) is below the expected minimum of ${expectedCounts.minMalicious}`
+    );
+  }
+
+  // Must-exist original 11 seed fixtures check
+  const existingIds = new Set(destinations.map((d) => d.id));
+  for (const id of expectedCounts.mustExist) {
+    if (!existingIds.has(id)) {
+      errors.push(`Required seed fixture ID "${id}" is missing from destinations.json`);
+    }
+  }
+}
+
 if (errors.length > 0) {
   console.error(`Fixture validation failed:\n${errors.map((e) => `  - ${e}`).join('\n')}`);
   process.exit(1);
