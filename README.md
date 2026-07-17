@@ -76,6 +76,14 @@ Checks that every destination in `destinations.json` has a matching entry in `sc
 
 ## Gryd Lock Organization
 
+## Dependency Updates
+
+This repo uses [Dependabot](.github/dependabot.yml) to keep npm packages and GitHub Actions current:
+
+- **Patch/minor updates** are grouped into a single weekly PR and are expected to be auto-merged once CI (`npm run validate`) passes.
+- **Major version updates** always open their own PR and are reviewed manually — this matters most for parsing/decoding dependencies like `@stellar/stellar-sdk`, where a breaking change could silently affect the sample XDRs this repo ships.
+- Checks run weekly (Monday 03:00 UTC). `package-lock.json` is committed so Dependabot has a lockfile to operate against.
+
 This repo is one of four in the [Gryd-lock](https://github.com/Gryd-lock) organization:
 
 | Repo                                                                              | Role                                                                                             |
