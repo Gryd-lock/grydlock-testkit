@@ -1,0 +1,69 @@
+---
+# .github/dependabot.yml
+#
+# Dependabot configuration for grydlock-testkit.
+#
+# Policy summary
+# ──────────────
+# • npm – checked weekly (Monday 03:00 UTC).
+#   Minor and patch updates are grouped into a single PR to keep noise low
+#   and are expected to be auto-merged once CI passes.
+#   Major version bumps always open their own individual PR so they get a
+#   manual review (this repo's fixtures feed grydlock-oracle-adapter and
+#   grydlock-research directly, so a breaking dependency change — e.g. in
+#   @stellar/stellar-sdk's XDR handling — needs a human to check nothing
+#   downstream broke).
+#
+# • GitHub Actions – checked weekly (Monday 03:00 UTC).
+#   All action version bumps are grouped into one PR per cycle.
+#
+# See the "Dependency Updates" section in README.md for the full policy.
+
+version: 2
+
+updates:
+  # ── npm ──────────────────────────────────────────────────────────────
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "03:00"
+      timezone: "UTC"
+    groups:
+      npm-minor-patch:
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
+    labels:
+      - "dependencies"
+      - "npm"
+      - "automated-pr"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+
+  # ── GitHub Actions ──────────────────────────────────────────────────
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "03:00"
+      timezone: "UTC"
+    groups:
+      github-actions-updates:
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
+    labels:
+      - "dependencies"
+      - "github-actions"
+      - "automated-pr"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(actions)"
+      include: "scope"
