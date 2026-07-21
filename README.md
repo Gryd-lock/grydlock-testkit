@@ -44,6 +44,17 @@ Checks that every destination in destinations.json has a matching entry in score
 - The extension is pointed at the stub oracle during development, so the full path - decode, score, tier, warning - runs entirely offline
 - grydlock-research runs the extension across every entry in destinations.json and measures how often the assigned tier matches the label
 
+## Consumer Contract Test
+
+`grydlock-oracle-adapter`'s `StubOracle` reads a *vendored copy* of `scores.json`/`destinations.json` (checked in under its own `src/fixtures/testkit/`, shape-checked at module load). A change here - a new entity type, a schema-versioning change, a scores.json shape change - could break `StubOracle`'s assumptions in a way nothing in this repo would otherwise catch, since this repo has no automated way to exercise that downstream code.
+
+`.github/workflows/consumer-contract-test.yml` is a "consumer contract test": it checks out `grydlock-oracle-adapter` at a pinned commit, copies this repo's *current* `scores.json`/`destinations.json` over the adapter's vendored copies, and runs a small `vitest` check asserting `StubOracle.getScore()` resolves to a finite 0-100 number for every destination in `destinations.json` with no throw.
+
+- **Trigger:** manual (`workflow_dispatch`) or a weekly schedule - deliberately not on every push, to avoid a hard cross-repo CI coupling on every PR here.
+- **Purpose:** catch a testkit change that's breaking-for-consumers before it ships in a tagged release, rather than discovering it later in `grydlock-oracle-adapter` or `grydlock-research`.
+- **Limitations:** it's only as good as the pinned `grydlock-oracle-adapter` ref (`ORACLE_ADAPTER_REF` in the workflow file) - it does not track that repo's `main` branch, so it can miss adapter-side changes made after the pin. It also only checks the fixture *shape* the adapter expects, not scoring correctness (that's `grydlock-research`'s job).
+- **Updating the pin:** edit `ORACLE_ADAPTER_REF` at the top of `.github/workflows/consumer-contract-test.yml` to a new commit SHA (or tag) of `grydlock-oracle-adapter`, ideally whenever that repo cuts a release or changes its fixture-loading code.
+
 ## Pinning to a Release
 
 Consumers should pin to a specific tagged release rather than tracking the main branch. This ensures fixture changes do not silently alter evaluation results.

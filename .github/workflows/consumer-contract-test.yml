@@ -1,0 +1,85 @@
+name: Consumer Contract Test (grydlock-oracle-adapter)
+
+# Verifies that grydlock-oracle-adapter's StubOracle can still load this
+# repo's current scores.json/destinations.json without error. Not run on
+# every push (that would be a hard cross-repo CI coupling) - only on a
+# schedule and manual dispatch, so a breaking fixture change is caught
+# before a release rather than blocking every unrelated PR.
+#
+# See "Consumer Contract Test" in README.md for how to bump ORACLE_ADAPTER_REF.
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 6 * * 1' # weekly, Monday 06:00 UTC
+
+env:
+  # Pinned commit of Gryd-lock/grydlock-oracle-adapter to test against.
+  # Bump this periodically (see README.md) - it will not track main
+  # automatically.
+  ORACLE_ADAPTER_REF: 7e5b1b09860ce713abe507a59a3b7a226e09ebfb
+
+jobs:
+  stub-oracle-contract-test:
+    name: StubOracle loads this repo's current fixtures
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout grydlock-testkit
+        uses: actions/checkout@v4
+        with:
+          path: testkit
+
+      - name: Checkout grydlock-oracle-adapter (pinned ref)
+        uses: actions/checkout@v4
+        with:
+          repository: Gryd-lock/grydlock-oracle-adapter
+          ref: ${{ env.ORACLE_ADAPTER_REF }}
+          path: oracle-adapter
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install grydlock-oracle-adapter dependencies
+        working-directory: oracle-adapter
+        run: npm ci
+
+      - name: Point StubOracle at this repo's current fixtures
+        run: |
+          cp testkit/scores.json oracle-adapter/src/fixtures/testkit/scores.json
+          cp testkit/destinations.json oracle-adapter/src/fixtures/testkit/destinations.json
+
+      - name: Write consumer contract test
+        run: |
+          cat > oracle-adapter/tests/testkit-consumer-contract.test.ts <<'EOF'
+          import { describe, expect, it } from 'vitest';
+          import { StubOracle } from '../src/StubOracle';
+          import { destinations } from '../src/fixtures/testkit';
+
+          // Contract asserted here: for every destination currently published
+          // in grydlock-testkit's destinations.json, StubOracle.getScore()
+          // must resolve to a finite number in [0, 100] without throwing.
+          // grydlock-testkit's schema.ts validation (run at module load,
+          // see src/fixtures/testkit/index.ts) is what would actually throw
+          // first if scores.json/destinations.json's shape changed
+          // incompatibly - this test exists to catch that at the point the
+          // testkit fixtures change, not later when it breaks downstream.
+          describe('grydlock-testkit consumer contract', () => {
+            it("loads every destination in grydlock-testkit's current destinations.json", async () => {
+              const oracle = new StubOracle();
+              expect(destinations.destinations.length).toBeGreaterThan(0);
+
+              for (const destination of destinations.destinations) {
+                const score = await oracle.getScore(destination.id);
+                expect(typeof score).toBe('number');
+                expect(Number.isFinite(score)).toBe(true);
+                expect(score).toBeGreaterThanOrEqual(0);
+                expect(score).toBeLessThanOrEqual(100);
+              }
+            });
+          });
+          EOF
+
+      - name: Run consumer contract test
+        working-directory: oracle-adapter
+        run: npx vitest run tests/testkit-consumer-contract.test.ts
