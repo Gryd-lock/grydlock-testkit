@@ -27,6 +27,8 @@ grydlock-testkit/
   destinations.json
   scores.json
   scripts/validate-fixtures.mjs
+  scripts/bench/
+  docs/benchmarks/dataset-scale.md
   transactions/
     payment.xdr
     path_payment.xdr
@@ -37,6 +39,18 @@ grydlock-testkit/
 npm run validate
 
 Checks that every destination in destinations.json has a matching entry in scores.json, every score is an integer in 0-100, and every label is one of clean, suspicious, or malicious.
+
+## Dataset Scale Benchmarks
+
+[docs/benchmarks/dataset-scale.md](docs/benchmarks/dataset-scale.md) answers how fixture loading should behave as the corpus grows past its current 12 entries. It compares five loading strategies at five corpus sizes (12 to 100,000) on startup latency, lookup latency, memory, and artifact size, and sets the thresholds at which the current raw-JSON layout stops being sufficient.
+
+Short version: nothing needs to change now, and the JSON files should stay the reviewable source of truth at every size - only what gets *published* changes as the corpus grows.
+
+Reproduce the measurements with:
+
+npm run bench
+
+That generates synthetic corpora under .bench/ (git-ignored, deterministic), measures each strategy in an isolated child process, and writes .bench/results.json and .bench/results.md. See scripts/bench/ for the harness and docs/benchmarks/dataset-scale.md for how to interpret the output.
 
 ## How It's Used
 
