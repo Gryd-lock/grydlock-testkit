@@ -5,6 +5,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "validate": "node scripts/validate-fixtures.mjs"
+    "validate": "node scripts/validate-fixtures.mjs",
+    "bench": "node scripts/bench/run-benchmarks.mjs",
+    "bench:corpus": "node scripts/bench/generate-corpus.mjs"
   }
 }
