@@ -38,6 +38,28 @@ npm run validate
 
 Checks that every destination in destinations.json has a matching entry in scores.json, every score is an integer in 0-100, and every label is one of clean, suspicious, or malicious.
 
+## Fixture Report
+
+npm run report
+
+Emits a deterministic JSON summary of the fixture dataset to stdout. The output includes:
+
+- `version` — package version from package.json
+- `generated_at` — ISO 8601 timestamp of the run
+- `totals` — total count of destinations and scores entries
+- `label_counts` — per-label counts (clean / suspicious / malicious)
+- `type_counts` — per-type counts (account, asset, …)
+- `risk_pattern_counts` — count of each risk pattern present in destinations.json
+- `score_bands` — destinations bucketed into low (0–24), medium-low (25–49), medium-high (50–74), high (75–100)
+- `transactions` — list of `.xdr` files with their SHA-256 hashes
+- `file_hashes` — SHA-256 hashes of `destinations.json`, `scores.json`, and `CHANGELOG.md`
+
+Repeated runs are byte-identical when the input files are unchanged. Redirect to a file to capture a snapshot:
+
+npm run report > report.json
+
+The script has no third-party dependencies.
+
 ## How It's Used
 
 - grydlock-oracle-adapter loads scores.json in its StubOracle to return scores without a live backend
