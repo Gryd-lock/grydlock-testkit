@@ -26,6 +26,20 @@ jobs:
           node-version: 20
       - run: npm run validate
 
+  bench-smoke:
+    name: Benchmark harness smoke test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # Runs the two smallest corpora once each - enough to catch the harness
+      # bit-rotting, without publishing CI timings as if they were meaningful
+      # (shared runners are far too noisy for that). Real numbers come from
+      # running `npm run bench` locally; see docs/benchmarks/dataset-scale.md.
+      - run: node scripts/bench/run-benchmarks.mjs --sizes 12,100 --repeat 1
+
   validate-changelog:
     name: Changelog updated
     runs-on: ubuntu-latest
@@ -58,4 +72,4 @@ jobs:
             echo "::error file=CHANGELOG.md::This PR modifies fixture files but the [Unreleased] section of CHANGELOG.md is empty."
             exit 1
           fi
-          echo "CHANGELOG.md [Unreleased] section is populated — check passed."
+          echo "CHANGELOG.md [Unreleased] section is populated ï¿½ check passed."
