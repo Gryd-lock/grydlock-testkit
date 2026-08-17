@@ -11,6 +11,39 @@ const VALID_RISK_PATTERNS = new Set([
   'scam-trustline', 'signer-takeover', 'memo-impersonation',
   'sponsored-mule', 'cold-start', 'adversarial-clean', 'none'
 ]);
+
+/**
+ * Score bands per label as documented in CONTRIBUTING.md.
+ * Gaps (26–39 and 71–74) are intentionally unused — do not fill them.
+ */
+export const SCORE_BANDS = {
+  clean:      { min: 0,  max: 25  },
+  suspicious: { min: 40, max: 70  },
+  malicious:  { min: 75, max: 100 },
+};
+
+/**
+ * Return a human-readable range string for a label, e.g. "0–25".
+ * @param {string} label
+ * @returns {string}
+ */
+export function bandRangeLabel(label) {
+  const band = SCORE_BANDS[label];
+  return band ? `${band.min}–${band.max}` : 'unknown';
+}
+
+/**
+ * Check whether a numeric score falls within the expected band for a given label.
+ * @param {string} label  - one of 'clean' | 'suspicious' | 'malicious'
+ * @param {number} score  - integer 0–100
+ * @returns {boolean}
+ */
+export function scoreMatchesBand(label, score) {
+  const band = SCORE_BANDS[label];
+  if (!band) return false;
+  return score >= band.min && score <= band.max;
+}
+
 const errors = [];
 
 for (const d of destinations) {
@@ -28,11 +61,23 @@ for (const d of destinations) {
 }
 
 for (const [id, score] of Object.entries(scores)) {
-  if (typeof score !== 'number' || score < 0 || score > 100) {
-    errors.push(id + ': score ' + score + ' out of range 0-100');
+  if (typeof score !== 'number' || !Number.isInteger(score) || score < 0 || score > 100) {
+    errors.push(id + ': score ' + score + ' is not an integer in 0–100');
+    continue; // skip band check when score itself is invalid
   }
   if (!destinations.some((d) => d.id === id)) {
     errors.push(id + ': present in scores.json but not in destinations.json');
+    continue;
+  }
+
+  const dest = destinations.find((d) => d.id === id);
+  if (dest && VALID_LABELS.has(dest.label)) {
+    if (!scoreMatchesBand(dest.label, score)) {
+      errors.push(
+        `${id}: score ${score} is outside the expected band for label "${dest.label}" ` +
+        `(expected ${bandRangeLabel(dest.label)})`
+      );
+    }
   }
 }
 
