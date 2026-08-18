@@ -5,6 +5,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "validate": "node scripts/validate-fixtures.mjs"
+    "validate": "node scripts/validate-fixtures.mjs",
+    "generate-manifest": "node scripts/generate-manifest.mjs",
+    "verify-manifest": "node scripts/verify-manifest.mjs"
   }
 }

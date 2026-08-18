@@ -14,7 +14,31 @@ Version numbers track the fixture dataset, not a software release.
 
 ## [Unreleased]
 
-<!-- Add entries here as fixtures change. See CONTRIBUTING.md for the required format. -->
+### Added — Provenance Pipeline
+
+- **`evaluation-manifest.json`** — Checked-in provenance manifest locking every input file
+  (destinations, scores, XDRs) to its SHA-256 hash, recording the `fixtureRelease`,
+  `sourceCommit`, `mappingVersion`, tier thresholds, expected label counts, and a
+  `resultSchema` reference. Regenerate with `npm run generate-manifest`.
+- **`EVALUATION_RESULT_SCHEMA.json`** — JSON Schema (Draft 2020-12) defining the result
+  document that `grydlock-research` must produce per evaluation run: `schemaVersion`,
+  `fixtureRelease`, `sourceCommit`, `evaluatorVersion`, `mappingVersion`, `tierThresholds`,
+  summary accuracy metrics, and a per-destination breakdown.
+- **`scripts/generate-manifest.mjs`** — Computes SHA-256 hashes of all input files and
+  writes `evaluation-manifest.json`. Preserves human-controlled version fields
+  (`manifestVersion`, `mappingVersion`, `evaluatorVersion`) across regenerations.
+- **`scripts/verify-manifest.mjs`** — Standalone altered-input detector. Checks that every
+  file listed in `manifest.inputs` exists on disk and matches its recorded hash, that
+  `fixtureRelease` matches `package.json`, and that `expectedCounts` agree with the actual
+  label distribution. Used by CI on every push.
+- **`scripts/validate-fixtures.mjs`** — Extended with manifest cross-checks: verifies
+  `fixtureRelease`, `expectedCounts`, and SHA-256 hashes for the two JSON fixture files as
+  part of the existing `npm run validate` step.
+- **`package.json`** — Added `generate-manifest` and `verify-manifest` scripts.
+- **CI (`ci.yml`)** — Added `verify-manifest` job that runs `npm run verify-manifest` and
+  then regenerates the manifest in a throw-away working tree to detect stale-manifest
+  commits (inputs changed but manifest not updated).
+
 
 ---
 

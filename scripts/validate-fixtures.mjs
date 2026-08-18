@@ -1,4 +1,5 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
@@ -83,6 +84,101 @@ if (expectedCounts) {
   for (const id of expectedCounts.mustExist) {
     if (!existingIds.has(id)) {
       errors.push(`Required seed fixture ID "${id}" is missing from destinations.json`);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Manifest cross-check
+// Verify that evaluation-manifest.json exists and its expectedCounts agree
+// with the destinations we just validated. Full hash verification is done by
+// scripts/verify-manifest.mjs; here we only check the counts to keep the
+// validate step fast and free of I/O on every binary fixture.
+// ---------------------------------------------------------------------------
+
+const manifestPath = `${root}/evaluation-manifest.json`;
+if (!existsSync(manifestPath)) {
+  errors.push(
+    'evaluation-manifest.json is missing. Run: npm run generate-manifest'
+  );
+} else {
+  let manifest;
+  try {
+    manifest = JSON.parse(readFileSync(manifestPath, 'utf-8'));
+  } catch (err) {
+    errors.push(`evaluation-manifest.json is not valid JSON: ${err.message}`);
+    manifest = null;
+  }
+
+  if (manifest) {
+    // fixtureRelease must match package.json version.
+    let pkgVersion;
+    try {
+      pkgVersion = JSON.parse(readFileSync(`${root}/package.json`, 'utf-8')).version;
+    } catch {
+      /* ignore — package.json absence is caught elsewhere */
+    }
+    if (pkgVersion && manifest.fixtureRelease !== pkgVersion) {
+      errors.push(
+        `evaluation-manifest.json fixtureRelease="${manifest.fixtureRelease}" ` +
+        `does not match package.json version="${pkgVersion}". ` +
+        'Run: npm run generate-manifest'
+      );
+    }
+
+    // expectedCounts must agree with the current label distribution.
+    if (manifest.expectedCounts) {
+      const ec = manifest.expectedCounts;
+      const labelCounts = { clean: 0, suspicious: 0, malicious: 0 };
+      for (const d of destinations) {
+        if (labelCounts[d.label] !== undefined) labelCounts[d.label]++;
+      }
+
+      if (typeof ec.total === 'number' && ec.total !== destinations.length) {
+        errors.push(
+          `evaluation-manifest.json expectedCounts.total=${ec.total} but ` +
+          `destinations.json has ${destinations.length} entries. ` +
+          'Run: npm run generate-manifest'
+        );
+      }
+      for (const label of ['clean', 'suspicious', 'malicious']) {
+        if (typeof ec[label] === 'number' && ec[label] !== labelCounts[label]) {
+          errors.push(
+            `evaluation-manifest.json expectedCounts.${label}=${ec[label]} but ` +
+            `destinations.json has ${labelCounts[label]} ${label} entries. ` +
+            'Run: npm run generate-manifest'
+          );
+        }
+      }
+    } else {
+      errors.push('evaluation-manifest.json is missing expectedCounts field.');
+    }
+
+    // Verify SHA-256 hashes for the two JSON fixture files (fast, text-only).
+    // XDR binary files are covered by verify-manifest (run separately in CI).
+    const HASH_TARGETS = [
+      { key: 'destinations', path: 'destinations.json' },
+      { key: 'scores',       path: 'scores.json' },
+    ];
+    for (const { key, path } of HASH_TARGETS) {
+      const entry = manifest.inputs?.[key];
+      if (!entry) {
+        errors.push(`evaluation-manifest.json missing inputs.${key}`);
+        continue;
+      }
+      try {
+        const actual = createHash('sha256')
+          .update(readFileSync(`${root}/${path}`))
+          .digest('hex');
+        if (actual !== entry.sha256) {
+          errors.push(
+            `inputs.${key} hash mismatch for "${path}" — file changed since manifest was generated. ` +
+            'Run: npm run generate-manifest'
+          );
+        }
+      } catch (err) {
+        errors.push(`Could not hash "${path}": ${err.message}`);
+      }
     }
   }
 }
