@@ -1,58 +1,22 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { VALID_LABELS, VALID_RISK_PATTERNS } from './lib/taxonomy.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const destinations = JSON.parse(readFileSync(root + '/destinations.json', 'utf-8')).destinations;
 const scores = JSON.parse(readFileSync(root + '/scores.json', 'utf-8'));
 
-const VALID_LABELS = new Set(['clean', 'suspicious', 'malicious']);
-const VALID_RISK_PATTERNS = new Set([
-  'sweep', 'phishing-drainer', 'rug-pull', 'pass-through',
-  'scam-trustline', 'signer-takeover', 'memo-impersonation',
-  'sponsored-mule', 'cold-start', 'adversarial-clean', 'none'
-]);
-
-/**
- * Score bands per label as documented in CONTRIBUTING.md.
- * Gaps (26–39 and 71–74) are intentionally unused — do not fill them.
- */
-export const SCORE_BANDS = {
-  clean:      { min: 0,  max: 25  },
-  suspicious: { min: 40, max: 70  },
-  malicious:  { min: 75, max: 100 },
-};
-
-/**
- * Return a human-readable range string for a label, e.g. "0–25".
- * @param {string} label
- * @returns {string}
- */
-export function bandRangeLabel(label) {
-  const band = SCORE_BANDS[label];
-  return band ? `${band.min}–${band.max}` : 'unknown';
-}
-
-/**
- * Check whether a numeric score falls within the expected band for a given label.
- * @param {string} label  - one of 'clean' | 'suspicious' | 'malicious'
- * @param {number} score  - integer 0–100
- * @returns {boolean}
- */
-export function scoreMatchesBand(label, score) {
-  const band = SCORE_BANDS[label];
-  if (!band) return false;
-  return score >= band.min && score <= band.max;
-}
-
+const VALID_LABEL_SET = new Set(VALID_LABELS);
+const VALID_RISK_PATTERN_SET = new Set(VALID_RISK_PATTERNS);
 const errors = [];
 
 for (const d of destinations) {
-  if (!VALID_LABELS.has(d.label)) {
+  if (!VALID_LABEL_SET.has(d.label)) {
     errors.push(d.id + ': invalid label "' + d.label + '"');
   }
   if (!d.risk_pattern) {
     errors.push(d.id + ': missing risk_pattern');
-  } else if (!VALID_RISK_PATTERNS.has(d.risk_pattern)) {
+  } else if (!VALID_RISK_PATTERN_SET.has(d.risk_pattern)) {
     errors.push(d.id + ': invalid risk_pattern "' + d.risk_pattern + '"');
   }
   if (!(d.id in scores)) {

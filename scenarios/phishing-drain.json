@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "id": "phishing-drain-01",
+  "name": "Multi-step phishing drain",
+  "description": "A clean wallet is funded, interacts with a suspicious pass-through, then is drained to a known phishing-drainer. The risk emerges from the sequence, not any single isolated transaction.",
+  "participants": [
+    {
+      "id": "victim",
+      "destination": "GCRRYBV5IY7DSI54DKW33ZELC2LWYCAHC43TXAM2A2HTFN5GWOFWXPC2"
+    },
+    {
+      "id": "attacker",
+      "destination": "GCAMGLMB5EN55ICM26RYDGZSE5P4GKMK6TD6ZB7LACMVE7IEDTWVYZDF"
+    }
+  ],
+  "steps": [
+    {
+      "id": "initial-funding",
+      "sequence": 1,
+      "transaction": "payment",
+      "destination": "GCRRYBV5IY7DSI54DKW33ZELC2LWYCAHC43TXAM2A2HTFN5GWOFWXPC2",
+      "participants": ["victim"],
+      "expected_warnings": [],
+      "expected_state": [
+        { "participant": "victim", "tier": "clean" }
+      ]
+    },
+    {
+      "id": "suspicious-interaction",
+      "sequence": 2,
+      "transaction": "payment",
+      "destination": "GCRNKXJJLZNDLK2EWPX25JISTORCXCF2HYUXMYKF7XWKHMEOHCXVGP4J",
+      "participants": ["victim"],
+      "expected_warnings": [
+        { "risk_pattern": "pass-through", "expected": true, "severity": "suspicious" }
+      ],
+      "expected_state": [
+        { "participant": "victim", "tier": "suspicious" }
+      ]
+    },
+    {
+      "id": "follow-up-drain",
+      "sequence": 3,
+      "transaction": "path_payment",
+      "destination": "GCAMGLMB5EN55ICM26RYDGZSE5P4GKMK6TD6ZB7LACMVE7IEDTWVYZDF",
+      "participants": ["victim", "attacker"],
+      "expected_warnings": [
+        { "risk_pattern": "phishing-drainer", "expected": true, "severity": "malicious" },
+        { "risk_pattern": "sweep", "expected": false }
+      ],
+      "expected_state": [
+        { "participant": "victim", "tier": "malicious" },
+        { "participant": "attacker", "tier": "malicious" }
+      ]
+    }
+  ]
+}

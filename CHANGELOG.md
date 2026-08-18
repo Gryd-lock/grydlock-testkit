@@ -14,6 +14,12 @@ Version numbers track the fixture dataset, not a software release.
 
 ## [Unreleased]
 
+### Added — Scenario Bundles (`scenarios/`)
+
+- Introduced versioned scenario bundles (`schema_version` `1.0`) for deterministic, offline, multi-transaction attack workflows. A scenario groups participants, destination/transaction references, and ordered steps with machine-checkable expected warnings and state transitions.
+- Added `scenarios/phishing-drain.json`, an executable synthetic example (initial funding → suspicious pass-through interaction → phishing-drainer drain).
+- Added scenario validation and replay tooling: `scripts/validate-scenarios.mjs`, `scripts/replay-scenario.mjs`, and `scripts/lib/scenario.mjs` (plus a shared `scripts/lib/taxonomy.mjs`). Wired into `npm run validate`, `npm run replay`, and `npm test`.
+
 <!-- Add entries here as fixtures change. See CONTRIBUTING.md for the required format. -->
 
 ---
