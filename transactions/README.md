@@ -36,6 +36,8 @@ A fixture subsection has:
 
 ## Current fixtures
 
+See [`index.json`](./index.json) for a machine-readable record of each fixture's passphrase, envelope type, Stellar transaction hash, and per-operation metadata. Always consult `index.json` before decoding — the XDR encoding does not embed the network passphrase.
+
 ### `payment.xdr`
 
 **Envelope**
@@ -86,3 +88,22 @@ A fixture subsection has:
 | # | Operation | Op Source | Params |
 | --- | --- | --- | --- |
 | 0 | `changeTrust` (SCAM asset) | — | no destination — trustline change only |
+
+### `fee_bump_payment.xdr`
+
+**Envelope**
+
+| Field | Value |
+| --- | --- |
+| Fee Bump | yes (outer fee source: `clean_wallet_2`) |
+| Source | `clean_wallet_1` (inner transaction source) |
+| Memo | none |
+| Time Bounds | none |
+
+**Operations**
+
+| # | Operation | Op Source | Params |
+| --- | --- | --- | --- |
+| 0 | `payment` (native XLM) | — | destination: `suspicious_wallet_1` |
+
+**Notes:** This is an `envelopeTypeTxFeeBump` envelope. The outer fee-bump source (`clean_wallet_2`) pays the network fee on behalf of the inner transaction. The inner transaction source (`clean_wallet_1`) is the actual initiator and the account whose operations must be decoded and risk-scored. A decoder that reads `tx.source` on a `FeeBumpTransaction` object receives the fee-bump source, not the inner transaction source — it must call `tx.innerTransaction.source` and `tx.innerTransaction.operations` to reach the relevant data.
