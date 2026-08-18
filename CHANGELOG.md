@@ -39,6 +39,25 @@ Version numbers track the fixture dataset, not a software release.
   then regenerates the manifest in a throw-away working tree to detect stale-manifest
   commits (inputs changed but manifest not updated).
 
+### Added — Transaction Fixture Portability (Spike deliverables)
+
+- **`transactions/index.json`** — Machine-readable fixture index recording for each XDR file:
+  network, passphrase string, envelope type, `signed` flag, Stellar transaction hash
+  (TESTNET), source account(s), and per-operation metadata. Closes the silent-wrong-passphrase
+  risk: consumers can read the passphrase before calling `TransactionBuilder.fromXDR` and
+  verify the resulting hash matches the recorded value.
+- **`transactions/fee_bump_payment.xdr`** — Fee-bump envelope (`envelopeTypeTxFeeBump`)
+  wrapping `payment.xdr`. Outer fee source: `clean_wallet_2`; inner tx source: `clean_wallet_1`;
+  inner operation: payment to `suspicious_wallet_1`. Exercises the decoder's fee-bump code
+  path, which was previously untested. Inner tx hash equals the hash of `payment.xdr` under
+  TESTNET; outer hash differs.
+- **`docs/spike-transaction-portability.md`** — Full spike findings: current-state inventory,
+  passphrase/hash/signature implications, PUBLIC vs TESTNET comparison, signed vs unsigned
+  analysis, fee-bump prototype, portability strategy comparison (Strategy A vs B), and
+  recommended follow-up issues.
+- **`scripts/generate-manifest.mjs`** — Updated to include `transaction_fee_bump` and
+  `transaction_index` in the set of hashed inputs.
+
 
 ---
 

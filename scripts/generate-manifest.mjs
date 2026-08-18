@@ -73,6 +73,8 @@ const INPUT_FILES = [
   { key: 'transaction_payment',      path: 'transactions/payment.xdr' },
   { key: 'transaction_path_payment', path: 'transactions/path_payment.xdr' },
   { key: 'transaction_change_trust', path: 'transactions/change_trust.xdr' },
+  { key: 'transaction_fee_bump',     path: 'transactions/fee_bump_payment.xdr' },
+  { key: 'transaction_index',        path: 'transactions/index.json' },
 ];
 
 const inputs = {};
