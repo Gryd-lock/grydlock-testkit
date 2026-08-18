@@ -1,0 +1,52 @@
+name: End-to-end evaluation
+
+# Product-level smoke test: decode → extract → StubOracle lookup →
+# research tier mapping → label comparison. Runs when fixtures or the
+# evaluator change so a destination miss or wrong warning cannot land
+# unnoticed.
+
+on:
+  pull_request:
+    paths:
+      - 'destinations.json'
+      - 'scores.json'
+      - 'transactions/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/evaluate.mjs'
+      - 'scripts/evaluate.test.mjs'
+      - 'scripts/evaluate/**'
+      - '.github/workflows/evaluate.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'destinations.json'
+      - 'scores.json'
+      - 'transactions/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/evaluate.mjs'
+      - 'scripts/evaluate.test.mjs'
+      - 'scripts/evaluate/**'
+      - '.github/workflows/evaluate.yml'
+  workflow_dispatch: {}
+
+jobs:
+  evaluate:
+    name: Evaluate transaction fixtures end to end
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Run evaluator unit tests
+        run: npm test
+
+      - name: Evaluate current fixtures
+        run: npm run evaluate

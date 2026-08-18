@@ -139,6 +139,8 @@ Before adding a scenario:
 5. **Run it** — `npm run validate:scenarios` and
    `npm run replay -- scenarios/<file>.json` must both pass.
 
+`npm run evaluate` runs the product-level pipeline (decode → extract → stub lookup → tier mapping → label comparison) against every transaction fixture and every labelled destination. Unknown destinations are classified as `unscored`, distinct from low-risk. `npm test` covers valid, unknown, and malformed inputs.
+
 ---
 
 ## Reviewer checklist
@@ -208,12 +210,14 @@ accept it on the next run.
 2. **Edit fixtures** — make your changes to `destinations.json`, `scores.json`, and/or
    `transactions/`. Follow the labelling rubric above.
 
-3. **Validate locally** — run the fixture validator before pushing:
+3. **Validate locally** — run the fixture validator and the evaluator before pushing:
    ```bash
    npm run validate
+   npm test
+   npm run evaluate
    ```
-   This checks that every destination has a score, every score is in range, and every label is
-   valid.
+   `validate` checks that every destination has a score, every score is in range, and every label is
+   valid. `evaluate` runs decode → stub lookup → tier mapping → label comparison.
 
 4. **Update CHANGELOG.md** — add an entry under `[Unreleased]` describing what changed and why.
 

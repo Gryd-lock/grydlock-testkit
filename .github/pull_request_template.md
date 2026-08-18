@@ -29,6 +29,7 @@
 ## Validation
 
 - [ ] `npm run validate` passes locally.
+- [ ] `npm test` and `npm run evaluate` pass locally.
 
 ## Related issues
 
