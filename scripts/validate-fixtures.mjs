@@ -25,11 +25,23 @@ for (const d of destinations) {
 }
 
 for (const [id, score] of Object.entries(scores)) {
-  if (typeof score !== 'number' || score < 0 || score > 100) {
-    errors.push(id + ': score ' + score + ' out of range 0-100');
+  if (typeof score !== 'number' || !Number.isInteger(score) || score < 0 || score > 100) {
+    errors.push(id + ': score ' + score + ' is not an integer in 0–100');
+    continue; // skip band check when score itself is invalid
   }
   if (!destinations.some((d) => d.id === id)) {
     errors.push(id + ': present in scores.json but not in destinations.json');
+    continue;
+  }
+
+  const dest = destinations.find((d) => d.id === id);
+  if (dest && VALID_LABELS.has(dest.label)) {
+    if (!scoreMatchesBand(dest.label, score)) {
+      errors.push(
+        `${id}: score ${score} is outside the expected band for label "${dest.label}" ` +
+        `(expected ${bandRangeLabel(dest.label)})`
+      );
+    }
   }
 }
 
