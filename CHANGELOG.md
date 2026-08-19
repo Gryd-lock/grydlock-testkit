@@ -14,30 +14,11 @@ Version numbers track the fixture dataset, not a software release.
 
 ## [Unreleased]
 
-### Added — Transaction Fixture Portability (Spike)
+### Added — Scenario Bundles (`scenarios/`)
 
-- **`transactions/index.json`** — Machine-readable fixture index recording for each XDR file:
-  `network`, `passphrase` string, `envelopeType`, `signed` flag, `stellarHashTestnet`, source
-  account(s), and per-operation metadata. Closes the silent-wrong-passphrase risk:
-  `TransactionBuilder.fromXDR` accepts any passphrase without error — a consumer that passes
-  the wrong passphrase gets a wrong transaction hash silently. The index lets consumers read
-  the intended passphrase before decoding and verify the resulting hash matches the recorded
-  value.
-- **`transactions/fee_bump_payment.xdr`** — Fee-bump envelope (`envelopeTypeTxFeeBump`)
-  wrapping `payment.xdr`. Outer fee source: `clean_wallet_2`; inner tx source: `clean_wallet_1`;
-  inner operation: payment to `suspicious_wallet_1`. Outer hash (TESTNET): `7ab7ae0d...`;
-  inner hash equals the hash of `payment.xdr` (`f8310e15...`). Exercises the decoder's
-  fee-bump code path, which was previously untested. A decoder that reads `.source` on a
-  `FeeBumpTransaction` gets the outer fee-bump source, not the inner tx initiator; it must
-  call `.innerTransaction.source` and `.innerTransaction.operations`.
-- **`docs/spike-transaction-portability.md`** — Full spike findings: current-state inventory,
-  passphrase/hash/signature implications, PUBLIC vs TESTNET strategy comparison (Strategy A
-  TESTNET-only wins — fixture addresses are synthetic TESTNET data, multi-network adds no
-  evaluation signal), signed vs unsigned analysis, fee-bump prototype, and follow-up issue
-  list.
-- **`transactions/README.md`** — Added `index.json` reference paragraph and a `fee_bump_payment.xdr`
-  fixture section documenting the fee-bump envelope metadata and the inner-vs-outer source
-  decoder requirement.
+- Introduced versioned scenario bundles (`schema_version` `1.0`) for deterministic, offline, multi-transaction attack workflows. A scenario groups participants, destination/transaction references, and ordered steps with machine-checkable expected warnings and state transitions.
+- Added `scenarios/phishing-drain.json`, an executable synthetic example (initial funding → suspicious pass-through interaction → phishing-drainer drain).
+- Added scenario validation and replay tooling: `scripts/validate-scenarios.mjs`, `scripts/replay-scenario.mjs`, and `scripts/lib/scenario.mjs` (plus a shared `scripts/lib/taxonomy.mjs`). Wired into `npm run validate`, `npm run replay`, and `npm test`.
 
 <!-- Add entries here as fixtures change. See CONTRIBUTING.md for the required format. -->
 

@@ -16,6 +16,7 @@ Gryd Lock's warning layer is only useful if it can be measured. This repo provid
 - Labelled Destinations: Stellar testnet addresses and assets tagged clean, suspicious, or malicious
 - Sample Transactions: unsigned transaction XDRs covering payment, path payment, change trust
 - Score Stubs: lookup table mapping each destination to a 0-100 score for deterministic offline scoring
+- Scenario Bundles: versioned, ordered multi-transaction attack workflows that replay deterministically offline
 
 ## Repository Structure
 
@@ -26,17 +27,39 @@ grydlock-testkit/
   .github/workflows/ci.yml
   destinations.json
   scores.json
-  scripts/validate-fixtures.mjs
+  scripts/
+    validate-fixtures.mjs
+    validate-scenarios.mjs
+    replay-scenario.mjs
+    lib/scenario.mjs
+    lib/taxonomy.mjs
+  scenarios/
+    phishing-drain.json
+    README.md
   transactions/
     payment.xdr
     path_payment.xdr
     change_trust.xdr
+  tests/
+    scenario-validation.test.mjs
+    scenario-replay.test.mjs
+    backward-compat.test.mjs
 
 ## Validating Fixtures
 
 npm run validate
 
-Checks that every destination in destinations.json has a matching entry in scores.json, every score is an integer in 0-100, and every label is one of clean, suspicious, or malicious.
+Checks that every destination in destinations.json has a matching entry in scores.json, every score is an integer in 0-100, and every label is one of clean, suspicious, or malicious. It also validates every scenario bundle under scenarios/ (schema version, references, and step ordering).
+
+Other commands:
+
+- `npm run validate:scenarios` — validate only the scenario bundles
+- `npm run replay -- scenarios/phishing-drain.json` — deterministically replay a scenario offline
+- `npm test` — run the test suite (Node's built-in test runner, no dependencies)
+
+## Scenario Bundles
+
+Scenario bundles group existing point fixtures into ordered multi-transaction attack workflows whose risk emerges from the sequence of steps. They are versioned, validated, and replayable offline (no network access, no live indexer). See [scenarios/README.md](scenarios/README.md) for the full schema, validation rules, and a complete example.
 
 ## How It's Used
 
