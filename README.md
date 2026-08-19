@@ -16,6 +16,7 @@ Gryd Lock's warning layer is only useful if it can be measured. This repo provid
 - Labelled Destinations: Stellar testnet addresses and assets tagged clean, suspicious, or malicious
 - Sample Transactions: unsigned transaction XDRs covering payment, path payment, change trust
 - Score Stubs: lookup table mapping each destination to a 0-100 score for deterministic offline scoring
+- Scenario Bundles: versioned, ordered multi-transaction attack workflows that replay deterministically offline
 
 ## Repository Structure
 
@@ -29,72 +30,39 @@ grydlock-testkit/
   .github/workflows/consumer-contract-test.yml
   destinations.json
   scores.json
-  scripts/validate-fixtures.mjs
-  scripts/generate-manifest.mjs
-  scripts/verify-manifest.mjs
+  scripts/
+    validate-fixtures.mjs
+    validate-scenarios.mjs
+    replay-scenario.mjs
+    lib/scenario.mjs
+    lib/taxonomy.mjs
+  scenarios/
+    phishing-drain.json
+    README.md
   transactions/
     payment.xdr
     path_payment.xdr
     change_trust.xdr
+  tests/
+    scenario-validation.test.mjs
+    scenario-replay.test.mjs
+    backward-compat.test.mjs
 
 ## Validating Fixtures
 
 npm run validate
 
-Checks that every destination in destinations.json has a matching entry in scores.json, every score is an integer in 0-100, and every label is one of clean, suspicious, or malicious. Also verifies that evaluation-manifest.json exists, its expected counts match the current fixtures, and the SHA-256 hashes of destinations.json and scores.json match the recorded values.
+Checks that every destination in destinations.json has a matching entry in scores.json, every score is an integer in 0-100, and every label is one of clean, suspicious, or malicious. It also validates every scenario bundle under scenarios/ (schema version, references, and step ordering).
 
-## Provenance Pipeline
+Other commands:
 
-The provenance pipeline turns a fixture release into a reproducible research artifact. It prevents fixture, score, tier, or implementation changes from being mistaken for model improvement.
+- `npm run validate:scenarios` — validate only the scenario bundles
+- `npm run replay -- scenarios/phishing-drain.json` — deterministically replay a scenario offline
+- `npm test` — run the test suite (Node's built-in test runner, no dependencies)
 
-### How it works
+## Scenario Bundles
 
-`evaluation-manifest.json` is a checked-in document that locks every evaluation input to an exact SHA-256 hash. It records:
-
-| Field | Purpose |
-|-------|---------|
-| `manifestVersion` | Schema version of the manifest itself (semver). Bump major on breaking schema changes. |
-| `fixtureRelease` | Mirrors `package.json` version. Identifies the dataset release. |
-| `sourceCommit` | Full git SHA of this repo at generation time. |
-| `generatedAt` | ISO-8601 timestamp of last manifest generation. |
-| `inputs` | Map of logical name → `{ path, sha256 }` for every fixture file. |
-| `mappingVersion` | Tracks tier threshold changes independently of fixture releases. |
-| `tierThresholds` | Exact score boundaries used to assign clean / suspicious / malicious tiers. |
-| `expectedCounts` | Exact integer counts by label for the current dataset. |
-| `evaluatorVersion` | Semver range that `grydlock-research` must satisfy. |
-| `resultSchema` | `$ref` to `EVALUATION_RESULT_SCHEMA.json`. |
-
-### Regenerating the manifest
-
-Run this whenever any fixture file changes:
-
-```
-npm run generate-manifest
-```
-
-The script computes hashes from disk, reads the current label distribution, and writes `evaluation-manifest.json`. It preserves `manifestVersion`, `mappingVersion`, and `evaluatorVersion` from the previous manifest so those fields remain under deliberate human control. Commit the updated manifest alongside the fixture change.
-
-### Verifying the manifest
-
-```
-npm run verify-manifest
-```
-
-Checks all input file hashes, validates required fields, confirms `fixtureRelease` matches `package.json`, and verifies `expectedCounts` against the current `destinations.json`. Exits non-zero on any mismatch, printing which file changed and what to do.
-
-CI runs `verify-manifest` on every push and also regenerates the manifest in a throw-away working tree to detect stale manifests (inputs changed but manifest not updated).
-
-### Result schema
-
-`EVALUATION_RESULT_SCHEMA.json` defines the JSON document that `grydlock-research` must produce for every evaluation run. Required fields include `fixtureRelease`, `sourceCommit`, `evaluatorVersion`, `mappingVersion`, `tierThresholds`, per-label accuracy summary, and a per-destination breakdown. This ensures every result is self-describing and can be compared across runs without ambiguity.
-
-### Versioning rules
-
-- **`manifestVersion`** — bump the major when the manifest schema gains or removes fields.
-- **`fixtureRelease`** — bump following `package.json` semver: patch for minor fixture corrections, minor for new destinations, major for breaking label or schema changes.
-- **`mappingVersion`** — bump when tier threshold boundaries change (independent of fixture release, since threshold changes alter accuracy even with identical fixtures).
-- **`evaluatorVersion`** — tighten the semver range when the evaluation methodology requires a newer version of `grydlock-research`.
-
+Scenario bundles group existing point fixtures into ordered multi-transaction attack workflows whose risk emerges from the sequence of steps. They are versioned, validated, and replayable offline (no network access, no live indexer). See [scenarios/README.md](scenarios/README.md) for the full schema, validation rules, and a complete example.
 
 ## How It's Used
 

@@ -14,50 +14,13 @@ Version numbers track the fixture dataset, not a software release.
 
 ## [Unreleased]
 
-### Added — Provenance Pipeline
+### Added — Scenario Bundles (`scenarios/`)
 
-- **`evaluation-manifest.json`** — Checked-in provenance manifest locking every input file
-  (destinations, scores, XDRs) to its SHA-256 hash, recording the `fixtureRelease`,
-  `sourceCommit`, `mappingVersion`, tier thresholds, expected label counts, and a
-  `resultSchema` reference. Regenerate with `npm run generate-manifest`.
-- **`EVALUATION_RESULT_SCHEMA.json`** — JSON Schema (Draft 2020-12) defining the result
-  document that `grydlock-research` must produce per evaluation run: `schemaVersion`,
-  `fixtureRelease`, `sourceCommit`, `evaluatorVersion`, `mappingVersion`, `tierThresholds`,
-  summary accuracy metrics, and a per-destination breakdown.
-- **`scripts/generate-manifest.mjs`** — Computes SHA-256 hashes of all input files and
-  writes `evaluation-manifest.json`. Preserves human-controlled version fields
-  (`manifestVersion`, `mappingVersion`, `evaluatorVersion`) across regenerations.
-- **`scripts/verify-manifest.mjs`** — Standalone altered-input detector. Checks that every
-  file listed in `manifest.inputs` exists on disk and matches its recorded hash, that
-  `fixtureRelease` matches `package.json`, and that `expectedCounts` agree with the actual
-  label distribution. Used by CI on every push.
-- **`scripts/validate-fixtures.mjs`** — Extended with manifest cross-checks: verifies
-  `fixtureRelease`, `expectedCounts`, and SHA-256 hashes for the two JSON fixture files as
-  part of the existing `npm run validate` step.
-- **`package.json`** — Added `generate-manifest` and `verify-manifest` scripts.
-- **CI (`ci.yml`)** — Added `verify-manifest` job that runs `npm run verify-manifest` and
-  then regenerates the manifest in a throw-away working tree to detect stale-manifest
-  commits (inputs changed but manifest not updated).
+- Introduced versioned scenario bundles (`schema_version` `1.0`) for deterministic, offline, multi-transaction attack workflows. A scenario groups participants, destination/transaction references, and ordered steps with machine-checkable expected warnings and state transitions.
+- Added `scenarios/phishing-drain.json`, an executable synthetic example (initial funding → suspicious pass-through interaction → phishing-drainer drain).
+- Added scenario validation and replay tooling: `scripts/validate-scenarios.mjs`, `scripts/replay-scenario.mjs`, and `scripts/lib/scenario.mjs` (plus a shared `scripts/lib/taxonomy.mjs`). Wired into `npm run validate`, `npm run replay`, and `npm test`.
 
-### Added — Transaction Fixture Portability (Spike deliverables)
-
-- **`transactions/index.json`** — Machine-readable fixture index recording for each XDR file:
-  network, passphrase string, envelope type, `signed` flag, Stellar transaction hash
-  (TESTNET), source account(s), and per-operation metadata. Closes the silent-wrong-passphrase
-  risk: consumers can read the passphrase before calling `TransactionBuilder.fromXDR` and
-  verify the resulting hash matches the recorded value.
-- **`transactions/fee_bump_payment.xdr`** — Fee-bump envelope (`envelopeTypeTxFeeBump`)
-  wrapping `payment.xdr`. Outer fee source: `clean_wallet_2`; inner tx source: `clean_wallet_1`;
-  inner operation: payment to `suspicious_wallet_1`. Exercises the decoder's fee-bump code
-  path, which was previously untested. Inner tx hash equals the hash of `payment.xdr` under
-  TESTNET; outer hash differs.
-- **`docs/spike-transaction-portability.md`** — Full spike findings: current-state inventory,
-  passphrase/hash/signature implications, PUBLIC vs TESTNET comparison, signed vs unsigned
-  analysis, fee-bump prototype, portability strategy comparison (Strategy A vs B), and
-  recommended follow-up issues.
-- **`scripts/generate-manifest.mjs`** — Updated to include `transaction_fee_bump` and
-  `transaction_index` in the set of hashed inputs.
-
+<!-- Add entries here as fixtures change. See CONTRIBUTING.md for the required format. -->
 
 ---
 

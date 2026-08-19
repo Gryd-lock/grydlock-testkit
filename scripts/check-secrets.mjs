@@ -23,7 +23,7 @@ for (const file of files) {
       // Validate Ed25519 secret seed checksum
       if (isValidEd25519SecretSeed(seed)) {
         const line = content.substring(0, match.index).split('\n').length;
-        console.error(\SECRET SEED FOUND: \:\ — [REDACTED]\);
+        console.error(`SECRET SEED FOUND: ${file}:${line} [REDACTED]`);
         found = true;
       }
     }
@@ -37,7 +37,7 @@ if (found) {
   process.exit(1);
 }
 
-console.log('No Stellar secret seeds found — CI check passed.');
+console.log('No Stellar secret seeds found â€” CI check passed.');
 
 // Validate Ed25519 secret seed checksum (last byte is CRC16-XModem of first 55 bytes)
 function isValidEd25519SecretSeed(seed) {
