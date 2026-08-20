@@ -91,7 +91,10 @@ Every new entry in `destinations.json` must include:
 | `asset_code` | ✅ (assets) | The asset code |
 | `asset_issuer` | ✅ (assets) | The issuing account's public key |
 | `label` | ✅ | One of `clean`, `suspicious`, `malicious` |
+| `fixture_status` | ✅ | Lifecycle status; currently must be `"synthetic-only"` |
 | `notes` | ✅ | A one-sentence rationale explaining *why* this label was chosen, referencing the specific pattern. This is what downstream reviewers and evaluators read to verify the label is defensible. |
+
+Every fixture is synthetic-only: it is not a record of live Horizon state and must not be used to infer network activity. The validator rejects missing or unknown `fixture_status` values. Future network-visible fixtures must be introduced with an explicitly supported status and coordinated adapter-schema change.
 
 Every new entry must have a matching entry in `scores.json` with an integer score in 0–100.
 
@@ -109,6 +112,7 @@ npm test
 - Every destination has a matching entry in `scores.json`
 - Every score is an integer in 0–100
 - Every label is one of `clean`, `suspicious`, or `malicious`
+- Every destination has `fixture_status: "synthetic-only"` (unknown or missing statuses fail validation)
 - No extra entries in `scores.json` without a matching destination
 - Every scenario in `scenarios/` passes schema, reference, and ordering validation
 

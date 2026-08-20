@@ -8,9 +8,20 @@ const scores = JSON.parse(readFileSync(root + '/scores.json', 'utf-8'));
 
 const VALID_LABEL_SET = new Set(VALID_LABELS);
 const VALID_RISK_PATTERN_SET = new Set(VALID_RISK_PATTERNS);
+const VALID_FIXTURE_STATUSES = new Set(['synthetic-only']);
 const errors = [];
 
+export function validateFixtureStatus(destination) {
+  if (!Object.hasOwn(destination, 'fixture_status')) return 'missing fixture_status';
+  if (!VALID_FIXTURE_STATUSES.has(destination.fixture_status)) {
+    return `invalid fixture_status \"${destination.fixture_status}\"`;
+  }
+  return null;
+}
+
 for (const d of destinations) {
+  const fixtureStatusError = validateFixtureStatus(d);
+  if (fixtureStatusError) errors.push(d.id + ': ' + fixtureStatusError);
   if (!VALID_LABEL_SET.has(d.label)) {
     errors.push(d.id + ': invalid label "' + d.label + '"');
   }

@@ -14,6 +14,10 @@ Version numbers track the fixture dataset, not a software release.
 
 ## [Unreleased]
 
+### Changed — Destinations
+- Added the required per-fixture `fixture_status` field; all existing destinations are marked `synthetic-only`.
+
+
 ### Added — Scenario Bundles (`scenarios/`)
 
 - Introduced versioned scenario bundles (`schema_version` `1.0`) for deterministic, offline, multi-transaction attack workflows. A scenario groups participants, destination/transaction references, and ordered steps with machine-checkable expected warnings and state transitions.
