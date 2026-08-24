@@ -13,6 +13,7 @@ Gryd Lock's warning layer is only useful if it can be measured. This repo provid
 
 ## Features
 
+- Per-fixture lifecycle status: every destination declares `fixture_status: "synthetic-only"`
 - Labelled Destinations: Stellar testnet addresses and assets tagged clean, suspicious, or malicious
 - Sample Transactions: unsigned transaction XDRs covering payment, path payment, change trust
 - Score Stubs: lookup table mapping each destination to a 0-100 score for deterministic offline scoring
@@ -49,7 +50,7 @@ grydlock-testkit/
 
 npm run validate
 
-Checks that every destination in destinations.json has a matching entry in scores.json, every score is an integer in 0-100, and every label is one of clean, suspicious, or malicious. It also validates every scenario bundle under scenarios/ (schema version, references, and step ordering).
+Checks that every destination in destinations.json has a matching entry in scores.json, every score is an integer in 0-100, and every label is one of clean, suspicious, or malicious, and every destination declares the supported `fixture_status` (`"synthetic-only"`). It also validates every scenario bundle under scenarios/ (schema version, references, and step ordering).
 
 Other commands:
 

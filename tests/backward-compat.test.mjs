@@ -62,3 +62,20 @@ test('backward compat: the scenario example only references existing fixtures', 
   assert.ok(transactions.has('payment'));
   assert.ok(transactions.has('path_payment'));
 });
+
+import { validateFixtureStatus } from '../scripts/validate-fixtures.mjs';
+
+test('fixture status validation: accepts the supported synthetic status', () => {
+  assert.equal(validateFixtureStatus({ fixture_status: 'synthetic-only' }), null);
+});
+
+test('fixture status validation: rejects a missing status', () => {
+  assert.equal(validateFixtureStatus({}), 'missing fixture_status');
+});
+
+test('fixture status validation: rejects an unknown status', () => {
+  assert.equal(
+    validateFixtureStatus({ fixture_status: 'network-visible' }),
+    'invalid fixture_status "network-visible"'
+  );
+});
