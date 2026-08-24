@@ -26,6 +26,26 @@ jobs:
           node-version: 20
       - run: npm run validate
 
+  report:
+    name: Report is valid, deterministic JSON
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Emit report twice and compare
+        run: |
+          npm run report --silent > /tmp/report-1.json
+          npm run report --silent > /tmp/report-2.json
+          if ! diff -q /tmp/report-1.json /tmp/report-2.json; then
+            echo "::error::npm run report is not deterministic - repeated runs differ."
+            exit 1
+          fi
+          node -e "JSON.parse(require('fs').readFileSync('/tmp/report-1.json', 'utf8'))"
+          echo "npm run report emits valid, deterministic JSON."
+
   validate-changelog:
     name: Changelog updated
     runs-on: ubuntu-latest

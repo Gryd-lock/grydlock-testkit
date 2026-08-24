@@ -109,6 +109,7 @@ const txFiles = readdirSync(transactionsDir)
 const fileHashes = {
   'CHANGELOG.md': fileHash(changelogPath),
   'destinations.json': fileHash(destinationsPath),
+  'package.json': fileHash(packagePath),
   'scores.json': fileHash(scoresPath),
 };
 
@@ -118,7 +119,6 @@ const fileHashes = {
 
 const report = {
   version,
-  generated_at: new Date().toISOString(),
   totals: {
     destinations: destinations.length,
     scores: Object.keys(scores).length,
