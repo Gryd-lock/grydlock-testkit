@@ -24,7 +24,10 @@ grydlock-testkit/
   README.md
   LICENSE
   package.json
+  evaluation-manifest.json
+  EVALUATION_RESULT_SCHEMA.json
   .github/workflows/ci.yml
+  .github/workflows/consumer-contract-test.yml
   destinations.json
   scores.json
   scripts/
