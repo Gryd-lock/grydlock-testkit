@@ -26,6 +26,7 @@ Version numbers track the fixture dataset, not a software release.
 
 <!-- Add entries here as fixtures change. See CONTRIBUTING.md for the required format. -->
 
+
 ---
 
 ## [0.1.0] — 2026-07-07
