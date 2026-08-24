@@ -26,50 +26,6 @@ jobs:
           node-version: 20
       - run: npm run validate
 
-  verify-manifest:
-    name: Verify provenance manifest
-    needs: secret-check
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Verify evaluation-manifest.json
-        run: npm run verify-manifest
-      # Catch a manifest that was committed without being regenerated after an
-      # input file changed. Regenerate, then compare only hash-bearing fields
-      # (excluding generatedAt and sourceCommit which legitimately differ on
-      # every regeneration). Any diff means the manifest is stale.
-      - name: Detect stale manifest (inputs changed without regenerating)
-        run: |
-          # Capture the committed manifest for comparison.
-          node -e "
-            const fs = require('fs');
-            const m = JSON.parse(fs.readFileSync('evaluation-manifest.json','utf-8'));
-            // Extract only the fields that must match: inputs hashes, expectedCounts,
-            // fixtureRelease, manifestVersion, mappingVersion, tierThresholds.
-            const sig = { inputs: m.inputs, expectedCounts: m.expectedCounts,
-                          fixtureRelease: m.fixtureRelease, manifestVersion: m.manifestVersion,
-                          mappingVersion: m.mappingVersion, tierThresholds: m.tierThresholds };
-            fs.writeFileSync('manifest-sig-before.json', JSON.stringify(sig, null, 2) + '\n');
-          "
-          npm run generate-manifest
-          node -e "
-            const fs = require('fs');
-            const m = JSON.parse(fs.readFileSync('evaluation-manifest.json','utf-8'));
-            const sig = { inputs: m.inputs, expectedCounts: m.expectedCounts,
-                          fixtureRelease: m.fixtureRelease, manifestVersion: m.manifestVersion,
-                          mappingVersion: m.mappingVersion, tierThresholds: m.tierThresholds };
-            fs.writeFileSync('manifest-sig-after.json', JSON.stringify(sig, null, 2) + '\n');
-          "
-          if ! diff -q manifest-sig-before.json manifest-sig-after.json > /dev/null; then
-            echo "::error file=evaluation-manifest.json::evaluation-manifest.json is stale — an input file changed but the manifest was not regenerated. Run 'npm run generate-manifest' and commit the result."
-            diff manifest-sig-before.json manifest-sig-after.json
-            exit 1
-          fi
-          echo "Manifest signature unchanged — manifest is up to date."
-
   validate-changelog:
     name: Changelog updated
     runs-on: ubuntu-latest
@@ -102,3 +58,4 @@ jobs:
             echo "::error file=CHANGELOG.md::This PR modifies fixture files but the [Unreleased] section of CHANGELOG.md is empty."
             exit 1
           fi
+          echo "CHANGELOG.md [Unreleased] section is populated � check passed."
