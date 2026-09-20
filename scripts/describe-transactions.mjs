@@ -1,11 +1,38 @@
+import { execFileSync, spawnSync } from 'node:child_process';
 import { readdir, readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { TransactionBuilder } from '@stellar/stellar-sdk';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
+const scriptPath = fileURLToPath(import.meta.url);
 const transactionsDir = path.join(root, 'transactions');
 const indexPath = path.join(transactionsDir, 'index.json');
+const SDK_PACKAGE = '@stellar/stellar-sdk@17.1.0';
+
+async function loadTransactionBuilder() {
+  try {
+    return (await import('@stellar/stellar-sdk')).TransactionBuilder;
+  } catch (error) {
+    if (process.env.GRYDLOCK_STELLAR_SDK_BOOTSTRAPPED === '1') {
+      throw new Error(`Unable to load @stellar/stellar-sdk after bootstrap: ${error.message}`);
+    }
+
+    console.log(`@stellar/stellar-sdk is not installed; installing pinned ${SDK_PACKAGE} for this decode run.`);
+    const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
+    execFileSync(
+      npm,
+      ['install', '--ignore-scripts', '--no-save', '--package-lock=false', SDK_PACKAGE],
+      { cwd: root, stdio: 'inherit' }
+    );
+
+    const child = spawnSync(process.execPath, [scriptPath], {
+      cwd: root,
+      stdio: 'inherit',
+      env: { ...process.env, GRYDLOCK_STELLAR_SDK_BOOTSTRAPPED: '1' },
+    });
+    process.exit(child.status ?? 1);
+  }
+}
 
 function stringifyValue(value) {
   if (value === null || value === undefined) return null;
@@ -148,6 +175,7 @@ function formatOperation(operation, index) {
 }
 
 async function main() {
+  const TransactionBuilder = await loadTransactionBuilder();
   const index = JSON.parse(await readFile(indexPath, 'utf8'));
   if (typeof index.passphrase !== 'string' || index.passphrase.length === 0) {
     throw new Error('transactions/index.json must define a non-empty "passphrase"');
