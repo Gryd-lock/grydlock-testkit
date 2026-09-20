@@ -5,9 +5,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "validate": "node scripts/validate-fixtures.mjs && node scripts/validate-scenarios.mjs",
+    "validate": "node scripts/validate-fixtures.mjs && node scripts/validate-scenarios.mjs && node scripts/describe-transactions.mjs",
     "validate:fixtures": "node scripts/validate-fixtures.mjs",
     "validate:scenarios": "node scripts/validate-scenarios.mjs",
+    "describe:transactions": "node scripts/describe-transactions.mjs",
     "replay": "node scripts/replay-scenario.mjs",
     "test": "node --test"
   }
