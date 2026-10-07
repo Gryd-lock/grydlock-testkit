@@ -1,0 +1,58 @@
+name: Fixture Request
+description: Propose a new ground-truth testnet destination, score, or fixture
+title: "[Fixture]: "
+labels: ["enhancement", "fixture"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for proposing a new fixture to the Gryd-lock testkit.
+        Please provide complete justification and details so maintainers can audit the ground-truth data.
+
+  - type: input
+    id: label
+    attributes:
+      label: Proposed Label / Identifier
+      description: A unique snake_case identifier for this fixture (e.g., malicious_wallet_5, reputable_anchor_2).
+      placeholder: e.g., suspicious_arbitrage_1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: fixture_type
+    attributes:
+      label: Fixture Type
+      description: What type of entity or artifact does this fixture represent?
+      options:
+        - Destination / Account
+        - Transaction XDR
+        - Oracle Stub Score
+        - Asset / Issuer
+    validations:
+      required: true
+
+  - type: input
+    id: address
+    attributes:
+      label: Stellar Public Key or Hash
+      description: Stellar G-address, contract C-address, or transaction hash.
+      placeholder: e.g., G... or C...
+    validations:
+      required: true
+
+  - type: textarea
+    id: justification
+    attributes:
+      label: Rationale & Justification
+      description: Explain why this fixture is needed, the behavioral pattern it exhibits, and the rationale for its expected score/label.
+      placeholder: Detail the on-chain behavior, risk factors, or historical incident rationale...
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: Additional Notes & References
+      description: Links to Stellar Expert, transactions, or upstream research.
+    validations:
+      required: false

@@ -1,0 +1,47 @@
+name: Bug Report
+description: Report invalid fixture data, broken validation scripts, or schema errors
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please report any issues with testkit schemas, invalid addresses, or validation errors.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear description of what the problem is.
+      placeholder: Describe the discrepancy, schema failure, or validation issue...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Exact commands run to reproduce the problem.
+      value: |
+        1. Run `npm install`
+        2. Run `npm run validate`
+        3. See error output
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: What should have happened instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Log Output
+      description: Copy and paste command line output or error traces.
+      render: shell
+    validations:
+      required: false
