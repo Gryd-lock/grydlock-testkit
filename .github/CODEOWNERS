@@ -1,0 +1,10 @@
+# CODEOWNERS for Gryd-lock Testkit
+# Ground-truth datasets require tighter review to prevent regressions in oracle stub verification.
+
+# Default maintainers for repository-wide changes
+* @knytcomics-ui
+
+# Critical ground-truth data files require explicit approval from core dataset maintainers
+/destinations.json @knytcomics-ui
+/scores.json @knytcomics-ui
+/transactions/ @knytcomics-ui
