@@ -18,7 +18,7 @@ test('backward compat: destinations.json still parses with the existing shape', 
   const byId = loadDestinations(root);
   for (const dest of raw.destinations) {
     assert.equal(typeof dest.id, 'string');
-    assert.ok(['account', 'asset'].includes(dest.type));
+    assert.ok(['account', 'asset', 'contract'].includes(dest.type));
     assert.ok(['clean', 'suspicious', 'malicious'].includes(dest.label));
     assert.equal(typeof dest.risk_pattern, 'string');
     assert.deepEqual(byId.get(dest.id), dest);

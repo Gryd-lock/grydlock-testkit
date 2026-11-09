@@ -123,6 +123,1480 @@
           "amount": "50.0000000"
         }
       ]
+    },
+    {
+      "id": "clean_payment_xlm",
+      "file": "transactions/clean_payment_xlm.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "202d551ef4a6071a9e74ec9222d320bba828d7a8c5188585472130edfbe3dc96",
+      "label": "clean",
+      "risk_pattern": "none",
+      "rationale": "Both parties are ordinary clean wallets; nothing about the operation is risky.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "202d551ef4a6071a9e74ec9222d320bba828d7a8c5188585472130edfbe3dc96",
+        "ledger": 5645869,
+        "closedAt": "2026-11-09T19:36:27Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/202d551ef4a6071a9e74ec9222d320bba828d7a8c5188585472130edfbe3dc96"
+      },
+      "counterparties": [
+        "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA"
+      ],
+      "source": "GBFU36X3NYV466DBHBAWGC5VQ2HYU32PXD7TEFQAFHOB7JAEVSHNBFOS",
+      "description": "Plain XLM payment between two clean wallets.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253583"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "payment",
+          "destination": "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA",
+          "asset": "native",
+          "amount": "120.0000000"
+        }
+      ]
+    },
+    {
+      "id": "clean_payment_tusd_merchant",
+      "file": "transactions/clean_payment_tusd_merchant.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "789e7d95ad366512c9190e32489e40c3da88aefc5939406790aacdefdbbd7445",
+      "label": "clean",
+      "risk_pattern": "none",
+      "rationale": "Pays a clean merchant in a clean, widely held asset.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "789e7d95ad366512c9190e32489e40c3da88aefc5939406790aacdefdbbd7445",
+        "ledger": 5645870,
+        "closedAt": "2026-11-09T19:36:32Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/789e7d95ad366512c9190e32489e40c3da88aefc5939406790aacdefdbbd7445"
+      },
+      "counterparties": [
+        "GBXNFWT7LD4QV7KFHEZC6XE2PUILW3IKC3JCJVZOFC5NLZOIXUKOMCEY",
+        "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ"
+      ],
+      "source": "GD2EI4OMHBP3ZJRJ3F4UX7BRDI53Z4TTJOKXZIAF6II75K5LMPOSDM2W",
+      "description": "TUSD payment to a merchant.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253588"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "payment",
+          "destination": "GBXNFWT7LD4QV7KFHEZC6XE2PUILW3IKC3JCJVZOFC5NLZOIXUKOMCEY",
+          "asset": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+          "amount": "45.5000000"
+        }
+      ]
+    },
+    {
+      "id": "clean_payment_exchange_memo_id",
+      "file": "transactions/clean_payment_exchange_memo_id.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "e187b1a36a9f430c494ea3ca18818126e8ee485335b56516627dd38241337d36",
+      "label": "clean",
+      "risk_pattern": "none",
+      "rationale": "Depositing to an exchange hot wallet with a memo id is the normal custodial deposit flow.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "e187b1a36a9f430c494ea3ca18818126e8ee485335b56516627dd38241337d36",
+        "ledger": 5645871,
+        "closedAt": "2026-11-09T19:36:37Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/e187b1a36a9f430c494ea3ca18818126e8ee485335b56516627dd38241337d36"
+      },
+      "counterparties": [
+        "GBGWSHSIYNLZJXRZXQ62OUKLOYJDKWK245QKONDSP74SFPWPLZ3EH3CW"
+      ],
+      "source": "GAKZOS4PCTUUWIJKUFGK5VO3RN4D6CKGJ2NRAZB77BDJAJCX53AHGQOO",
+      "description": "Exchange deposit with a memo-id routing tag.",
+      "memo": {
+        "type": "id",
+        "value": "884213"
+      },
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253593"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "payment",
+          "destination": "GBGWSHSIYNLZJXRZXQ62OUKLOYJDKWK245QKONDSP74SFPWPLZ3EH3CW",
+          "asset": "native",
+          "amount": "300.0000000"
+        }
+      ]
+    },
+    {
+      "id": "clean_path_strict_send",
+      "file": "transactions/clean_path_strict_send.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "9cbd300d6a4ff2037fd8374959f24cad7cfe6259219f43142964410c334a5c0a",
+      "label": "clean",
+      "risk_pattern": "none",
+      "rationale": "The recipient and the asset are clean, and the path crosses only the clean distributor's offer.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "9cbd300d6a4ff2037fd8374959f24cad7cfe6259219f43142964410c334a5c0a",
+        "ledger": 5645872,
+        "closedAt": "2026-11-09T19:36:42Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/9cbd300d6a4ff2037fd8374959f24cad7cfe6259219f43142964410c334a5c0a"
+      },
+      "counterparties": [
+        "GAAAPRSEMBK75VESS5A4OZ43DGFDPO5RBUOPYUKDLGN35GNFCIKSFN4Z",
+        "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ"
+      ],
+      "source": "GAF6FXYAB4CDUCUMZIWHKCNZHPEDIG5U26ZLXX3EVEKZEY63O3IDNWHT",
+      "description": "Path payment strict-send XLM -> TUSD to a clean wallet, filled against the clean TUSD market.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253598"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "pathPaymentStrictSend",
+          "destination": "GAAAPRSEMBK75VESS5A4OZ43DGFDPO5RBUOPYUKDLGN35GNFCIKSFN4Z",
+          "sendAsset": "native",
+          "sendAmount": "50.0000000",
+          "destAsset": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+          "destMin": "1.0000000",
+          "path": []
+        }
+      ]
+    },
+    {
+      "id": "clean_path_strict_receive",
+      "file": "transactions/clean_path_strict_receive.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "c1d2f6da5232e006e77d3ba3bb4592df326e8535c9d934add3e5d19b87e2e2fe",
+      "label": "clean",
+      "risk_pattern": "none",
+      "rationale": "The recipient and the asset are clean.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "c1d2f6da5232e006e77d3ba3bb4592df326e8535c9d934add3e5d19b87e2e2fe",
+        "ledger": 5645873,
+        "closedAt": "2026-11-09T19:36:47Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/c1d2f6da5232e006e77d3ba3bb4592df326e8535c9d934add3e5d19b87e2e2fe"
+      },
+      "counterparties": [
+        "GDHOVLDRWGYRKAW3ZNYPBKW2AZWLO5G6E3IFB4YOMJV7J646S5BATJZU",
+        "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ"
+      ],
+      "source": "GD6TXWROHQBMFH74ZKN7ZPGB4ZT3U63E4F2UJZW5BGY2YWW4LE3I4KF4",
+      "description": "Path payment strict-receive XLM -> 20 TUSD to a merchant.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253603"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "pathPaymentStrictReceive",
+          "destination": "GDHOVLDRWGYRKAW3ZNYPBKW2AZWLO5G6E3IFB4YOMJV7J646S5BATJZU",
+          "sendAsset": "native",
+          "sendMax": "100.0000000",
+          "destAsset": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+          "destAmount": "20.0000000",
+          "path": []
+        }
+      ]
+    },
+    {
+      "id": "clean_fee_bump_payment",
+      "file": "transactions/clean_fee_bump_payment.xdr",
+      "envelopeType": "envelopeTypeTxFeeBump",
+      "signed": false,
+      "stellarHashTestnet": "d96ee2f5741f6fd1cae756cd774d24e2b17589fc3bc14b3e1c554372237167c9",
+      "label": "clean",
+      "risk_pattern": "none",
+      "rationale": "A fee bump only changes who pays the fee. The fee source and recipient are both clean.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "d96ee2f5741f6fd1cae756cd774d24e2b17589fc3bc14b3e1c554372237167c9",
+        "ledger": 5645874,
+        "closedAt": "2026-11-09T19:36:52Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/d96ee2f5741f6fd1cae756cd774d24e2b17589fc3bc14b3e1c554372237167c9"
+      },
+      "counterparties": [
+        "GBWUBEGIUFNJTHKDNAJU6TARNR75W3PM2NJJH7ASWHT33XOT44XZZMCN",
+        "GC4UTYN5MKNDQ75Z72OL4Z6L2CRCHLGTKEAHW4HRZNK6Y5S5LN5PGFZQ"
+      ],
+      "source": "GAIPD6UEUSWFUQYGIE6TY6YHA33PW55C7I6CRK7WUYRCXKAEDLA6FJBO",
+      "description": "Fee-bump envelope: clean-relayer pays the fee for a clean XLM payment.",
+      "feeBumpSource": "GBWUBEGIUFNJTHKDNAJU6TARNR75W3PM2NJJH7ASWHT33XOT44XZZMCN",
+      "innerTransaction": {
+        "stellarHashTestnet": "7f74c155bb91d9d1cf975dfbfab8be2125e99d26e2dbd6697ef476fd4fea6369",
+        "source": "GAIPD6UEUSWFUQYGIE6TY6YHA33PW55C7I6CRK7WUYRCXKAEDLA6FJBO",
+        "signed": true
+      },
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253608"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "payment",
+          "destination": "GC4UTYN5MKNDQ75Z72OL4Z6L2CRCHLGTKEAHW4HRZNK6Y5S5LN5PGFZQ",
+          "asset": "native",
+          "amount": "75.0000000"
+        }
+      ]
+    },
+    {
+      "id": "clean_change_trust_tusd",
+      "file": "transactions/clean_change_trust_tusd.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "bdf477d51cf91e1df11f86a45c1ad00f5dba292b61822f6ce29e034e2c2d9e35",
+      "label": "clean",
+      "risk_pattern": "none",
+      "rationale": "TUSD is a clean, widely held asset.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "bdf477d51cf91e1df11f86a45c1ad00f5dba292b61822f6ce29e034e2c2d9e35",
+        "ledger": 5645875,
+        "closedAt": "2026-11-09T19:36:57Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/bdf477d51cf91e1df11f86a45c1ad00f5dba292b61822f6ce29e034e2c2d9e35"
+      },
+      "counterparties": [
+        "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ"
+      ],
+      "source": "GDDR64QMBH6N3FK2WHNSXJSQTR3R3BXDZHOQLET4CDMPLPXBHNXR3ZGD",
+      "description": "changeTrust to the clean TUSD asset.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253613"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "changeTrust",
+          "asset": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+          "limit": "922337203685.4775807"
+        }
+      ]
+    },
+    {
+      "id": "clean_claim_claimable_tusd",
+      "file": "transactions/clean_claim_claimable_tusd.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "36574f5d2aae8041b4f9d0e32d3752cccc4acac3dc0c02353c30474cc7364861",
+      "label": "clean",
+      "risk_pattern": "none",
+      "rationale": "The claimant already trusts TUSD, and the balance comes from a clean distributor.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "36574f5d2aae8041b4f9d0e32d3752cccc4acac3dc0c02353c30474cc7364861",
+        "ledger": 5645876,
+        "closedAt": "2026-11-09T19:37:02Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/36574f5d2aae8041b4f9d0e32d3752cccc4acac3dc0c02353c30474cc7364861"
+      },
+      "counterparties": [],
+      "source": "GAW2UG4BGR6ZUXCM32WSJGXGRYDGZUD4RXIWCFKDBFKPBZFW7H4BMVIB",
+      "description": "Claim a TUSD claimable balance created by the clean distributor.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253618"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "claimClaimableBalance",
+          "balanceId": "00000000cfd3de4eabbe01946e313eca981878c4ac550499e029d9e9b911ac47adaab0a8"
+        }
+      ]
+    },
+    {
+      "id": "clean_soroban_sac_transfer",
+      "file": "transactions/clean_soroban_sac_transfer.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "77cbd3c37d749737d10bbe16830fe9c67ee58bb0d93e39c327f3d7407c2ebe51",
+      "label": "clean",
+      "risk_pattern": "none",
+      "rationale": "A token transfer via the clean TUSD contract to a clean wallet.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "77cbd3c37d749737d10bbe16830fe9c67ee58bb0d93e39c327f3d7407c2ebe51",
+        "ledger": 5645879,
+        "closedAt": "2026-11-09T19:37:17.000Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/77cbd3c37d749737d10bbe16830fe9c67ee58bb0d93e39c327f3d7407c2ebe51"
+      },
+      "counterparties": [
+        "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+        "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA"
+      ],
+      "source": "GBFU36X3NYV466DBHBAWGC5VQ2HYU32PXD7TEFQAFHOB7JAEVSHNBFOS",
+      "description": "Soroban invokeHostFunction: TUSD SAC transfer(from, to, 10 TUSD) between clean wallets.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253631"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "invokeHostFunction",
+          "function": "invokeContract",
+          "contract": "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+          "method": "transfer",
+          "args": [
+            "GBFU36X3NYV466DBHBAWGC5VQ2HYU32PXD7TEFQAFHOB7JAEVSHNBFOS",
+            "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA",
+            "100000000"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clean_soroban_approve_bounded",
+      "file": "transactions/clean_soroban_approve_bounded.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "a35722fbfce49a7e483583ff9f8808f8d9af73601ddb2df094f13469169ff364",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "rationale": "The allowance is small and short-lived, and the spender is a clean dApp. It has the same shape as an approval drain, which makes it a false-positive probe.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "a35722fbfce49a7e483583ff9f8808f8d9af73601ddb2df094f13469169ff364",
+        "ledger": 5645886,
+        "closedAt": "2026-11-09T19:37:52.000Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/a35722fbfce49a7e483583ff9f8808f8d9af73601ddb2df094f13469169ff364"
+      },
+      "counterparties": [
+        "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+        "GBV6FR3VVU6CF2LUXQE7X47WDAVVGLB3VCZTP5HC3BD7VAWZXSIGEWXL"
+      ],
+      "source": "GD2EI4OMHBP3ZJRJ3F4UX7BRDI53Z4TTJOKXZIAF6II75K5LMPOSDM2W",
+      "description": "Soroban approve(): 10 TUSD allowance to a known dApp spender, expiring in ~720 ledgers (~1h).",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253654"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "invokeHostFunction",
+          "function": "invokeContract",
+          "contract": "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+          "method": "approve",
+          "args": [
+            "GD2EI4OMHBP3ZJRJ3F4UX7BRDI53Z4TTJOKXZIAF6II75K5LMPOSDM2W",
+            "GBV6FR3VVU6CF2LUXQE7X47WDAVVGLB3VCZTP5HC3BD7VAWZXSIGEWXL",
+            "100000000",
+            5646600
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clean_set_options_cosigner",
+      "file": "transactions/clean_set_options_cosigner.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "62ef443d4293a814565ad8f65d6a7dafb5c0f176a9565652e499ed6ed0cd7411",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "rationale": "The owner keeps its master key (weight 1) and needs both keys for payments. That adds security rather than handing over control. Same operation type as a signer takeover, so it is a false-positive probe.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "62ef443d4293a814565ad8f65d6a7dafb5c0f176a9565652e499ed6ed0cd7411",
+        "ledger": 5645887,
+        "closedAt": "2026-11-09T19:37:57Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/62ef443d4293a814565ad8f65d6a7dafb5c0f176a9565652e499ed6ed0cd7411"
+      },
+      "counterparties": [
+        "GB276PXQMDGDN7YA4PD2K3KRRQWK5SGQR46VH2CJU2T5CTS2CYF433OJ"
+      ],
+      "source": "GDNYI5Z5DV5V3AX6V5X7E2L7C7YICS7VLP6TC36WFKPNDWDZBOKZVRSF",
+      "description": "setOptions: add clean-cosigner (weight 1) and raise med/high thresholds to 2, making a 2-of-2 multisig.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253674"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "setOptions",
+          "medThreshold": 2,
+          "highThreshold": 2,
+          "signer": {
+            "key": "GB276PXQMDGDN7YA4PD2K3KRRQWK5SGQR46VH2CJU2T5CTS2CYF433OJ",
+            "weight": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "clean_account_merge_own_wallet",
+      "file": "transactions/clean_account_merge_own_wallet.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "7a19f1cf9bb22f4fbccbae2ba75e812b26bf0dfe9d70d9dcc800e8bda2093827",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "rationale": "The merge destination belongs to the same synthetic user. Same operation as a merge drain, so it is a false-positive probe.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "7a19f1cf9bb22f4fbccbae2ba75e812b26bf0dfe9d70d9dcc800e8bda2093827",
+        "ledger": 5645888,
+        "closedAt": "2026-11-09T19:38:02Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/7a19f1cf9bb22f4fbccbae2ba75e812b26bf0dfe9d70d9dcc800e8bda2093827"
+      },
+      "counterparties": [
+        "GC45RHY6HTN7FADJXMJ2JOKN7RLX2S3CI4V2E3OMO6DHXPMRKB65DCLN"
+      ],
+      "source": "GAPEMC7D2TT3RDGKXYXLZ7FHUYJ2IC7YW7DOVODYGUH4PNSK5J66UND7",
+      "description": "accountMerge: clean-closer closes its account into the same user's clean-savings.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253678"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "accountMerge",
+          "destination": "GC45RHY6HTN7FADJXMJ2JOKN7RLX2S3CI4V2E3OMO6DHXPMRKB65DCLN"
+        }
+      ]
+    },
+    {
+      "id": "clean_multi_op_payroll",
+      "file": "transactions/clean_multi_op_payroll.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "0ab00f358150d9e488d0e7fb9c8e0c83197e8db7ae017d4109fa95c400b966fb",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "rationale": "Every recipient is clean. The high fan-out resembles a pass-through distribution, which makes it a false-positive probe.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "0ab00f358150d9e488d0e7fb9c8e0c83197e8db7ae017d4109fa95c400b966fb",
+        "ledger": 5645889,
+        "closedAt": "2026-11-09T19:38:07Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/0ab00f358150d9e488d0e7fb9c8e0c83197e8db7ae017d4109fa95c400b966fb"
+      },
+      "counterparties": [
+        "GBFU36X3NYV466DBHBAWGC5VQ2HYU32PXD7TEFQAFHOB7JAEVSHNBFOS",
+        "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA",
+        "GD2EI4OMHBP3ZJRJ3F4UX7BRDI53Z4TTJOKXZIAF6II75K5LMPOSDM2W",
+        "GDNYI5Z5DV5V3AX6V5X7E2L7C7YICS7VLP6TC36WFKPNDWDZBOKZVRSF",
+        "GAKZOS4PCTUUWIJKUFGK5VO3RN4D6CKGJ2NRAZB77BDJAJCX53AHGQOO"
+      ],
+      "source": "GAZFRP5KJV6S6SVPQH2U5JILZ6BBVBUXT54Z7LOFKDH6JZJA2I5FFYWA",
+      "description": "Five-operation payroll batch paying 40 XLM to five clean wallets.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253683"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "payment",
+          "destination": "GBFU36X3NYV466DBHBAWGC5VQ2HYU32PXD7TEFQAFHOB7JAEVSHNBFOS",
+          "asset": "native",
+          "amount": "40.0000000"
+        },
+        {
+          "index": 1,
+          "type": "payment",
+          "destination": "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA",
+          "asset": "native",
+          "amount": "40.0000000"
+        },
+        {
+          "index": 2,
+          "type": "payment",
+          "destination": "GD2EI4OMHBP3ZJRJ3F4UX7BRDI53Z4TTJOKXZIAF6II75K5LMPOSDM2W",
+          "asset": "native",
+          "amount": "40.0000000"
+        },
+        {
+          "index": 3,
+          "type": "payment",
+          "destination": "GDNYI5Z5DV5V3AX6V5X7E2L7C7YICS7VLP6TC36WFKPNDWDZBOKZVRSF",
+          "asset": "native",
+          "amount": "40.0000000"
+        },
+        {
+          "index": 4,
+          "type": "payment",
+          "destination": "GAKZOS4PCTUUWIJKUFGK5VO3RN4D6CKGJ2NRAZB77BDJAJCX53AHGQOO",
+          "asset": "native",
+          "amount": "40.0000000"
+        }
+      ]
+    },
+    {
+      "id": "clean_dex_sell_offer",
+      "file": "transactions/clean_dex_sell_offer.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "6a55e65ebb9fd443e9b394beaed12aedd964e0297e85713d0b9f27a12162b442",
+      "label": "clean",
+      "risk_pattern": "none",
+      "rationale": "An ordinary DEX trade into a clean asset.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "6a55e65ebb9fd443e9b394beaed12aedd964e0297e85713d0b9f27a12162b442",
+        "ledger": 5645890,
+        "closedAt": "2026-11-09T19:38:12Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/6a55e65ebb9fd443e9b394beaed12aedd964e0297e85713d0b9f27a12162b442"
+      },
+      "counterparties": [
+        "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ"
+      ],
+      "source": "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA",
+      "description": "manageSellOffer selling 20 XLM for TUSD at 1.9 TUSD/XLM, crossing the clean market.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253688"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "manageSellOffer",
+          "selling": "native",
+          "buying": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+          "amount": "20.0000000",
+          "price": "1.9",
+          "offerId": "0"
+        }
+      ]
+    },
+    {
+      "id": "clean_payment_new_user",
+      "file": "transactions/clean_payment_new_user.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "916b95ea75acca035a484efc34048c5b4010c97a24514ca2cdb3e6330e0f8eac",
+      "label": "clean",
+      "risk_pattern": "cold-start",
+      "rationale": "The recipient is clean but has no history (the clean counterpart of a cold-start scam).",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "916b95ea75acca035a484efc34048c5b4010c97a24514ca2cdb3e6330e0f8eac",
+        "ledger": 5645891,
+        "closedAt": "2026-11-09T19:38:17Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/916b95ea75acca035a484efc34048c5b4010c97a24514ca2cdb3e6330e0f8eac"
+      },
+      "counterparties": [
+        "GBOWLGAUYCVB7N3BKWBSH5PWBRHJHBL3VSJ4DV6WAQBFHMHUEXPSZUUN"
+      ],
+      "source": "GAKZOS4PCTUUWIJKUFGK5VO3RN4D6CKGJ2NRAZB77BDJAJCX53AHGQOO",
+      "description": "XLM payment to a freshly funded clean wallet with no history.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253693"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "payment",
+          "destination": "GBOWLGAUYCVB7N3BKWBSH5PWBRHJHBL3VSJ4DV6WAQBFHMHUEXPSZUUN",
+          "asset": "native",
+          "amount": "25.0000000"
+        }
+      ]
+    },
+    {
+      "id": "clean_payment_boundary_score",
+      "file": "transactions/clean_payment_boundary_score.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "96cbf9f3911f7b6cffeb3b2ff4f893ec37cf9a81bb5f17ed58ee7fe87cb9cf23",
+      "label": "clean",
+      "risk_pattern": "none",
+      "rationale": "The recipient is clean. The fixture exists to catch tiering off-by-one errors.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "96cbf9f3911f7b6cffeb3b2ff4f893ec37cf9a81bb5f17ed58ee7fe87cb9cf23",
+        "ledger": 5645892,
+        "closedAt": "2026-11-09T19:38:22Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/96cbf9f3911f7b6cffeb3b2ff4f893ec37cf9a81bb5f17ed58ee7fe87cb9cf23"
+      },
+      "counterparties": [
+        "GD42RV27HMRMSRM7AYY4SEI2LKI4NHBTV4ITV3MTYP2FGMAMZ7WNHKHI"
+      ],
+      "source": "GAF6FXYAB4CDUCUMZIWHKCNZHPEDIG5U26ZLXX3EVEKZEY63O3IDNWHT",
+      "description": "XLM payment to clean-boundary, whose stub score is exactly 20 (low/elevated boundary).",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253698"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "payment",
+          "destination": "GD42RV27HMRMSRM7AYY4SEI2LKI4NHBTV4ITV3MTYP2FGMAMZ7WNHKHI",
+          "asset": "native",
+          "amount": "15.0000000"
+        }
+      ]
+    },
+    {
+      "id": "susp_payment_pass_through",
+      "file": "transactions/susp_payment_pass_through.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "385cd1c14d1ad115aff01e95ace09c23b90c1ad62aade4abb687cff72a440fa2",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "rationale": "The recipient is a laundering hop rather than the final beneficiary.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "385cd1c14d1ad115aff01e95ace09c23b90c1ad62aade4abb687cff72a440fa2",
+        "ledger": 5645893,
+        "closedAt": "2026-11-09T19:38:27Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/385cd1c14d1ad115aff01e95ace09c23b90c1ad62aade4abb687cff72a440fa2"
+      },
+      "counterparties": [
+        "GDZN4Q4BTNTE235EK63K6HQUDLACTXLIBJ3ZLZFD2QIRPM44PU7NSGZT"
+      ],
+      "source": "GBREFXCKZUECQUBHEI4ERHMFESD5XY5VU2VXTDNG2H7TPVTU3LMJ3N33",
+      "description": "XLM payment to pass-through-1, which forwards it to sweeper-1 within the minute (see evidence).",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253703"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "payment",
+          "destination": "GDZN4Q4BTNTE235EK63K6HQUDLACTXLIBJ3ZLZFD2QIRPM44PU7NSGZT",
+          "asset": "native",
+          "amount": "200.0000000"
+        }
+      ]
+    },
+    {
+      "id": "susp_path_payment_pass_through",
+      "file": "transactions/susp_path_payment_pass_through.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "87bb6d08b795b206c1ba1145ab1efaa9b6468dbebb71b355af780c5ead6dff0f",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "rationale": "The recipient is a laundering hop. The path itself crosses only the clean market.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "87bb6d08b795b206c1ba1145ab1efaa9b6468dbebb71b355af780c5ead6dff0f",
+        "ledger": 5645895,
+        "closedAt": "2026-11-09T19:38:37Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/87bb6d08b795b206c1ba1145ab1efaa9b6468dbebb71b355af780c5ead6dff0f"
+      },
+      "counterparties": [
+        "GDTMMIJ34PPVMEBL25RBUYXD7TEZJVZZFXIIUBH7LHHI4TIUO3EPXR7N",
+        "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ"
+      ],
+      "source": "GAE7PTBWGQC3VUQXADCCZO22GEJ2DHSCH7AK3NMNSNQKIOQGDOM7OH4V",
+      "description": "Path payment strict-send XLM -> TUSD to pass-through-2, which forwards TUSD to sweeper-2.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253713"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "pathPaymentStrictSend",
+          "destination": "GDTMMIJ34PPVMEBL25RBUYXD7TEZJVZZFXIIUBH7LHHI4TIUO3EPXR7N",
+          "sendAsset": "native",
+          "sendAmount": "30.0000000",
+          "destAsset": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+          "destMin": "10.0000000",
+          "path": []
+        }
+      ]
+    },
+    {
+      "id": "susp_payment_boundary_pass_through",
+      "file": "transactions/susp_payment_boundary_pass_through.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "f1bc9d05a270e6e576bd31b7f92486433e833200cce450205c9f1bf59728c144",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "rationale": "The recipient is a laundering hop. The fixture exists to catch tiering off-by-one errors.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "f1bc9d05a270e6e576bd31b7f92486433e833200cce450205c9f1bf59728c144",
+        "ledger": 5645899,
+        "closedAt": "2026-11-09T19:38:57Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/f1bc9d05a270e6e576bd31b7f92486433e833200cce450205c9f1bf59728c144"
+      },
+      "counterparties": [
+        "GCGNNVUBVI6L4N7BI7UHC7JTWN6DLL5PDQ3B3IUFLKOVUQXEXF2I7J6O"
+      ],
+      "source": "GASCQQSZJKGIAKEXRT6RWOJQOHZIDDCOIQQSY2QAGHH3E6XHXYRRPF2A",
+      "description": "XLM payment to pass-through-boundary (stub score 51: elevated/high boundary).",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253733"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "payment",
+          "destination": "GCGNNVUBVI6L4N7BI7UHC7JTWN6DLL5PDQ3B3IUFLKOVUQXEXF2I7J6O",
+          "asset": "native",
+          "amount": "50.0000000"
+        }
+      ]
+    },
+    {
+      "id": "susp_payment_memo_impersonation",
+      "file": "transactions/susp_payment_memo_impersonation.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "98ac73d117c8d047e0f147750995a1f0bc0394c178db422c883dc8af2cf860d8",
+      "label": "suspicious",
+      "risk_pattern": "memo-impersonation",
+      "rationale": "The recipient impersonates a support desk via memos. The loss is a small fee, so suspicious rather than malicious.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "98ac73d117c8d047e0f147750995a1f0bc0394c178db422c883dc8af2cf860d8",
+        "ledger": 5645901,
+        "closedAt": "2026-11-09T19:39:07Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/98ac73d117c8d047e0f147750995a1f0bc0394c178db422c883dc8af2cf860d8"
+      },
+      "counterparties": [
+        "GAVRLCQLYBWYVMVP3GPUA25UW7LRYR5PND2SA7XKQ5EBI7FUQV7337IG"
+      ],
+      "source": "GAE7PTBWGQC3VUQXADCCZO22GEJ2DHSCH7AK3NMNSNQKIOQGDOM7OH4V",
+      "description": "Pays 25 XLM \"KYC verification fee\" to memo-impersonator-1 after receiving its refund-lure memo.",
+      "memo": {
+        "type": "text",
+        "value": "75,89,67,32,118,101,114,105,102,105,99,97,116,105,111,110,32,102,101,101"
+      },
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253743"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "payment",
+          "destination": "GAVRLCQLYBWYVMVP3GPUA25UW7LRYR5PND2SA7XKQ5EBI7FUQV7337IG",
+          "asset": "native",
+          "amount": "25.0000000"
+        }
+      ]
+    },
+    {
+      "id": "susp_change_trust_clawback_asset",
+      "file": "transactions/susp_change_trust_clawback_asset.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "48f1820db8093cd0e7406d08a6df7da0dced0480d4c715bb5ad4d845041fe874",
+      "label": "suspicious",
+      "risk_pattern": "clawback-enabled",
+      "rationale": "The issuer can claw back the balance (executed on-chain in the follow-up evidence). The user should be told, but this is not theft.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "48f1820db8093cd0e7406d08a6df7da0dced0480d4c715bb5ad4d845041fe874",
+        "ledger": 5645902,
+        "closedAt": "2026-11-09T19:39:12Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/48f1820db8093cd0e7406d08a6df7da0dced0480d4c715bb5ad4d845041fe874"
+      },
+      "counterparties": [
+        "CLAW:GAKZPSMQ5I57CHXEBDCXERM7NP6BKHH5EE7ER453D4H2OC5U7QBBSUAC"
+      ],
+      "source": "GD6YWYTLI6ZMB73QEB4GJVEK4W4O6JYLT32XXLYBTMN3V6C4TOD4HAS2",
+      "description": "changeTrust to CLAW, an asset whose issuer has AUTH_CLAWBACK_ENABLED.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253748"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "changeTrust",
+          "asset": "CLAW:GAKZPSMQ5I57CHXEBDCXERM7NP6BKHH5EE7ER453D4H2OC5U7QBBSUAC",
+          "limit": "922337203685.4775807"
+        }
+      ]
+    },
+    {
+      "id": "susp_sponsored_mule_creation",
+      "file": "transactions/susp_sponsored_mule_creation.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "7c5c3240e364aaa6545b17762b4e1b60c2a7cdb2deb52b8f2e71827783db8bcd",
+      "label": "suspicious",
+      "risk_pattern": "sponsored-mule",
+      "rationale": "The new account depends on an attacker-controlled sponsor (mule infrastructure). Signed by both parties.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "7c5c3240e364aaa6545b17762b4e1b60c2a7cdb2deb52b8f2e71827783db8bcd",
+        "ledger": 5645905,
+        "closedAt": "2026-11-09T19:39:27Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/7c5c3240e364aaa6545b17762b4e1b60c2a7cdb2deb52b8f2e71827783db8bcd"
+      },
+      "counterparties": [
+        "GC55SEG6OFH45ZEYD3X3JUOF7TWYBKT7MNLNHVFG3WVZ445TQICP73XO"
+      ],
+      "source": "GCTCSJRFEGW3Y247ZLK4P76DNKARYR7SADKGFQGNHVZ2C4RI3JG7TKVJ",
+      "description": "begin/endSponsoringFutureReserves + createAccount: malicious-sponsor creates sponsored-mule-1 with sponsored reserves.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253763"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "beginSponsoringFutureReserves",
+          "sponsoredId": "GC55SEG6OFH45ZEYD3X3JUOF7TWYBKT7MNLNHVFG3WVZ445TQICP73XO"
+        },
+        {
+          "index": 1,
+          "type": "createAccount",
+          "destination": "GC55SEG6OFH45ZEYD3X3JUOF7TWYBKT7MNLNHVFG3WVZ445TQICP73XO",
+          "startingBalance": "0.0000000"
+        },
+        {
+          "index": 2,
+          "type": "endSponsoringFutureReserves",
+          "source": "GC55SEG6OFH45ZEYD3X3JUOF7TWYBKT7MNLNHVFG3WVZ445TQICP73XO"
+        }
+      ]
+    },
+    {
+      "id": "susp_change_trust_scam_asset",
+      "file": "transactions/susp_change_trust_scam_asset.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "047effb6f722e3b4785308885aec431ef7a86e74d2562a68cee6a10e298727b2",
+      "label": "suspicious",
+      "risk_pattern": "scam-trustline",
+      "rationale": "A trustline alone moves no funds, so this is suspicious rather than malicious. It is the first step of buying a rug-pull token (see malicious_path_buy_rug_token).",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "047effb6f722e3b4785308885aec431ef7a86e74d2562a68cee6a10e298727b2",
+        "ledger": 5645906,
+        "closedAt": "2026-11-09T19:39:32Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/047effb6f722e3b4785308885aec431ef7a86e74d2562a68cee6a10e298727b2"
+      },
+      "counterparties": [
+        "RUGX:GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP"
+      ],
+      "source": "GAE7PTBWGQC3VUQXADCCZO22GEJ2DHSCH7AK3NMNSNQKIOQGDOM7OH4V",
+      "description": "changeTrust to RUGX, the rug-pull token.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253768"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "changeTrust",
+          "asset": "RUGX:GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+          "limit": "922337203685.4775807"
+        }
+      ]
+    },
+    {
+      "id": "susp_claim_airdrop_spam",
+      "file": "transactions/susp_claim_airdrop_spam.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "50fbb19b1fa05b74c39aceeba235fc3584e9306fa5ee22f7607e38a5f2ab5730",
+      "label": "suspicious",
+      "risk_pattern": "claimable-balance-spam",
+      "rationale": "Claiming spam engages the user with the attacker's asset (a phishing lure), but no funds leave the account.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "50fbb19b1fa05b74c39aceeba235fc3584e9306fa5ee22f7607e38a5f2ab5730",
+        "ledger": 5645907,
+        "closedAt": "2026-11-09T19:39:37Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/50fbb19b1fa05b74c39aceeba235fc3584e9306fa5ee22f7607e38a5f2ab5730"
+      },
+      "counterparties": [
+        "AIRDROP:GCEEOBWVRSYQCMNIXOWFFXRQGNLIUERY753NYY4TPM6AU36DQLNUVVTP"
+      ],
+      "source": "GD6YWYTLI6ZMB73QEB4GJVEK4W4O6JYLT32XXLYBTMN3V6C4TOD4HAS2",
+      "description": "Multi-op: changeTrust AIRDROP + claimClaimableBalance of an unsolicited airdrop.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253773"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "changeTrust",
+          "asset": "AIRDROP:GCEEOBWVRSYQCMNIXOWFFXRQGNLIUERY753NYY4TPM6AU36DQLNUVVTP",
+          "limit": "922337203685.4775807"
+        },
+        {
+          "index": 1,
+          "type": "claimClaimableBalance",
+          "balanceId": "00000000d10279029e1792fa1300e8d00dd993afcd5d7d6548d78ac72b5a726b9d2ff309"
+        }
+      ]
+    },
+    {
+      "id": "mal_path_payment_sweeper",
+      "file": "transactions/mal_path_payment_sweeper.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "ebc76ecca01c3a1f5598d88550541fb6b829ef090ca68f6ec6880788ca8d3db1",
+      "label": "malicious",
+      "risk_pattern": "sweep",
+      "rationale": "The funds land with a final collection wallet for stolen funds.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "ebc76ecca01c3a1f5598d88550541fb6b829ef090ca68f6ec6880788ca8d3db1",
+        "ledger": 5645908,
+        "closedAt": "2026-11-09T19:39:42Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/ebc76ecca01c3a1f5598d88550541fb6b829ef090ca68f6ec6880788ca8d3db1"
+      },
+      "counterparties": [
+        "GCVPYQ3XTA5BQPMTEW6UQ5YAJFFZPRQ7FZ4WDPK2NOJNQSRXYK2OYNLL",
+        "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ"
+      ],
+      "source": "GBREFXCKZUECQUBHEI4ERHMFESD5XY5VU2VXTDNG2H7TPVTU3LMJ3N33",
+      "description": "Path payment strict-send XLM -> TUSD delivered to sweeper-1.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253778"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "pathPaymentStrictSend",
+          "destination": "GCVPYQ3XTA5BQPMTEW6UQ5YAJFFZPRQ7FZ4WDPK2NOJNQSRXYK2OYNLL",
+          "sendAsset": "native",
+          "sendAmount": "400.0000000",
+          "destAsset": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+          "destMin": "100.0000000",
+          "path": []
+        }
+      ]
+    },
+    {
+      "id": "mal_fee_bump_gasless_drain",
+      "file": "transactions/mal_fee_bump_gasless_drain.xdr",
+      "envelopeType": "envelopeTypeTxFeeBump",
+      "signed": false,
+      "stellarHashTestnet": "5faafd1e6872102509df34dd3f08889b93fcfafffd3fb6214ecb2d329936117b",
+      "label": "malicious",
+      "risk_pattern": "phishing-drainer",
+      "rationale": "The inner payment drains the victim to a phishing drainer, and the outer fee source is also attacker-controlled. A decoder must look inside the fee bump.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "5faafd1e6872102509df34dd3f08889b93fcfafffd3fb6214ecb2d329936117b",
+        "ledger": 5645909,
+        "closedAt": "2026-11-09T19:39:47Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/5faafd1e6872102509df34dd3f08889b93fcfafffd3fb6214ecb2d329936117b"
+      },
+      "counterparties": [
+        "GD6LERCQFQQ5OL3KJT4W2NVQWXRDDW5CGWS7IF6KJ7DNSG7O6DJF6B6S",
+        "GANEF5PKENDRBIPY44IFZL4IQBYSOTUZLTMZEFPPZLA6TGRI4PXSIV2X"
+      ],
+      "source": "GB3DA5SHGOLLVIXG3K3TKDVKDB3JQVQ2TNJDKWZPLWXROOHJTZT5FPEW",
+      "description": "Fee-bump: phishing-drainer-2 pays the fee for a 5,000 XLM payment from victim-4 to phishing-drainer-1 (\"gasless\" lure).",
+      "feeBumpSource": "GD6LERCQFQQ5OL3KJT4W2NVQWXRDDW5CGWS7IF6KJ7DNSG7O6DJF6B6S",
+      "innerTransaction": {
+        "stellarHashTestnet": "ec8bf2d4bb4fbd606ea8782afe48eb7b8e5dc767c874dfda759d69397b53ec05",
+        "source": "GB3DA5SHGOLLVIXG3K3TKDVKDB3JQVQ2TNJDKWZPLWXROOHJTZT5FPEW",
+        "signed": true
+      },
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253783"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "payment",
+          "destination": "GANEF5PKENDRBIPY44IFZL4IQBYSOTUZLTMZEFPPZLA6TGRI4PXSIV2X",
+          "asset": "native",
+          "amount": "5000.0000000"
+        }
+      ]
+    },
+    {
+      "id": "mal_set_options_signer_takeover",
+      "file": "transactions/mal_set_options_signer_takeover.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "9fc77173abd2b5a23cb3a94dd27e56100e08344e4e01415446e751e6c9a8f6ff",
+      "label": "malicious",
+      "risk_pattern": "signer-takeover",
+      "rationale": "The victim permanently hands sole control to the attacker. The follow-up evidence shows the attacker draining the account.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "9fc77173abd2b5a23cb3a94dd27e56100e08344e4e01415446e751e6c9a8f6ff",
+        "ledger": 5645910,
+        "closedAt": "2026-11-09T19:39:52Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/9fc77173abd2b5a23cb3a94dd27e56100e08344e4e01415446e751e6c9a8f6ff"
+      },
+      "counterparties": [
+        "GAIYX5ASWINTHEZJYYJXPOUJBDPHTSK32I3YERSYXUDKBMIX5DKMJ4BW"
+      ],
+      "source": "GCGL46FAEMD6YI2QOXXWJGHSGTLG2XMCZ2PFZ7EE4RAVOF67BOYUCZCV",
+      "description": "setOptions: add takeover-attacker-1 as signer (weight 255) and set master weight to 0.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253788"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "setOptions",
+          "masterWeight": 0,
+          "signer": {
+            "key": "GAIYX5ASWINTHEZJYYJXPOUJBDPHTSK32I3YERSYXUDKBMIX5DKMJ4BW",
+            "weight": 255
+          }
+        }
+      ]
+    },
+    {
+      "id": "mal_set_options_threshold_takeover",
+      "file": "transactions/mal_set_options_threshold_takeover.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "9ec4838e58e6061f586b7abdcc002617e862afdbfe59560c6028979d3036f166",
+      "label": "malicious",
+      "risk_pattern": "signer-takeover",
+      "rationale": "The attacker key alone can now authorise any operation, including payments and merges.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "9ec4838e58e6061f586b7abdcc002617e862afdbfe59560c6028979d3036f166",
+        "ledger": 5645912,
+        "closedAt": "2026-11-09T19:40:02Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/9ec4838e58e6061f586b7abdcc002617e862afdbfe59560c6028979d3036f166"
+      },
+      "counterparties": [
+        "GCCF57IS6YC6JNLJZOCYIW3NKI2PNB6SFTZR6G2VAQ2SX3WSSKCIJNOR"
+      ],
+      "source": "GC4HTW6TRWB6NHQO4WJ7WM4LYR2GEUE2J4367HCO26FVU4LCPNVYEIQB",
+      "description": "setOptions: add takeover-attacker-2 (weight 1) and set all thresholds to 1.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253798"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "setOptions",
+          "lowThreshold": 1,
+          "medThreshold": 1,
+          "highThreshold": 1,
+          "signer": {
+            "key": "GCCF57IS6YC6JNLJZOCYIW3NKI2PNB6SFTZR6G2VAQ2SX3WSSKCIJNOR",
+            "weight": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "mal_account_merge_drain",
+      "file": "transactions/mal_account_merge_drain.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "30627b7d23419f13b2373c3bdd01916d021d811df9155a09ed29b1529f835e01",
+      "label": "malicious",
+      "risk_pattern": "account-merge-drain",
+      "rationale": "Transfers the entire balance to an attacker and deletes the victim account. This cannot be undone.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "30627b7d23419f13b2373c3bdd01916d021d811df9155a09ed29b1529f835e01",
+        "ledger": 5645913,
+        "closedAt": "2026-11-09T19:40:07Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/30627b7d23419f13b2373c3bdd01916d021d811df9155a09ed29b1529f835e01"
+      },
+      "counterparties": [
+        "GBW5SCORDKP5OXJ6C5WJOH3JG56MVJID6J23YHQ6NPNWQMCYJWBC2NTL"
+      ],
+      "source": "GCBSKBPQJGQHYCGLYZCM37X5RTNTUAFXLHGT6Z6XUGIAGNIYZXCA4DHW",
+      "description": "accountMerge: victim-merge-1 merges its whole account into merge-drainer-1.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253803"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "accountMerge",
+          "destination": "GBW5SCORDKP5OXJ6C5WJOH3JG56MVJID6J23YHQ6NPNWQMCYJWBC2NTL"
+        }
+      ]
+    },
+    {
+      "id": "mal_soroban_transfer_to_sweeper",
+      "file": "transactions/mal_soroban_transfer_to_sweeper.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "764abf622ad529ccde8778fa27cc0cd88b608d38f253c247cabc58383764b78f",
+      "label": "malicious",
+      "risk_pattern": "sweep",
+      "rationale": "A token transfer to a malicious collection wallet via a clean contract. The contract is clean; the recipient argument is not.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "764abf622ad529ccde8778fa27cc0cd88b608d38f253c247cabc58383764b78f",
+        "ledger": 5645919,
+        "closedAt": "2026-11-09T19:40:37.000Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/764abf622ad529ccde8778fa27cc0cd88b608d38f253c247cabc58383764b78f"
+      },
+      "counterparties": [
+        "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+        "GA5DJT4EJK245OC76KO4SR5HGKWSU4DQEEWYOEE3VK5FC5IT3WURHBKT"
+      ],
+      "source": "GB6EQ7H5SKDNK6ISK5V3CB745UCTFFDM4CXSVGUKSABLBB6EXNAHAPEL",
+      "description": "Soroban TUSD SAC transfer(victim-5, sweeper-2, 100 TUSD).",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253819"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "invokeHostFunction",
+          "function": "invokeContract",
+          "contract": "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+          "method": "transfer",
+          "args": [
+            "GB6EQ7H5SKDNK6ISK5V3CB745UCTFFDM4CXSVGUKSABLBB6EXNAHAPEL",
+            "GA5DJT4EJK245OC76KO4SR5HGKWSU4DQEEWYOEE3VK5FC5IT3WURHBKT",
+            "1000000000"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mal_soroban_approve_unlimited",
+      "file": "transactions/mal_soroban_approve_unlimited.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "480bb0f082a99d3a12350677ada3178a49efedb08dff39d45574fe7fab419338",
+      "label": "malicious",
+      "risk_pattern": "soroban-approval-drain",
+      "rationale": "An unlimited, months-long allowance to an unknown spender. The spender then calls transfer_from and drains the balance (evidence).",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "480bb0f082a99d3a12350677ada3178a49efedb08dff39d45574fe7fab419338",
+        "ledger": 5645923,
+        "closedAt": "2026-11-09T19:40:57.000Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/480bb0f082a99d3a12350677ada3178a49efedb08dff39d45574fe7fab419338"
+      },
+      "counterparties": [
+        "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+        "GC4X3SL3SG6LAHMXPYNBMDSTPE67UIM5UWOTQP5RDOIFCOV4J7NXN5KP"
+      ],
+      "source": "GB6EQ7H5SKDNK6ISK5V3CB745UCTFFDM4CXSVGUKSABLBB6EXNAHAPEL",
+      "description": "Soroban TUSD SAC approve(victim-5, approval-drainer-1, i128::MAX, +1,000,000 ledgers).",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253852"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "invokeHostFunction",
+          "function": "invokeContract",
+          "contract": "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+          "method": "approve",
+          "args": [
+            "GB6EQ7H5SKDNK6ISK5V3CB745UCTFFDM4CXSVGUKSABLBB6EXNAHAPEL",
+            "GC4X3SL3SG6LAHMXPYNBMDSTPE67UIM5UWOTQP5RDOIFCOV4J7NXN5KP",
+            "170141183460469231731687303715884105727",
+            6645921
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mal_soroban_approve_native",
+      "file": "transactions/mal_soroban_approve_native.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "d1aeb732721dabbb61c12a27b58c93f8217425f8e0d10b4c921e58eada6aea56",
+      "label": "malicious",
+      "risk_pattern": "soroban-approval-drain",
+      "rationale": "A large, long-lived XLM allowance to an unknown spender, which is then drained via transfer_from (evidence).",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "d1aeb732721dabbb61c12a27b58c93f8217425f8e0d10b4c921e58eada6aea56",
+        "ledger": 5645932,
+        "closedAt": "2026-11-09T19:41:42.000Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/d1aeb732721dabbb61c12a27b58c93f8217425f8e0d10b4c921e58eada6aea56"
+      },
+      "counterparties": [
+        "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC",
+        "GBIRZS2KE6HTNQXHOUBCXR5OYGSMB6MKQEYPOPLMZSIM57B4FPH3XUJE"
+      ],
+      "source": "GCB7X54DH57IISY37I6FBRGOL66IQRBQJZWARF3SMYAANLEIFLUORIYR",
+      "description": "Soroban native XLM SAC approve(victim-6, approval-drainer-2, 9,000 XLM, +1,000,000 ledgers).",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253890"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "invokeHostFunction",
+          "function": "invokeContract",
+          "contract": "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC",
+          "method": "approve",
+          "args": [
+            "GCB7X54DH57IISY37I6FBRGOL66IQRBQJZWARF3SMYAANLEIFLUORIYR",
+            "GBIRZS2KE6HTNQXHOUBCXR5OYGSMB6MKQEYPOPLMZSIM57B4FPH3XUJE",
+            "90000000000",
+            6645928
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mal_multi_op_bundle",
+      "file": "transactions/mal_multi_op_bundle.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "87a180b305258e0e128df63cff13b214bf5f335584ce2507b60cdac38b24e917",
+      "label": "malicious",
+      "risk_pattern": "signer-takeover",
+      "rationale": "An innocuous-looking first operation hides a payment to a sweeper and a signer takeover. The label follows the worst operation.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "87a180b305258e0e128df63cff13b214bf5f335584ce2507b60cdac38b24e917",
+        "ledger": 5645937,
+        "closedAt": "2026-11-09T19:42:07Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/87a180b305258e0e128df63cff13b214bf5f335584ce2507b60cdac38b24e917"
+      },
+      "counterparties": [
+        "RUGX:GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+        "GBJKRDZJKYJSTZJFD4ULXURD7HXQNCY3LF2Y5MPUCYVQNAUKHBUSX34F",
+        "GBYHGCXYWOUTFTIAOTAXXP27JNTBMGRIHK66XKCNKHXW5JCYTADHTSZX"
+      ],
+      "source": "GDDCXVROL6ACFG2KDPM5BZBGYOHPTQ3IJL4F3E2W5VCWQIKD3AM2O6AG",
+      "description": "Three-op bundle: changeTrust RUGX + 500 XLM payment to sweeper-3 + setOptions adding takeover-attacker-3 (weight 10).",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253924"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "changeTrust",
+          "asset": "RUGX:GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+          "limit": "922337203685.4775807"
+        },
+        {
+          "index": 1,
+          "type": "payment",
+          "destination": "GBJKRDZJKYJSTZJFD4ULXURD7HXQNCY3LF2Y5MPUCYVQNAUKHBUSX34F",
+          "asset": "native",
+          "amount": "500.0000000"
+        },
+        {
+          "index": 2,
+          "type": "setOptions",
+          "signer": {
+            "key": "GBYHGCXYWOUTFTIAOTAXXP27JNTBMGRIHK66XKCNKHXW5JCYTADHTSZX",
+            "weight": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "mal_multi_op_hidden_merge",
+      "file": "transactions/mal_multi_op_hidden_merge.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "52d4395fb909a2ccb4a33e36a546a4b74b2bc8f89a0b1d3707c597bdaac41d4c",
+      "label": "malicious",
+      "risk_pattern": "account-merge-drain",
+      "rationale": "A small legitimate-looking payment precedes a full-account drain.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "52d4395fb909a2ccb4a33e36a546a4b74b2bc8f89a0b1d3707c597bdaac41d4c",
+        "ledger": 5645938,
+        "closedAt": "2026-11-09T19:42:12Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/52d4395fb909a2ccb4a33e36a546a4b74b2bc8f89a0b1d3707c597bdaac41d4c"
+      },
+      "counterparties": [
+        "GBXNFWT7LD4QV7KFHEZC6XE2PUILW3IKC3JCJVZOFC5NLZOIXUKOMCEY",
+        "GAR4BJKBE4T347HKAV3G5HUXQYRIVFQKYBRBXP3OA43XLUTVF4L2R6SN"
+      ],
+      "source": "GCYSSAI7QWA3SH24OFMOMB2C5IAFETSBQQRAE3JV52RZ6F5TSM4DLUDX",
+      "description": "Two-op bundle: 1 XLM to a clean merchant, then accountMerge into merge-drainer-2.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253928"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "payment",
+          "destination": "GBXNFWT7LD4QV7KFHEZC6XE2PUILW3IKC3JCJVZOFC5NLZOIXUKOMCEY",
+          "asset": "native",
+          "amount": "1.0000000"
+        },
+        {
+          "index": 1,
+          "type": "accountMerge",
+          "destination": "GAR4BJKBE4T347HKAV3G5HUXQYRIVFQKYBRBXP3OA43XLUTVF4L2R6SN"
+        }
+      ]
+    },
+    {
+      "id": "mal_payment_cold_start_scam",
+      "file": "transactions/mal_payment_cold_start_scam.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "1b011f69ae40129ad5a40abb9c6830b0a0310b02c148d3e54beecfd1a932f19e",
+      "label": "malicious",
+      "risk_pattern": "cold-start",
+      "rationale": "The recipient is a scam collection wallet by construction. Its low stub score models the oracle's cold-start blind spot, so this fixture is an expected miss for the reputation-only path.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "1b011f69ae40129ad5a40abb9c6830b0a0310b02c148d3e54beecfd1a932f19e",
+        "ledger": 5645939,
+        "closedAt": "2026-11-09T19:42:17Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/1b011f69ae40129ad5a40abb9c6830b0a0310b02c148d3e54beecfd1a932f19e"
+      },
+      "counterparties": [
+        "GCRZEOWD6J5TTYGK7QLCLUKFSQFJSK3PGJTTTZ7GICT35LNHNH6GRYPA"
+      ],
+      "source": "GASCQQSZJKGIAKEXRT6RWOJQOHZIDDCOIQQSY2QAGHH3E6XHXYRRPF2A",
+      "description": "750 XLM payment to cold-start-scam-1, a freshly funded scam wallet with no history.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253933"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "payment",
+          "destination": "GCRZEOWD6J5TTYGK7QLCLUKFSQFJSK3PGJTTTZ7GICT35LNHNH6GRYPA",
+          "asset": "native",
+          "amount": "750.0000000"
+        }
+      ]
+    },
+    {
+      "id": "mal_path_buy_rug_token",
+      "file": "transactions/mal_path_buy_rug_token.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "41adabd455a78665219a9f8082435be7bd828e244a31d4b6ab3b6fef422fe54b",
+      "label": "malicious",
+      "risk_pattern": "rug-pull",
+      "rationale": "Converts real value into a token whose entire supply is controlled and dumped by the issuer.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "41adabd455a78665219a9f8082435be7bd828e244a31d4b6ab3b6fef422fe54b",
+        "ledger": 5645940,
+        "closedAt": "2026-11-09T19:42:22Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/41adabd455a78665219a9f8082435be7bd828e244a31d4b6ab3b6fef422fe54b"
+      },
+      "counterparties": [
+        "RUGX:GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP"
+      ],
+      "source": "GAE7PTBWGQC3VUQXADCCZO22GEJ2DHSCH7AK3NMNSNQKIOQGDOM7OH4V",
+      "description": "Path payment strict-receive: spend up to 200 XLM to buy 1,000 RUGX from the rug issuer's offer.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253938"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "pathPaymentStrictReceive",
+          "destination": "GAE7PTBWGQC3VUQXADCCZO22GEJ2DHSCH7AK3NMNSNQKIOQGDOM7OH4V",
+          "sendAsset": "native",
+          "sendMax": "200.0000000",
+          "destAsset": "RUGX:GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+          "destAmount": "1000.0000000",
+          "path": []
+        }
+      ]
+    },
+    {
+      "id": "mal_payment_phishing_drainer",
+      "file": "transactions/mal_payment_phishing_drainer.xdr",
+      "envelopeType": "envelopeTypeTx",
+      "signed": false,
+      "stellarHashTestnet": "282c523c8bfb8e0055ce6608f82d81a2f8db47de450bf50e02300eb91c362057",
+      "label": "malicious",
+      "risk_pattern": "phishing-drainer",
+      "rationale": "A large payment to a known phishing drainer.",
+      "provenance": {
+        "kind": "testnet",
+        "submitted": true,
+        "txHash": "282c523c8bfb8e0055ce6608f82d81a2f8db47de450bf50e02300eb91c362057",
+        "ledger": 5645941,
+        "closedAt": "2026-11-09T19:42:27Z",
+        "explorer": "https://stellar.expert/explorer/testnet/tx/282c523c8bfb8e0055ce6608f82d81a2f8db47de450bf50e02300eb91c362057"
+      },
+      "counterparties": [
+        "GD6LERCQFQQ5OL3KJT4W2NVQWXRDDW5CGWS7IF6KJ7DNSG7O6DJF6B6S"
+      ],
+      "source": "GASCQQSZJKGIAKEXRT6RWOJQOHZIDDCOIQQSY2QAGHH3E6XHXYRRPF2A",
+      "description": "2,500 XLM payment from victim-8 to phishing-drainer-2, which had dusted it with a \"test\" payment.",
+      "timeBounds": {
+        "minTime": "0",
+        "maxTime": "1794253943"
+      },
+      "operations": [
+        {
+          "index": 0,
+          "type": "payment",
+          "destination": "GD6LERCQFQQ5OL3KJT4W2NVQWXRDDW5CGWS7IF6KJ7DNSG7O6DJF6B6S",
+          "asset": "native",
+          "amount": "2500.0000000"
+        }
+      ]
     }
   ]
 }

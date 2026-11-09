@@ -1,8 +1,14 @@
 {
-  "minTotal": 12,
-  "minClean": 4,
-  "minSuspicious": 3,
-  "minMalicious": 5,
+  "minTotal": 60,
+  "minClean": 20,
+  "minSuspicious": 12,
+  "minMalicious": 20,
+  "minTransactions": 25,
+  "minTransactionsByLabel": {
+    "clean": 10,
+    "suspicious": 6,
+    "malicious": 8
+  },
   "mustExist": [
     "GCRRYBV5IY7DSI54DKW33ZELC2LWYCAHC43TXAM2A2HTFN5GWOFWXPC2",
     "GA4HFFSHZ7PADQWOFCZGYV2HE437LQ2WDILWCGC33BMJUQ6OBO5HKI5D",

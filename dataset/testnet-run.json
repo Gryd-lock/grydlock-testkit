@@ -1,0 +1,1098 @@
+{
+  "_comment": "Audit trail of the testnet run that produced this dataset. Every hash resolves on stellar.expert testnet until the next testnet reset. Contains public data only; no secret keys are ever persisted.",
+  "generatedAt": "2026-11-09T19:42:28.548Z",
+  "network": "TESTNET",
+  "networkPassphrase": "Test SDF Network ; September 2015",
+  "horizon": "https://horizon-testnet.stellar.org",
+  "sorobanRpc": "https://soroban-testnet.stellar.org",
+  "stellarSdk": "17.2.1",
+  "ledgerRange": [
+    5645844,
+    5645941
+  ],
+  "personas": {
+    "clean-wallet-01": {
+      "address": "GBFU36X3NYV466DBHBAWGC5VQ2HYU32PXD7TEFQAFHOB7JAEVSHNBFOS",
+      "funding_tx": "13048c4629c6bcfd5481840be3ee1e301890514c87375f9a778fea0b3185b3a9",
+      "destination": true
+    },
+    "clean-wallet-02": {
+      "address": "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA",
+      "funding_tx": "8341dd3e2780cb636e6df9736ce37330efae76c3a7e16b919c48ecf5192cd63b",
+      "destination": true
+    },
+    "clean-wallet-03": {
+      "address": "GD2EI4OMHBP3ZJRJ3F4UX7BRDI53Z4TTJOKXZIAF6II75K5LMPOSDM2W",
+      "funding_tx": "7d27884c53ff7314549122bef33b3064609d131b7b8e01f35567e03086c9149f",
+      "destination": true
+    },
+    "clean-wallet-04": {
+      "address": "GDNYI5Z5DV5V3AX6V5X7E2L7C7YICS7VLP6TC36WFKPNDWDZBOKZVRSF",
+      "funding_tx": "80cac6f47cfd419172171a0c84ee0d95991d636fd190d0012fdb58a694586680",
+      "destination": true
+    },
+    "clean-wallet-05": {
+      "address": "GAKZOS4PCTUUWIJKUFGK5VO3RN4D6CKGJ2NRAZB77BDJAJCX53AHGQOO",
+      "funding_tx": "7fa06e962cc68c8eb094e0e3a5cc567231738ba20b536949ac6e610eafaff166",
+      "destination": true
+    },
+    "clean-wallet-06": {
+      "address": "GAF6FXYAB4CDUCUMZIWHKCNZHPEDIG5U26ZLXX3EVEKZEY63O3IDNWHT",
+      "funding_tx": "64d366bedba1ecec500decacde576c1e73d10d9f02f7f3fd7cbd7156e92c1cad",
+      "destination": true
+    },
+    "clean-wallet-07": {
+      "address": "GAAAPRSEMBK75VESS5A4OZ43DGFDPO5RBUOPYUKDLGN35GNFCIKSFN4Z",
+      "funding_tx": "e314b1f9d03098670420eae565f13ce82dc1f6cd3e0623f77f7719dc9c6c37c8",
+      "destination": true
+    },
+    "clean-wallet-08": {
+      "address": "GD6TXWROHQBMFH74ZKN7ZPGB4ZT3U63E4F2UJZW5BGY2YWW4LE3I4KF4",
+      "funding_tx": "eb6fae30ba19e84c675fc5dbd43b209a0fa8462e494efaa41594bf0af61a0ae6",
+      "destination": true
+    },
+    "clean-wallet-09": {
+      "address": "GAIPD6UEUSWFUQYGIE6TY6YHA33PW55C7I6CRK7WUYRCXKAEDLA6FJBO",
+      "funding_tx": "74a7fea6c66c3d3bd39e36d345d2f393aab7f6628cfdb442b44f637c52797c49",
+      "destination": true
+    },
+    "clean-wallet-10": {
+      "address": "GC4UTYN5MKNDQ75Z72OL4Z6L2CRCHLGTKEAHW4HRZNK6Y5S5LN5PGFZQ",
+      "funding_tx": "d65004006d57dcda6b0c66da2dd311672fe37b7dedb7f7b8beee232a722eb00b",
+      "destination": true
+    },
+    "clean-wallet-11": {
+      "address": "GDDR64QMBH6N3FK2WHNSXJSQTR3R3BXDZHOQLET4CDMPLPXBHNXR3ZGD",
+      "funding_tx": "7c884bc9707ef7f94c21364249eb2bf6ebce7c9dd5c36fed02dffec648d2af8f",
+      "destination": true
+    },
+    "clean-wallet-12": {
+      "address": "GAW2UG4BGR6ZUXCM32WSJGXGRYDGZUD4RXIWCFKDBFKPBZFW7H4BMVIB",
+      "funding_tx": "567e5168a2ab74c561bc44c5f62c58cde322531150836314f74a07881b36c075",
+      "destination": true
+    },
+    "clean-issuer-tusd": {
+      "address": "GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+      "funding_tx": "b5bcb5f7a5750b5c51cf67d910a383c3296308cc70bd285c9d13f40e92377936",
+      "destination": true
+    },
+    "clean-distributor-tusd": {
+      "address": "GBHSSCCU5DCXQILE3C6KH2PYAGDYZ3NEDQJ4D6ZYB2AKUFHE72W4MFAM",
+      "funding_tx": "a5130fb280982928150c289b74a05adbe0185c6accfb3c1f2b01110e07f04cc6",
+      "destination": true
+    },
+    "clean-exchange-hot": {
+      "address": "GBGWSHSIYNLZJXRZXQ62OUKLOYJDKWK245QKONDSP74SFPWPLZ3EH3CW",
+      "funding_tx": "b34af15a223cb150cf172bc082d9c4b80df73bff2da83fb38a9e8884e0e4ac72",
+      "destination": true
+    },
+    "clean-merchant-1": {
+      "address": "GBXNFWT7LD4QV7KFHEZC6XE2PUILW3IKC3JCJVZOFC5NLZOIXUKOMCEY",
+      "funding_tx": "1154d2b95461b0d6d9c85355b7df6bd20699e69db42c259b0237e11e5e20f907",
+      "destination": true
+    },
+    "clean-merchant-2": {
+      "address": "GDHOVLDRWGYRKAW3ZNYPBKW2AZWLO5G6E3IFB4YOMJV7J646S5BATJZU",
+      "funding_tx": "d07d1f638773251f64cc2e58386c1c50d70f2558698e8048c93e9851aefd61e9",
+      "destination": true
+    },
+    "clean-relayer": {
+      "address": "GBWUBEGIUFNJTHKDNAJU6TARNR75W3PM2NJJH7ASWHT33XOT44XZZMCN",
+      "funding_tx": "0f9c9eef08bb073d405371698c4005f33bb4a798d17def8e4b261737c22a49e6",
+      "destination": true
+    },
+    "clean-cosigner": {
+      "address": "GB276PXQMDGDN7YA4PD2K3KRRQWK5SGQR46VH2CJU2T5CTS2CYF433OJ",
+      "funding_tx": "47ddc5ef73704b78acd045d6d274a03a2def6b1168ddf50a3be9fdbb2952be67",
+      "destination": true
+    },
+    "clean-dapp-spender": {
+      "address": "GBV6FR3VVU6CF2LUXQE7X47WDAVVGLB3VCZTP5HC3BD7VAWZXSIGEWXL",
+      "funding_tx": "d2cb71edb989ef835c030e5426d436f6b05ef6c98150913ceae5e0b270e58421",
+      "destination": true
+    },
+    "clean-savings": {
+      "address": "GC45RHY6HTN7FADJXMJ2JOKN7RLX2S3CI4V2E3OMO6DHXPMRKB65DCLN",
+      "funding_tx": "74103bed0b9cc44f4010acd4d74e70cb4235b045e53b2420492ae892eae21884",
+      "destination": true
+    },
+    "clean-high-velocity": {
+      "address": "GAZFRP5KJV6S6SVPQH2U5JILZ6BBVBUXT54Z7LOFKDH6JZJA2I5FFYWA",
+      "funding_tx": "6aa83f8f812effc228fce0ce9f3e837aced4b869029a7553ab2f08a531d31e02",
+      "destination": true
+    },
+    "clean-new-user": {
+      "address": "GBOWLGAUYCVB7N3BKWBSH5PWBRHJHBL3VSJ4DV6WAQBFHMHUEXPSZUUN",
+      "funding_tx": "4fc91729d07bd29b8974c8998a922abbe416c3373d9d8433074bb08ff26a2953",
+      "destination": true
+    },
+    "clean-boundary": {
+      "address": "GD42RV27HMRMSRM7AYY4SEI2LKI4NHBTV4ITV3MTYP2FGMAMZ7WNHKHI",
+      "funding_tx": "cef106b7d892f11fb3de207fc5e2dfc9a90778170cda7277af5c6edd5e48ebde",
+      "destination": true
+    },
+    "pass-through-1": {
+      "address": "GDZN4Q4BTNTE235EK63K6HQUDLACTXLIBJ3ZLZFD2QIRPM44PU7NSGZT",
+      "funding_tx": "ea24c1b54bba0d31662d42bc92d30c32a2c5cf77729dd7dfacda80896c0fc632",
+      "destination": true
+    },
+    "pass-through-2": {
+      "address": "GDTMMIJ34PPVMEBL25RBUYXD7TEZJVZZFXIIUBH7LHHI4TIUO3EPXR7N",
+      "funding_tx": "e06dcfbcfb90c1bf552a7a0e79c51bef09e2df096d50894d8fa3f971a110d5d5",
+      "destination": true
+    },
+    "pass-through-3": {
+      "address": "GA2BUDKBBV5HIRJROI7AIK27SOCMPK52PHTBOMNHL7TR4GEUCSXCCANL",
+      "funding_tx": "663f88aaf4b164a086b374c69f44cff75015e55b6889c71ee717cee415b6cfdf",
+      "destination": true
+    },
+    "pass-through-boundary": {
+      "address": "GCGNNVUBVI6L4N7BI7UHC7JTWN6DLL5PDQ3B3IUFLKOVUQXEXF2I7J6O",
+      "funding_tx": "b1a361f855c80c6a8cdd6d1dc3808951420f1b9161c51be4d3ee811f51467c7e",
+      "destination": true
+    },
+    "scam-trustline-holder-1": {
+      "address": "GDDUZFV6RNTMBKGUUVHKZJ7HTQBFQIVPHKBZUJEKZRVSXXBPCKBLVNPM",
+      "funding_tx": "736fafd1c4b71bcd7d5c9a9a3a8bc683e569799aaf442eb7a3ff8270d2461d8c",
+      "destination": true
+    },
+    "scam-trustline-holder-2": {
+      "address": "GDX5FIUEZBKCNPNNHGUG4JQ2PHIZHF65AQS6HFVHWYOBJXNWLO3MSQKF",
+      "funding_tx": "9e1c6b57d7b1bd83eba37aea7da7c3ae4fbb2d59d7939749904ed47a81f6b2e3",
+      "destination": true
+    },
+    "sponsored-mule-1": {
+      "address": "GC55SEG6OFH45ZEYD3X3JUOF7TWYBKT7MNLNHVFG3WVZ445TQICP73XO",
+      "funding_tx": null,
+      "destination": true
+    },
+    "sponsored-mule-2": {
+      "address": "GDADZAAGDIHTG7AFVE2UWIXGAOUGQUT5KST7FE2YDAJD2XELF3CIONQB",
+      "funding_tx": null,
+      "destination": true
+    },
+    "sponsored-mule-3": {
+      "address": "GDHFMEK3B2CFAM7GZ7D3MR5UNYNZLYXITY3B6UZBTZI26EFY334SMVPY",
+      "funding_tx": null,
+      "destination": true
+    },
+    "memo-impersonator-1": {
+      "address": "GAVRLCQLYBWYVMVP3GPUA25UW7LRYR5PND2SA7XKQ5EBI7FUQV7337IG",
+      "funding_tx": "4d4288f494ed1f6f5d7c5de3b940af650d18697469118e1ea77f1cfa56b7f62c",
+      "destination": true
+    },
+    "memo-impersonator-2": {
+      "address": "GB7LRM52TIH4XNETWIMIQJU4TJIQPYVLVVM52BKHNC4WMATMM4XE7NRN",
+      "funding_tx": "8bed9a876cbe024925c979eaf23849aa38a92398ce21a56aa3a88d445c2f68e1",
+      "destination": true
+    },
+    "claw-issuer": {
+      "address": "GAKZPSMQ5I57CHXEBDCXERM7NP6BKHH5EE7ER453D4H2OC5U7QBBSUAC",
+      "funding_tx": "d12c9b142a8f12fe641f9aa47f28b6773b67ce50c686d78543e46b0b62ec6796",
+      "destination": true
+    },
+    "sweeper-1": {
+      "address": "GCVPYQ3XTA5BQPMTEW6UQ5YAJFFZPRQ7FZ4WDPK2NOJNQSRXYK2OYNLL",
+      "funding_tx": "ddd5c91131a850493e6140e54cb214d7fa849234c17e9f8749fed873ae20236a",
+      "destination": true
+    },
+    "sweeper-2": {
+      "address": "GA5DJT4EJK245OC76KO4SR5HGKWSU4DQEEWYOEE3VK5FC5IT3WURHBKT",
+      "funding_tx": "be4a6ecdccb92c63698cd4453bdeb13854bb3867c4978d38f3d7f9c17f3c356a",
+      "destination": true
+    },
+    "sweeper-3": {
+      "address": "GBJKRDZJKYJSTZJFD4ULXURD7HXQNCY3LF2Y5MPUCYVQNAUKHBUSX34F",
+      "funding_tx": "e6b2d41b26021beca686b89ac5de89ab2f9f114bde174ec3c6c1c37d33c1460a",
+      "destination": true
+    },
+    "merge-drainer-1": {
+      "address": "GBW5SCORDKP5OXJ6C5WJOH3JG56MVJID6J23YHQ6NPNWQMCYJWBC2NTL",
+      "funding_tx": "5e0c3c220a1a38cfeb8d94345b8ed929ad596efa855b2486464018d712c03b29",
+      "destination": true
+    },
+    "merge-drainer-2": {
+      "address": "GAR4BJKBE4T347HKAV3G5HUXQYRIVFQKYBRBXP3OA43XLUTVF4L2R6SN",
+      "funding_tx": "fa6fb3dba5d553839e8068a205a5b3c65b3f13702982f014819b9dbfaeb7ead4",
+      "destination": true
+    },
+    "merge-drainer-3": {
+      "address": "GD6LSHONMBWCVJHRGTZ6KYUQ6OGOZBUB55FM5NO7WSX2Z5475C3CR5ZS",
+      "funding_tx": "700e42fdbd146eb21517df091c1c5b33ff948103eb39ff12587f3c57a23b3d53",
+      "destination": true
+    },
+    "takeover-attacker-1": {
+      "address": "GAIYX5ASWINTHEZJYYJXPOUJBDPHTSK32I3YERSYXUDKBMIX5DKMJ4BW",
+      "funding_tx": "94424f9a21f1f6d54e9234d7a9738d698591c05845c4dd2d73f6b0dd65fe3bb9",
+      "destination": true
+    },
+    "takeover-attacker-2": {
+      "address": "GCCF57IS6YC6JNLJZOCYIW3NKI2PNB6SFTZR6G2VAQ2SX3WSSKCIJNOR",
+      "funding_tx": "a03761f3e615f6a1d5b2762f86d966c62b8ac547a5bbf428dccfea0e351788f7",
+      "destination": true
+    },
+    "takeover-attacker-3": {
+      "address": "GBYHGCXYWOUTFTIAOTAXXP27JNTBMGRIHK66XKCNKHXW5JCYTADHTSZX",
+      "funding_tx": "374a3ed6e6caa3172e044979258072888c5edbaf74681c5996b0e019b65de860",
+      "destination": true
+    },
+    "phishing-drainer-1": {
+      "address": "GANEF5PKENDRBIPY44IFZL4IQBYSOTUZLTMZEFPPZLA6TGRI4PXSIV2X",
+      "funding_tx": "f403838e3acc6b0007a3c4fd9e8a8b87aab287d4cfefd4fb114cdf2cbaed9ca7",
+      "destination": true
+    },
+    "phishing-drainer-2": {
+      "address": "GD6LERCQFQQ5OL3KJT4W2NVQWXRDDW5CGWS7IF6KJ7DNSG7O6DJF6B6S",
+      "funding_tx": "835060abccf2205bf482334ee9274c8c019ffd66d665da1dcc6bb1f1bac9301a",
+      "destination": true
+    },
+    "rug-issuer": {
+      "address": "GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+      "funding_tx": "72eeabe26b107accf764d783b433a5367fcd731dc0d861b88bc48902784b1016",
+      "destination": true
+    },
+    "airdrop-issuer": {
+      "address": "GCEEOBWVRSYQCMNIXOWFFXRQGNLIUERY753NYY4TPM6AU36DQLNUVVTP",
+      "funding_tx": "d23b025658f9d9477ac90d686d22fb479a509c4b56bd59b118b9f14abb505b8e",
+      "destination": true
+    },
+    "approval-drainer-1": {
+      "address": "GC4X3SL3SG6LAHMXPYNBMDSTPE67UIM5UWOTQP5RDOIFCOV4J7NXN5KP",
+      "funding_tx": "648b09bfdce12ee2369ba47bb546959c0526975adf9c64dd48efbd1d6ae8f5d4",
+      "destination": true
+    },
+    "approval-drainer-2": {
+      "address": "GBIRZS2KE6HTNQXHOUBCXR5OYGSMB6MKQEYPOPLMZSIM57B4FPH3XUJE",
+      "funding_tx": "c234e47e9be82b70b6aea8dbd72e5496b3f1e59b0545334794e5167ad1f91c08",
+      "destination": true
+    },
+    "cold-start-scam-1": {
+      "address": "GCRZEOWD6J5TTYGK7QLCLUKFSQFJSK3PGJTTTZ7GICT35LNHNH6GRYPA",
+      "funding_tx": "099b714b28b495626c07dd61802d753277452c97e2e24e45530eff96a6e42592",
+      "destination": true
+    },
+    "cold-start-scam-2": {
+      "address": "GBOMQDX24COQOKU3KVLDXKBRGM5ZANX6PO43AXUR4AM3CX7MX5OW6GNP",
+      "funding_tx": "c712542f70df3be20722d5e1356a32e4b887a7cbb24c055f6c2fabdbda97e535",
+      "destination": true
+    },
+    "cold-start-scam-3": {
+      "address": "GCHW7QBOMDOC452S5EAX7CVDE76JDN7P7752ZIGWRL72CPMYA5V2ZSIL",
+      "funding_tx": "8040ddab4030c3e8f39f19ac5813db7e690787b6281a84378e9fcfa66ea4a642",
+      "destination": true
+    },
+    "malicious-sponsor": {
+      "address": "GCTCSJRFEGW3Y247ZLK4P76DNKARYR7SADKGFQGNHVZ2C4RI3JG7TKVJ",
+      "funding_tx": "6c9a2b792b9b87fbb0280b0021699fa4b00368ce95bf8388f2f5d4c95ffb1f6f",
+      "destination": true
+    },
+    "victim-1": {
+      "address": "GBREFXCKZUECQUBHEI4ERHMFESD5XY5VU2VXTDNG2H7TPVTU3LMJ3N33",
+      "funding_tx": "d219881424799db6dd074eb95410318e1c94dc3ec8a064563c07dca546759845",
+      "destination": false
+    },
+    "victim-2": {
+      "address": "GD6YWYTLI6ZMB73QEB4GJVEK4W4O6JYLT32XXLYBTMN3V6C4TOD4HAS2",
+      "funding_tx": "00b70e06089fe5157d0517bfdfded63cc687c55e50b31806d0188a252d85c9b7",
+      "destination": false
+    },
+    "victim-3": {
+      "address": "GAE7PTBWGQC3VUQXADCCZO22GEJ2DHSCH7AK3NMNSNQKIOQGDOM7OH4V",
+      "funding_tx": "764f9b35608afdc582721534838f8bedd1dcedcec898eae8b5663fd70c873907",
+      "destination": false
+    },
+    "victim-4": {
+      "address": "GB3DA5SHGOLLVIXG3K3TKDVKDB3JQVQ2TNJDKWZPLWXROOHJTZT5FPEW",
+      "funding_tx": "520b075dd657886708d02cbb72426a5a75f9e56aaaa36bc69c92cbaceaf7ec8c",
+      "destination": false
+    },
+    "victim-5": {
+      "address": "GB6EQ7H5SKDNK6ISK5V3CB745UCTFFDM4CXSVGUKSABLBB6EXNAHAPEL",
+      "funding_tx": "5ba7625aa97712c8e82ca17ee1068156915cf85c33b2e73290a90037ebd3ab34",
+      "destination": false
+    },
+    "victim-6": {
+      "address": "GCB7X54DH57IISY37I6FBRGOL66IQRBQJZWARF3SMYAANLEIFLUORIYR",
+      "funding_tx": "baae0ae613cce32835558cb3d2a5af00471cf167e57296e030e40560997d90ee",
+      "destination": false
+    },
+    "victim-7": {
+      "address": "GDDCXVROL6ACFG2KDPM5BZBGYOHPTQ3IJL4F3E2W5VCWQIKD3AM2O6AG",
+      "funding_tx": "cfb239f2730cc71eb78c06dd54a6590b5e7aef0b027b7e3ae96a31c5d3e512aa",
+      "destination": false
+    },
+    "victim-8": {
+      "address": "GASCQQSZJKGIAKEXRT6RWOJQOHZIDDCOIQQSY2QAGHH3E6XHXYRRPF2A",
+      "funding_tx": "e5ccfaa76f5f38757fc1c0c85f086438c0d899e73697c50a2165e2d5cc1bb138",
+      "destination": false
+    },
+    "victim-merge-1": {
+      "address": "GCBSKBPQJGQHYCGLYZCM37X5RTNTUAFXLHGT6Z6XUGIAGNIYZXCA4DHW",
+      "funding_tx": "dbb5bb78dfe6411cb03bd6542143122e635dd6d6d19623f8daac4bb4754e1404",
+      "destination": false
+    },
+    "victim-merge-2": {
+      "address": "GCYSSAI7QWA3SH24OFMOMB2C5IAFETSBQQRAE3JV52RZ6F5TSM4DLUDX",
+      "funding_tx": "75b971284ece1ce4a75d001678e15973352978e6ae2b2f54682d4adc2ba8543c",
+      "destination": false
+    },
+    "victim-merge-3": {
+      "address": "GCCR4YWGY6PVAWDXABNWXOD2GSXOLYXSC6QITFCTY2XFA2TXMRE4GKS3",
+      "funding_tx": "9a7a19baf1f32a040bb6eccb4ef1f1265abc3112f204f468300c75d67980a110",
+      "destination": false
+    },
+    "victim-takeover-1": {
+      "address": "GCGL46FAEMD6YI2QOXXWJGHSGTLG2XMCZ2PFZ7EE4RAVOF67BOYUCZCV",
+      "funding_tx": "b7df4d409e8c9a13541a4cbb3e23178e9419a96da2799f944c115a96f9a7560c",
+      "destination": false
+    },
+    "victim-takeover-2": {
+      "address": "GC4HTW6TRWB6NHQO4WJ7WM4LYR2GEUE2J4367HCO26FVU4LCPNVYEIQB",
+      "funding_tx": "506c2921cc1019a484fedb8aa3f34972afe3a476a24c2312905757a438d8f96a",
+      "destination": false
+    },
+    "clean-closer": {
+      "address": "GAPEMC7D2TT3RDGKXYXLZ7FHUYJ2IC7YW7DOVODYGUH4PNSK5J66UND7",
+      "funding_tx": "81d4039c2700dbfe27e4a931ef109b031e7b728fc4919cea10da7fbeb094dc76",
+      "destination": false
+    }
+  },
+  "contracts": {
+    "TUSD": "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+    "RUGX": "CA7ILM2HOASK5XR4GCKYH5M7BCP2FXHZRPFN3RF57XUN75UCO562DTYS",
+    "native": "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC"
+  },
+  "transactions": [
+    {
+      "recipe": "tusd-distributor-trust",
+      "kind": "setup",
+      "hash": "3e4401f4bbeff2d09010f97856ea7a6916afadd6eb30020356599ba39008dc9e",
+      "ledger": 5645844,
+      "closedAt": "2026-11-09T19:34:22Z",
+      "source": "clean-distributor-tusd",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/3e4401f4bbeff2d09010f97856ea7a6916afadd6eb30020356599ba39008dc9e"
+    },
+    {
+      "recipe": "tusd-issue",
+      "kind": "setup",
+      "hash": "d77f08a0ad07d081f81846e39d8b4afbeeb81b8503048d7012219900adbf658e",
+      "ledger": 5645845,
+      "closedAt": "2026-11-09T19:34:27Z",
+      "source": "clean-issuer-tusd",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/d77f08a0ad07d081f81846e39d8b4afbeeb81b8503048d7012219900adbf658e"
+    },
+    {
+      "recipe": "tusd-trustlines",
+      "kind": "setup",
+      "hash": "937d607dd0dcdbcce5a242b8a60fc25ff139b4fe0da18faf2b6dcef7f9d624f5",
+      "ledger": 5645846,
+      "closedAt": "2026-11-09T19:34:32Z",
+      "source": "clean-wallet-01",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/937d607dd0dcdbcce5a242b8a60fc25ff139b4fe0da18faf2b6dcef7f9d624f5"
+    },
+    {
+      "recipe": "tusd-trustlines",
+      "kind": "setup",
+      "hash": "30ba48454574de9918031be66fa54528da21a9fc3738a44fd31453c7efd03050",
+      "ledger": 5645846,
+      "closedAt": "2026-11-09T19:34:32Z",
+      "source": "clean-merchant-2",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/30ba48454574de9918031be66fa54528da21a9fc3738a44fd31453c7efd03050"
+    },
+    {
+      "recipe": "tusd-trustlines",
+      "kind": "setup",
+      "hash": "7e5a0c6c53003cbaac6ed8f58a09e5de9946e53c797edb3786210f18ec25407b",
+      "ledger": 5645846,
+      "closedAt": "2026-11-09T19:34:32Z",
+      "source": "approval-drainer-1",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/7e5a0c6c53003cbaac6ed8f58a09e5de9946e53c797edb3786210f18ec25407b"
+    },
+    {
+      "recipe": "tusd-trustlines",
+      "kind": "setup",
+      "hash": "bcbc1c08dbcab826b2d9b34ca4cb98b0d482a9b1a96502e0c37c2a867889376e",
+      "ledger": 5645846,
+      "closedAt": "2026-11-09T19:34:32Z",
+      "source": "sweeper-1",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/bcbc1c08dbcab826b2d9b34ca4cb98b0d482a9b1a96502e0c37c2a867889376e"
+    },
+    {
+      "recipe": "tusd-trustlines",
+      "kind": "setup",
+      "hash": "dc79491a5ec07b55297623dc23e5679cfc3f14010264be2eef09acb115628e02",
+      "ledger": 5645846,
+      "closedAt": "2026-11-09T19:34:32Z",
+      "source": "victim-5",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/dc79491a5ec07b55297623dc23e5679cfc3f14010264be2eef09acb115628e02"
+    },
+    {
+      "recipe": "tusd-trustlines",
+      "kind": "setup",
+      "hash": "2a2adbef514ab984326a51a56745545fc2dde40ee0f786fd9af206400c486039",
+      "ledger": 5645846,
+      "closedAt": "2026-11-09T19:34:32Z",
+      "source": "pass-through-2",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/2a2adbef514ab984326a51a56745545fc2dde40ee0f786fd9af206400c486039"
+    },
+    {
+      "recipe": "tusd-trustlines",
+      "kind": "setup",
+      "hash": "31571ba71499522e4850944f0f103ecb1994bb4816fe85e02b8de061feb0470c",
+      "ledger": 5645846,
+      "closedAt": "2026-11-09T19:34:32Z",
+      "source": "clean-wallet-03",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/31571ba71499522e4850944f0f103ecb1994bb4816fe85e02b8de061feb0470c"
+    },
+    {
+      "recipe": "tusd-trustlines",
+      "kind": "setup",
+      "hash": "0a47646efaeaa44d5b6a0137c8481b8059352040586b833fc742b6ea6adc5c8e",
+      "ledger": 5645846,
+      "closedAt": "2026-11-09T19:34:32Z",
+      "source": "clean-merchant-1",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/0a47646efaeaa44d5b6a0137c8481b8059352040586b833fc742b6ea6adc5c8e"
+    },
+    {
+      "recipe": "tusd-trustlines",
+      "kind": "setup",
+      "hash": "6ceb354493ff3b699ed9c96a581d245445313c2744329c2aadc62261c6cb4013",
+      "ledger": 5645846,
+      "closedAt": "2026-11-09T19:34:32Z",
+      "source": "clean-wallet-12",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/6ceb354493ff3b699ed9c96a581d245445313c2744329c2aadc62261c6cb4013"
+    },
+    {
+      "recipe": "tusd-trustlines",
+      "kind": "setup",
+      "hash": "058080dea5e53972d0582a668d6c3cf5eac865ea608af76eb274c9c45a2e5e5e",
+      "ledger": 5645846,
+      "closedAt": "2026-11-09T19:34:32Z",
+      "source": "sweeper-2",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/058080dea5e53972d0582a668d6c3cf5eac865ea608af76eb274c9c45a2e5e5e"
+    },
+    {
+      "recipe": "tusd-trustlines",
+      "kind": "setup",
+      "hash": "7014792a5b88dc1f6aaa27f05c842a731adadba30876d44d36f8f07bba855042",
+      "ledger": 5645846,
+      "closedAt": "2026-11-09T19:34:32Z",
+      "source": "clean-wallet-07",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/7014792a5b88dc1f6aaa27f05c842a731adadba30876d44d36f8f07bba855042"
+    },
+    {
+      "recipe": "tusd-trustlines",
+      "kind": "setup",
+      "hash": "238aa041e269e194579507f0ae2859b2fee94471e41d8f89e85e64d025dcbb3e",
+      "ledger": 5645846,
+      "closedAt": "2026-11-09T19:34:32Z",
+      "source": "clean-wallet-02",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/238aa041e269e194579507f0ae2859b2fee94471e41d8f89e85e64d025dcbb3e"
+    },
+    {
+      "recipe": "tusd-distribute",
+      "kind": "setup",
+      "hash": "0829fdbf2208c7835f34ae9f08b4ada22566133100af0b6249a3f42e547a50f2",
+      "ledger": 5645847,
+      "closedAt": "2026-11-09T19:34:37Z",
+      "source": "clean-distributor-tusd",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/0829fdbf2208c7835f34ae9f08b4ada22566133100af0b6249a3f42e547a50f2"
+    },
+    {
+      "recipe": "tusd-market",
+      "kind": "setup",
+      "hash": "4429133889fb64614f08d156e07edb8d13810d431bf8f40a4c3be102a4e724c4",
+      "ledger": 5645848,
+      "closedAt": "2026-11-09T19:34:42Z",
+      "source": "clean-distributor-tusd",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/4429133889fb64614f08d156e07edb8d13810d431bf8f40a4c3be102a4e724c4"
+    },
+    {
+      "recipe": "tusd-claimable",
+      "kind": "setup",
+      "hash": "12a139c385756a233e2d9c484f2fecb68c370bdd15c2c301ccd7fdafc02168b0",
+      "ledger": 5645849,
+      "closedAt": "2026-11-09T19:34:47Z",
+      "source": "clean-distributor-tusd",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/12a139c385756a233e2d9c484f2fecb68c370bdd15c2c301ccd7fdafc02168b0"
+    },
+    {
+      "recipe": "tusd-sac-deploy",
+      "kind": "setup",
+      "hash": "8f9dda91b95cbe84b3e91968264afb6494959f435a35b616ddd507431c425d48",
+      "ledger": 5645853,
+      "closedAt": "2026-11-09T19:35:07.000Z",
+      "source": "clean-issuer-tusd",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/8f9dda91b95cbe84b3e91968264afb6494959f435a35b616ddd507431c425d48"
+    },
+    {
+      "recipe": "claw-flags",
+      "kind": "setup",
+      "hash": "a24e68378d61b5518861f384a22cfb889a984ed07a076f46216439dcd04d77f4",
+      "ledger": 5645855,
+      "closedAt": "2026-11-09T19:35:17Z",
+      "source": "claw-issuer",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/a24e68378d61b5518861f384a22cfb889a984ed07a076f46216439dcd04d77f4"
+    },
+    {
+      "recipe": "rugx-holders",
+      "kind": "setup",
+      "hash": "528c8560a80741f0ad70c8260c03a9e8a367dacbcfa95b14304daf016f50ba4b",
+      "ledger": 5645856,
+      "closedAt": "2026-11-09T19:35:22Z",
+      "source": "scam-trustline-holder-2",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/528c8560a80741f0ad70c8260c03a9e8a367dacbcfa95b14304daf016f50ba4b"
+    },
+    {
+      "recipe": "rugx-holders",
+      "kind": "setup",
+      "hash": "b25f50726af0cb44e721a29277e43859cf028ab32abb49af4f3305e8e3ae9985",
+      "ledger": 5645856,
+      "closedAt": "2026-11-09T19:35:22Z",
+      "source": "scam-trustline-holder-1",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/b25f50726af0cb44e721a29277e43859cf028ab32abb49af4f3305e8e3ae9985"
+    },
+    {
+      "recipe": "rugx-market",
+      "kind": "setup",
+      "hash": "f5f9e3fbb752cbfd15c13a3f8fa73ab7724c8009a646fcc0dafe99d8a126b93a",
+      "ledger": 5645857,
+      "closedAt": "2026-11-09T19:35:27Z",
+      "source": "rug-issuer",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/f5f9e3fbb752cbfd15c13a3f8fa73ab7724c8009a646fcc0dafe99d8a126b93a"
+    },
+    {
+      "recipe": "rugx-sac-deploy",
+      "kind": "setup",
+      "hash": "85acb2cab7a626c17a5848660163b7e80c9eca8e29af6f6440fdaf8d60295b83",
+      "ledger": 5645862,
+      "closedAt": "2026-11-09T19:35:52.000Z",
+      "source": "rug-issuer",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/85acb2cab7a626c17a5848660163b7e80c9eca8e29af6f6440fdaf8d60295b83"
+    },
+    {
+      "recipe": "airdrop-spray",
+      "kind": "setup",
+      "hash": "7e946e1b6d4d2db9836f50f349cede6f54377e51d0ecb6649954fad61a325ffe",
+      "ledger": 5645863,
+      "closedAt": "2026-11-09T19:35:57Z",
+      "source": "airdrop-issuer",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/7e946e1b6d4d2db9836f50f349cede6f54377e51d0ecb6649954fad61a325ffe"
+    },
+    {
+      "recipe": "clean-history",
+      "kind": "setup",
+      "hash": "92c7dcccbed019986cf0927ea66a3dc881a96e3815be3f017d734299b4f99218",
+      "ledger": 5645864,
+      "closedAt": "2026-11-09T19:36:02Z",
+      "source": "clean-wallet-04",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/92c7dcccbed019986cf0927ea66a3dc881a96e3815be3f017d734299b4f99218"
+    },
+    {
+      "recipe": "clean-history",
+      "kind": "setup",
+      "hash": "e1f3e71d5f540d47a9e87f098a3a4aaee97bf7a478439e8ee230aa6dd666e4fb",
+      "ledger": 5645864,
+      "closedAt": "2026-11-09T19:36:02Z",
+      "source": "clean-wallet-10",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/e1f3e71d5f540d47a9e87f098a3a4aaee97bf7a478439e8ee230aa6dd666e4fb"
+    },
+    {
+      "recipe": "clean-history",
+      "kind": "setup",
+      "hash": "00970f2b923aee25a2ba02a77c30c046ff682ed7415eed8d8415d0192e08556d",
+      "ledger": 5645864,
+      "closedAt": "2026-11-09T19:36:02Z",
+      "source": "clean-wallet-08",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/00970f2b923aee25a2ba02a77c30c046ff682ed7415eed8d8415d0192e08556d"
+    },
+    {
+      "recipe": "phishing-dust",
+      "kind": "setup",
+      "hash": "9b81d96feef9ef8a285a5a6704221066f9d917d91f2d64a5fa5e346ba0d4268c",
+      "ledger": 5645865,
+      "closedAt": "2026-11-09T19:36:07Z",
+      "source": "phishing-drainer-2",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/9b81d96feef9ef8a285a5a6704221066f9d917d91f2d64a5fa5e346ba0d4268c"
+    },
+    {
+      "recipe": "phishing-dust",
+      "kind": "setup",
+      "hash": "ee2a9f674a9d5aff45baa51e26cac1ae83a98683a17a94276c019398dc0e12d4",
+      "ledger": 5645865,
+      "closedAt": "2026-11-09T19:36:07Z",
+      "source": "phishing-drainer-1",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/ee2a9f674a9d5aff45baa51e26cac1ae83a98683a17a94276c019398dc0e12d4"
+    },
+    {
+      "recipe": "memo-lures",
+      "kind": "setup",
+      "hash": "cb06b29a7f8e52358a9b3c188b99ba391bd7915080ec8883d5b7d1a8e8b0a1bb",
+      "ledger": 5645866,
+      "closedAt": "2026-11-09T19:36:12Z",
+      "source": "memo-impersonator-1",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/cb06b29a7f8e52358a9b3c188b99ba391bd7915080ec8883d5b7d1a8e8b0a1bb"
+    },
+    {
+      "recipe": "memo-lures",
+      "kind": "setup",
+      "hash": "8d0451ec755537266c8fdfd8612b9160bad2ae863d852cd0b476bfa7278875ef",
+      "ledger": 5645866,
+      "closedAt": "2026-11-09T19:36:12Z",
+      "source": "memo-impersonator-2",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/8d0451ec755537266c8fdfd8612b9160bad2ae863d852cd0b476bfa7278875ef"
+    },
+    {
+      "recipe": "sponsor-mule-2",
+      "kind": "setup",
+      "hash": "e59d47e9b64a728c0a0be86fddafa797f8ea2b6ad383420aaf35c59a7f071018",
+      "ledger": 5645867,
+      "closedAt": "2026-11-09T19:36:17Z",
+      "source": "malicious-sponsor",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/e59d47e9b64a728c0a0be86fddafa797f8ea2b6ad383420aaf35c59a7f071018"
+    },
+    {
+      "recipe": "sponsor-mule-3",
+      "kind": "setup",
+      "hash": "6e8f3925c2ba73e729fbb62291596c7950275ab6233c2581d484c21168cb7400",
+      "ledger": 5645868,
+      "closedAt": "2026-11-09T19:36:22Z",
+      "source": "malicious-sponsor",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/6e8f3925c2ba73e729fbb62291596c7950275ab6233c2581d484c21168cb7400"
+    },
+    {
+      "recipe": "clean_payment_xlm",
+      "kind": "fixture",
+      "hash": "202d551ef4a6071a9e74ec9222d320bba828d7a8c5188585472130edfbe3dc96",
+      "ledger": 5645869,
+      "closedAt": "2026-11-09T19:36:27Z",
+      "source": "clean-wallet-01",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/202d551ef4a6071a9e74ec9222d320bba828d7a8c5188585472130edfbe3dc96"
+    },
+    {
+      "recipe": "clean_payment_tusd_merchant",
+      "kind": "fixture",
+      "hash": "789e7d95ad366512c9190e32489e40c3da88aefc5939406790aacdefdbbd7445",
+      "ledger": 5645870,
+      "closedAt": "2026-11-09T19:36:32Z",
+      "source": "clean-wallet-03",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/789e7d95ad366512c9190e32489e40c3da88aefc5939406790aacdefdbbd7445"
+    },
+    {
+      "recipe": "clean_payment_exchange_memo_id",
+      "kind": "fixture",
+      "hash": "e187b1a36a9f430c494ea3ca18818126e8ee485335b56516627dd38241337d36",
+      "ledger": 5645871,
+      "closedAt": "2026-11-09T19:36:37Z",
+      "source": "clean-wallet-05",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/e187b1a36a9f430c494ea3ca18818126e8ee485335b56516627dd38241337d36"
+    },
+    {
+      "recipe": "clean_path_strict_send",
+      "kind": "fixture",
+      "hash": "9cbd300d6a4ff2037fd8374959f24cad7cfe6259219f43142964410c334a5c0a",
+      "ledger": 5645872,
+      "closedAt": "2026-11-09T19:36:42Z",
+      "source": "clean-wallet-06",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/9cbd300d6a4ff2037fd8374959f24cad7cfe6259219f43142964410c334a5c0a"
+    },
+    {
+      "recipe": "clean_path_strict_receive",
+      "kind": "fixture",
+      "hash": "c1d2f6da5232e006e77d3ba3bb4592df326e8535c9d934add3e5d19b87e2e2fe",
+      "ledger": 5645873,
+      "closedAt": "2026-11-09T19:36:47Z",
+      "source": "clean-wallet-08",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/c1d2f6da5232e006e77d3ba3bb4592df326e8535c9d934add3e5d19b87e2e2fe"
+    },
+    {
+      "recipe": "clean_fee_bump_payment",
+      "kind": "fixture",
+      "hash": "d96ee2f5741f6fd1cae756cd774d24e2b17589fc3bc14b3e1c554372237167c9",
+      "ledger": 5645874,
+      "closedAt": "2026-11-09T19:36:52Z",
+      "source": "clean-wallet-09",
+      "feeBumpSource": "clean-relayer",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/d96ee2f5741f6fd1cae756cd774d24e2b17589fc3bc14b3e1c554372237167c9"
+    },
+    {
+      "recipe": "clean_change_trust_tusd",
+      "kind": "fixture",
+      "hash": "bdf477d51cf91e1df11f86a45c1ad00f5dba292b61822f6ce29e034e2c2d9e35",
+      "ledger": 5645875,
+      "closedAt": "2026-11-09T19:36:57Z",
+      "source": "clean-wallet-11",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/bdf477d51cf91e1df11f86a45c1ad00f5dba292b61822f6ce29e034e2c2d9e35"
+    },
+    {
+      "recipe": "clean_claim_claimable_tusd",
+      "kind": "fixture",
+      "hash": "36574f5d2aae8041b4f9d0e32d3752cccc4acac3dc0c02353c30474cc7364861",
+      "ledger": 5645876,
+      "closedAt": "2026-11-09T19:37:02Z",
+      "source": "clean-wallet-12",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/36574f5d2aae8041b4f9d0e32d3752cccc4acac3dc0c02353c30474cc7364861"
+    },
+    {
+      "recipe": "clean_soroban_sac_transfer",
+      "kind": "fixture",
+      "hash": "77cbd3c37d749737d10bbe16830fe9c67ee58bb0d93e39c327f3d7407c2ebe51",
+      "ledger": 5645879,
+      "closedAt": "2026-11-09T19:37:17.000Z",
+      "source": "clean-wallet-01",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/77cbd3c37d749737d10bbe16830fe9c67ee58bb0d93e39c327f3d7407c2ebe51"
+    },
+    {
+      "recipe": "clean_soroban_approve_bounded",
+      "kind": "fixture",
+      "hash": "a35722fbfce49a7e483583ff9f8808f8d9af73601ddb2df094f13469169ff364",
+      "ledger": 5645886,
+      "closedAt": "2026-11-09T19:37:52.000Z",
+      "source": "clean-wallet-03",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/a35722fbfce49a7e483583ff9f8808f8d9af73601ddb2df094f13469169ff364"
+    },
+    {
+      "recipe": "clean_set_options_cosigner",
+      "kind": "fixture",
+      "hash": "62ef443d4293a814565ad8f65d6a7dafb5c0f176a9565652e499ed6ed0cd7411",
+      "ledger": 5645887,
+      "closedAt": "2026-11-09T19:37:57Z",
+      "source": "clean-wallet-04",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/62ef443d4293a814565ad8f65d6a7dafb5c0f176a9565652e499ed6ed0cd7411"
+    },
+    {
+      "recipe": "clean_account_merge_own_wallet",
+      "kind": "fixture",
+      "hash": "7a19f1cf9bb22f4fbccbae2ba75e812b26bf0dfe9d70d9dcc800e8bda2093827",
+      "ledger": 5645888,
+      "closedAt": "2026-11-09T19:38:02Z",
+      "source": "clean-closer",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/7a19f1cf9bb22f4fbccbae2ba75e812b26bf0dfe9d70d9dcc800e8bda2093827"
+    },
+    {
+      "recipe": "clean_multi_op_payroll",
+      "kind": "fixture",
+      "hash": "0ab00f358150d9e488d0e7fb9c8e0c83197e8db7ae017d4109fa95c400b966fb",
+      "ledger": 5645889,
+      "closedAt": "2026-11-09T19:38:07Z",
+      "source": "clean-high-velocity",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/0ab00f358150d9e488d0e7fb9c8e0c83197e8db7ae017d4109fa95c400b966fb"
+    },
+    {
+      "recipe": "clean_dex_sell_offer",
+      "kind": "fixture",
+      "hash": "6a55e65ebb9fd443e9b394beaed12aedd964e0297e85713d0b9f27a12162b442",
+      "ledger": 5645890,
+      "closedAt": "2026-11-09T19:38:12Z",
+      "source": "clean-wallet-02",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/6a55e65ebb9fd443e9b394beaed12aedd964e0297e85713d0b9f27a12162b442"
+    },
+    {
+      "recipe": "clean_payment_new_user",
+      "kind": "fixture",
+      "hash": "916b95ea75acca035a484efc34048c5b4010c97a24514ca2cdb3e6330e0f8eac",
+      "ledger": 5645891,
+      "closedAt": "2026-11-09T19:38:17Z",
+      "source": "clean-wallet-05",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/916b95ea75acca035a484efc34048c5b4010c97a24514ca2cdb3e6330e0f8eac"
+    },
+    {
+      "recipe": "clean_payment_boundary_score",
+      "kind": "fixture",
+      "hash": "96cbf9f3911f7b6cffeb3b2ff4f893ec37cf9a81bb5f17ed58ee7fe87cb9cf23",
+      "ledger": 5645892,
+      "closedAt": "2026-11-09T19:38:22Z",
+      "source": "clean-wallet-06",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/96cbf9f3911f7b6cffeb3b2ff4f893ec37cf9a81bb5f17ed58ee7fe87cb9cf23"
+    },
+    {
+      "recipe": "susp_payment_pass_through",
+      "kind": "fixture",
+      "hash": "385cd1c14d1ad115aff01e95ace09c23b90c1ad62aade4abb687cff72a440fa2",
+      "ledger": 5645893,
+      "closedAt": "2026-11-09T19:38:27Z",
+      "source": "victim-1",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/385cd1c14d1ad115aff01e95ace09c23b90c1ad62aade4abb687cff72a440fa2"
+    },
+    {
+      "recipe": "pass-through-1-forward",
+      "kind": "evidence",
+      "hash": "c777152ed87ad1b34fa78d37f34a5e90b19de8b5e1e0793e746bfc67e841fd04",
+      "ledger": 5645894,
+      "closedAt": "2026-11-09T19:38:32Z",
+      "source": "pass-through-1",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/c777152ed87ad1b34fa78d37f34a5e90b19de8b5e1e0793e746bfc67e841fd04"
+    },
+    {
+      "recipe": "susp_path_payment_pass_through",
+      "kind": "fixture",
+      "hash": "87bb6d08b795b206c1ba1145ab1efaa9b6468dbebb71b355af780c5ead6dff0f",
+      "ledger": 5645895,
+      "closedAt": "2026-11-09T19:38:37Z",
+      "source": "victim-3",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/87bb6d08b795b206c1ba1145ab1efaa9b6468dbebb71b355af780c5ead6dff0f"
+    },
+    {
+      "recipe": "pass-through-2-forward",
+      "kind": "evidence",
+      "hash": "f3e17bd1c2eadedfbcb29746e3cd8dd679ddfe4f4f2c1131d2dabcb54401bd8d",
+      "ledger": 5645896,
+      "closedAt": "2026-11-09T19:38:42Z",
+      "source": "pass-through-2",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/f3e17bd1c2eadedfbcb29746e3cd8dd679ddfe4f4f2c1131d2dabcb54401bd8d"
+    },
+    {
+      "recipe": "pass-through-3-hop",
+      "kind": "evidence",
+      "hash": "e6585b1c1ede5f70695a0cfed2b270696627ba1327d3c0d92473964d07f9afbe",
+      "ledger": 5645897,
+      "closedAt": "2026-11-09T19:38:47Z",
+      "source": "victim-6",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/e6585b1c1ede5f70695a0cfed2b270696627ba1327d3c0d92473964d07f9afbe"
+    },
+    {
+      "recipe": "pass-through-3-hop",
+      "kind": "evidence",
+      "hash": "1842fe5db134f4f848653b6a82c20fab61271f5069aed72877520a7e944e12f7",
+      "ledger": 5645898,
+      "closedAt": "2026-11-09T19:38:52Z",
+      "source": "pass-through-3",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/1842fe5db134f4f848653b6a82c20fab61271f5069aed72877520a7e944e12f7"
+    },
+    {
+      "recipe": "susp_payment_boundary_pass_through",
+      "kind": "fixture",
+      "hash": "f1bc9d05a270e6e576bd31b7f92486433e833200cce450205c9f1bf59728c144",
+      "ledger": 5645899,
+      "closedAt": "2026-11-09T19:38:57Z",
+      "source": "victim-8",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/f1bc9d05a270e6e576bd31b7f92486433e833200cce450205c9f1bf59728c144"
+    },
+    {
+      "recipe": "pass-through-boundary-forward",
+      "kind": "evidence",
+      "hash": "220eabd809ee8b3a37f850b35d6903ee8549665333c52f6a3dc1b38ca08d4ebf",
+      "ledger": 5645900,
+      "closedAt": "2026-11-09T19:39:02Z",
+      "source": "pass-through-boundary",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/220eabd809ee8b3a37f850b35d6903ee8549665333c52f6a3dc1b38ca08d4ebf"
+    },
+    {
+      "recipe": "susp_payment_memo_impersonation",
+      "kind": "fixture",
+      "hash": "98ac73d117c8d047e0f147750995a1f0bc0394c178db422c883dc8af2cf860d8",
+      "ledger": 5645901,
+      "closedAt": "2026-11-09T19:39:07Z",
+      "source": "victim-3",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/98ac73d117c8d047e0f147750995a1f0bc0394c178db422c883dc8af2cf860d8"
+    },
+    {
+      "recipe": "susp_change_trust_clawback_asset",
+      "kind": "fixture",
+      "hash": "48f1820db8093cd0e7406d08a6df7da0dced0480d4c715bb5ad4d845041fe874",
+      "ledger": 5645902,
+      "closedAt": "2026-11-09T19:39:12Z",
+      "source": "victim-2",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/48f1820db8093cd0e7406d08a6df7da0dced0480d4c715bb5ad4d845041fe874"
+    },
+    {
+      "recipe": "claw-issue-and-clawback",
+      "kind": "evidence",
+      "hash": "1d5ebf382f67ec5c584467911dfdee14734ec6a3318df67172b7247539621f01",
+      "ledger": 5645903,
+      "closedAt": "2026-11-09T19:39:17Z",
+      "source": "claw-issuer",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/1d5ebf382f67ec5c584467911dfdee14734ec6a3318df67172b7247539621f01"
+    },
+    {
+      "recipe": "claw-issue-and-clawback",
+      "kind": "evidence",
+      "hash": "d1a5a3e2c9a7cf319e7915d6984d4ceb30b4529c770962306abe914fb43c9ca4",
+      "ledger": 5645904,
+      "closedAt": "2026-11-09T19:39:22Z",
+      "source": "claw-issuer",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/d1a5a3e2c9a7cf319e7915d6984d4ceb30b4529c770962306abe914fb43c9ca4"
+    },
+    {
+      "recipe": "susp_sponsored_mule_creation",
+      "kind": "fixture",
+      "hash": "7c5c3240e364aaa6545b17762b4e1b60c2a7cdb2deb52b8f2e71827783db8bcd",
+      "ledger": 5645905,
+      "closedAt": "2026-11-09T19:39:27Z",
+      "source": "malicious-sponsor",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/7c5c3240e364aaa6545b17762b4e1b60c2a7cdb2deb52b8f2e71827783db8bcd"
+    },
+    {
+      "recipe": "susp_change_trust_scam_asset",
+      "kind": "fixture",
+      "hash": "047effb6f722e3b4785308885aec431ef7a86e74d2562a68cee6a10e298727b2",
+      "ledger": 5645906,
+      "closedAt": "2026-11-09T19:39:32Z",
+      "source": "victim-3",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/047effb6f722e3b4785308885aec431ef7a86e74d2562a68cee6a10e298727b2"
+    },
+    {
+      "recipe": "susp_claim_airdrop_spam",
+      "kind": "fixture",
+      "hash": "50fbb19b1fa05b74c39aceeba235fc3584e9306fa5ee22f7607e38a5f2ab5730",
+      "ledger": 5645907,
+      "closedAt": "2026-11-09T19:39:37Z",
+      "source": "victim-2",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/50fbb19b1fa05b74c39aceeba235fc3584e9306fa5ee22f7607e38a5f2ab5730"
+    },
+    {
+      "recipe": "mal_path_payment_sweeper",
+      "kind": "fixture",
+      "hash": "ebc76ecca01c3a1f5598d88550541fb6b829ef090ca68f6ec6880788ca8d3db1",
+      "ledger": 5645908,
+      "closedAt": "2026-11-09T19:39:42Z",
+      "source": "victim-1",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/ebc76ecca01c3a1f5598d88550541fb6b829ef090ca68f6ec6880788ca8d3db1"
+    },
+    {
+      "recipe": "mal_fee_bump_gasless_drain",
+      "kind": "fixture",
+      "hash": "5faafd1e6872102509df34dd3f08889b93fcfafffd3fb6214ecb2d329936117b",
+      "ledger": 5645909,
+      "closedAt": "2026-11-09T19:39:47Z",
+      "source": "victim-4",
+      "feeBumpSource": "phishing-drainer-2",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/5faafd1e6872102509df34dd3f08889b93fcfafffd3fb6214ecb2d329936117b"
+    },
+    {
+      "recipe": "mal_set_options_signer_takeover",
+      "kind": "fixture",
+      "hash": "9fc77173abd2b5a23cb3a94dd27e56100e08344e4e01415446e751e6c9a8f6ff",
+      "ledger": 5645910,
+      "closedAt": "2026-11-09T19:39:52Z",
+      "source": "victim-takeover-1",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/9fc77173abd2b5a23cb3a94dd27e56100e08344e4e01415446e751e6c9a8f6ff"
+    },
+    {
+      "recipe": "takeover-drain",
+      "kind": "evidence",
+      "hash": "c900362eaba30b6d28509cb9c9fc3e61dacbb0f3f0ff439890d4b052ea9831ae",
+      "ledger": 5645911,
+      "closedAt": "2026-11-09T19:39:57Z",
+      "source": "victim-takeover-1",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/c900362eaba30b6d28509cb9c9fc3e61dacbb0f3f0ff439890d4b052ea9831ae"
+    },
+    {
+      "recipe": "mal_set_options_threshold_takeover",
+      "kind": "fixture",
+      "hash": "9ec4838e58e6061f586b7abdcc002617e862afdbfe59560c6028979d3036f166",
+      "ledger": 5645912,
+      "closedAt": "2026-11-09T19:40:02Z",
+      "source": "victim-takeover-2",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/9ec4838e58e6061f586b7abdcc002617e862afdbfe59560c6028979d3036f166"
+    },
+    {
+      "recipe": "mal_account_merge_drain",
+      "kind": "fixture",
+      "hash": "30627b7d23419f13b2373c3bdd01916d021d811df9155a09ed29b1529f835e01",
+      "ledger": 5645913,
+      "closedAt": "2026-11-09T19:40:07Z",
+      "source": "victim-merge-1",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/30627b7d23419f13b2373c3bdd01916d021d811df9155a09ed29b1529f835e01"
+    },
+    {
+      "recipe": "merge-drainer-3-merge",
+      "kind": "evidence",
+      "hash": "4621fe1266ce67b07aa07c5a762cb8ceb2d14ad02899583fa619d9b610c5e009",
+      "ledger": 5645914,
+      "closedAt": "2026-11-09T19:40:12Z",
+      "source": "victim-merge-3",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/4621fe1266ce67b07aa07c5a762cb8ceb2d14ad02899583fa619d9b610c5e009"
+    },
+    {
+      "recipe": "mal_soroban_transfer_to_sweeper",
+      "kind": "fixture",
+      "hash": "764abf622ad529ccde8778fa27cc0cd88b608d38f253c247cabc58383764b78f",
+      "ledger": 5645919,
+      "closedAt": "2026-11-09T19:40:37.000Z",
+      "source": "victim-5",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/764abf622ad529ccde8778fa27cc0cd88b608d38f253c247cabc58383764b78f"
+    },
+    {
+      "recipe": "mal_soroban_approve_unlimited",
+      "kind": "fixture",
+      "hash": "480bb0f082a99d3a12350677ada3178a49efedb08dff39d45574fe7fab419338",
+      "ledger": 5645923,
+      "closedAt": "2026-11-09T19:40:57.000Z",
+      "source": "victim-5",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/480bb0f082a99d3a12350677ada3178a49efedb08dff39d45574fe7fab419338"
+    },
+    {
+      "recipe": "approval-drain-tusd",
+      "kind": "evidence",
+      "hash": "06b3be6f5736fdb4ca6991be9eb11cfe6fe5763e4f1a9e16bad9471ca73006e1",
+      "ledger": 5645926,
+      "closedAt": "2026-11-09T19:41:12.000Z",
+      "source": "approval-drainer-1",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/06b3be6f5736fdb4ca6991be9eb11cfe6fe5763e4f1a9e16bad9471ca73006e1"
+    },
+    {
+      "recipe": "mal_soroban_approve_native",
+      "kind": "fixture",
+      "hash": "d1aeb732721dabbb61c12a27b58c93f8217425f8e0d10b4c921e58eada6aea56",
+      "ledger": 5645932,
+      "closedAt": "2026-11-09T19:41:42.000Z",
+      "source": "victim-6",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/d1aeb732721dabbb61c12a27b58c93f8217425f8e0d10b4c921e58eada6aea56"
+    },
+    {
+      "recipe": "approval-drain-native",
+      "kind": "evidence",
+      "hash": "968066731c1b4c6b1cf21137fd0fb915948017dce07317067e77636750620269",
+      "ledger": 5645935,
+      "closedAt": "2026-11-09T19:41:57.000Z",
+      "source": "approval-drainer-2",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/968066731c1b4c6b1cf21137fd0fb915948017dce07317067e77636750620269"
+    },
+    {
+      "recipe": "mal_multi_op_bundle",
+      "kind": "fixture",
+      "hash": "87a180b305258e0e128df63cff13b214bf5f335584ce2507b60cdac38b24e917",
+      "ledger": 5645937,
+      "closedAt": "2026-11-09T19:42:07Z",
+      "source": "victim-7",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/87a180b305258e0e128df63cff13b214bf5f335584ce2507b60cdac38b24e917"
+    },
+    {
+      "recipe": "mal_multi_op_hidden_merge",
+      "kind": "fixture",
+      "hash": "52d4395fb909a2ccb4a33e36a546a4b74b2bc8f89a0b1d3707c597bdaac41d4c",
+      "ledger": 5645938,
+      "closedAt": "2026-11-09T19:42:12Z",
+      "source": "victim-merge-2",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/52d4395fb909a2ccb4a33e36a546a4b74b2bc8f89a0b1d3707c597bdaac41d4c"
+    },
+    {
+      "recipe": "mal_payment_cold_start_scam",
+      "kind": "fixture",
+      "hash": "1b011f69ae40129ad5a40abb9c6830b0a0310b02c148d3e54beecfd1a932f19e",
+      "ledger": 5645939,
+      "closedAt": "2026-11-09T19:42:17Z",
+      "source": "victim-8",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/1b011f69ae40129ad5a40abb9c6830b0a0310b02c148d3e54beecfd1a932f19e"
+    },
+    {
+      "recipe": "mal_path_buy_rug_token",
+      "kind": "fixture",
+      "hash": "41adabd455a78665219a9f8082435be7bd828e244a31d4b6ab3b6fef422fe54b",
+      "ledger": 5645940,
+      "closedAt": "2026-11-09T19:42:22Z",
+      "source": "victim-3",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/41adabd455a78665219a9f8082435be7bd828e244a31d4b6ab3b6fef422fe54b"
+    },
+    {
+      "recipe": "mal_payment_phishing_drainer",
+      "kind": "fixture",
+      "hash": "282c523c8bfb8e0055ce6608f82d81a2f8db47de450bf50e02300eb91c362057",
+      "ledger": 5645941,
+      "closedAt": "2026-11-09T19:42:27Z",
+      "source": "victim-8",
+      "explorer": "https://stellar.expert/explorer/testnet/tx/282c523c8bfb8e0055ce6608f82d81a2f8db47de450bf50e02300eb91c362057"
+    }
+  ]
+}

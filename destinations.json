@@ -181,6 +181,1317 @@
         "kind": "offline-synthetic",
         "funded": false
       }
+    },
+    {
+      "id": "GBFU36X3NYV466DBHBAWGC5VQ2HYU32PXD7TEFQAFHOB7JAEVSHNBFOS",
+      "type": "account",
+      "address": "GBFU36X3NYV466DBHBAWGC5VQ2HYU32PXD7TEFQAFHOB7JAEVSHNBFOS",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Ordinary testnet wallet; peer payments and TUSD use only.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-wallet-01",
+      "rationale": "Funded by Friendbot and used only for ordinary activity in this run: peer XLM payments, TUSD trustline and payments, DEX trades. It never interacts with a labelled suspicious or malicious persona as a recipient of their funds.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "13048c4629c6bcfd5481840be3ee1e301890514c87375f9a778fea0b3185b3a9",
+        "evidence_txs": [
+          "937d607dd0dcdbcce5a242b8a60fc25ff139b4fe0da18faf2b6dcef7f9d624f5",
+          "0829fdbf2208c7835f34ae9f08b4ada22566133100af0b6249a3f42e547a50f2",
+          "202d551ef4a6071a9e74ec9222d320bba828d7a8c5188585472130edfbe3dc96",
+          "77cbd3c37d749737d10bbe16830fe9c67ee58bb0d93e39c327f3d7407c2ebe51",
+          "0ab00f358150d9e488d0e7fb9c8e0c83197e8db7ae017d4109fa95c400b966fb"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GBFU36X3NYV466DBHBAWGC5VQ2HYU32PXD7TEFQAFHOB7JAEVSHNBFOS"
+      }
+    },
+    {
+      "id": "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA",
+      "type": "account",
+      "address": "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Ordinary testnet wallet; peer payments and TUSD use only.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-wallet-02",
+      "rationale": "Funded by Friendbot and used only for ordinary activity in this run: peer XLM payments, TUSD trustline and payments, DEX trades. It never interacts with a labelled suspicious or malicious persona as a recipient of their funds.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "8341dd3e2780cb636e6df9736ce37330efae76c3a7e16b919c48ecf5192cd63b",
+        "evidence_txs": [
+          "238aa041e269e194579507f0ae2859b2fee94471e41d8f89e85e64d025dcbb3e",
+          "202d551ef4a6071a9e74ec9222d320bba828d7a8c5188585472130edfbe3dc96",
+          "77cbd3c37d749737d10bbe16830fe9c67ee58bb0d93e39c327f3d7407c2ebe51",
+          "0ab00f358150d9e488d0e7fb9c8e0c83197e8db7ae017d4109fa95c400b966fb",
+          "6a55e65ebb9fd443e9b394beaed12aedd964e0297e85713d0b9f27a12162b442"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA"
+      }
+    },
+    {
+      "id": "GD2EI4OMHBP3ZJRJ3F4UX7BRDI53Z4TTJOKXZIAF6II75K5LMPOSDM2W",
+      "type": "account",
+      "address": "GD2EI4OMHBP3ZJRJ3F4UX7BRDI53Z4TTJOKXZIAF6II75K5LMPOSDM2W",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Ordinary testnet wallet; peer payments and TUSD use only.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-wallet-03",
+      "rationale": "Funded by Friendbot and used only for ordinary activity in this run: peer XLM payments, TUSD trustline and payments, DEX trades. It never interacts with a labelled suspicious or malicious persona as a recipient of their funds.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "7d27884c53ff7314549122bef33b3064609d131b7b8e01f35567e03086c9149f",
+        "evidence_txs": [
+          "31571ba71499522e4850944f0f103ecb1994bb4816fe85e02b8de061feb0470c",
+          "0829fdbf2208c7835f34ae9f08b4ada22566133100af0b6249a3f42e547a50f2",
+          "789e7d95ad366512c9190e32489e40c3da88aefc5939406790aacdefdbbd7445",
+          "a35722fbfce49a7e483583ff9f8808f8d9af73601ddb2df094f13469169ff364",
+          "0ab00f358150d9e488d0e7fb9c8e0c83197e8db7ae017d4109fa95c400b966fb"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GD2EI4OMHBP3ZJRJ3F4UX7BRDI53Z4TTJOKXZIAF6II75K5LMPOSDM2W"
+      }
+    },
+    {
+      "id": "GDNYI5Z5DV5V3AX6V5X7E2L7C7YICS7VLP6TC36WFKPNDWDZBOKZVRSF",
+      "type": "account",
+      "address": "GDNYI5Z5DV5V3AX6V5X7E2L7C7YICS7VLP6TC36WFKPNDWDZBOKZVRSF",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Ordinary testnet wallet; peer payments and TUSD use only.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-wallet-04",
+      "rationale": "Funded by Friendbot and used only for ordinary activity in this run: peer XLM payments, TUSD trustline and payments, DEX trades. It never interacts with a labelled suspicious or malicious persona as a recipient of their funds.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "80cac6f47cfd419172171a0c84ee0d95991d636fd190d0012fdb58a694586680",
+        "evidence_txs": [
+          "92c7dcccbed019986cf0927ea66a3dc881a96e3815be3f017d734299b4f99218",
+          "62ef443d4293a814565ad8f65d6a7dafb5c0f176a9565652e499ed6ed0cd7411",
+          "0ab00f358150d9e488d0e7fb9c8e0c83197e8db7ae017d4109fa95c400b966fb"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GDNYI5Z5DV5V3AX6V5X7E2L7C7YICS7VLP6TC36WFKPNDWDZBOKZVRSF"
+      }
+    },
+    {
+      "id": "GAKZOS4PCTUUWIJKUFGK5VO3RN4D6CKGJ2NRAZB77BDJAJCX53AHGQOO",
+      "type": "account",
+      "address": "GAKZOS4PCTUUWIJKUFGK5VO3RN4D6CKGJ2NRAZB77BDJAJCX53AHGQOO",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Ordinary testnet wallet; peer payments and TUSD use only.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-wallet-05",
+      "rationale": "Funded by Friendbot and used only for ordinary activity in this run: peer XLM payments, TUSD trustline and payments, DEX trades. It never interacts with a labelled suspicious or malicious persona as a recipient of their funds.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "7fa06e962cc68c8eb094e0e3a5cc567231738ba20b536949ac6e610eafaff166",
+        "evidence_txs": [
+          "e187b1a36a9f430c494ea3ca18818126e8ee485335b56516627dd38241337d36",
+          "0ab00f358150d9e488d0e7fb9c8e0c83197e8db7ae017d4109fa95c400b966fb",
+          "916b95ea75acca035a484efc34048c5b4010c97a24514ca2cdb3e6330e0f8eac"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GAKZOS4PCTUUWIJKUFGK5VO3RN4D6CKGJ2NRAZB77BDJAJCX53AHGQOO"
+      }
+    },
+    {
+      "id": "GAF6FXYAB4CDUCUMZIWHKCNZHPEDIG5U26ZLXX3EVEKZEY63O3IDNWHT",
+      "type": "account",
+      "address": "GAF6FXYAB4CDUCUMZIWHKCNZHPEDIG5U26ZLXX3EVEKZEY63O3IDNWHT",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Ordinary testnet wallet; peer payments and TUSD use only.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-wallet-06",
+      "rationale": "Funded by Friendbot and used only for ordinary activity in this run: peer XLM payments, TUSD trustline and payments, DEX trades. It never interacts with a labelled suspicious or malicious persona as a recipient of their funds.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "64d366bedba1ecec500decacde576c1e73d10d9f02f7f3fd7cbd7156e92c1cad",
+        "evidence_txs": [
+          "9cbd300d6a4ff2037fd8374959f24cad7cfe6259219f43142964410c334a5c0a",
+          "96cbf9f3911f7b6cffeb3b2ff4f893ec37cf9a81bb5f17ed58ee7fe87cb9cf23"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GAF6FXYAB4CDUCUMZIWHKCNZHPEDIG5U26ZLXX3EVEKZEY63O3IDNWHT"
+      }
+    },
+    {
+      "id": "GAAAPRSEMBK75VESS5A4OZ43DGFDPO5RBUOPYUKDLGN35GNFCIKSFN4Z",
+      "type": "account",
+      "address": "GAAAPRSEMBK75VESS5A4OZ43DGFDPO5RBUOPYUKDLGN35GNFCIKSFN4Z",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Ordinary testnet wallet; peer payments and TUSD use only.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-wallet-07",
+      "rationale": "Funded by Friendbot and used only for ordinary activity in this run: peer XLM payments, TUSD trustline and payments, DEX trades. It never interacts with a labelled suspicious or malicious persona as a recipient of their funds.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "e314b1f9d03098670420eae565f13ce82dc1f6cd3e0623f77f7719dc9c6c37c8",
+        "evidence_txs": [
+          "7014792a5b88dc1f6aaa27f05c842a731adadba30876d44d36f8f07bba855042",
+          "9cbd300d6a4ff2037fd8374959f24cad7cfe6259219f43142964410c334a5c0a"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GAAAPRSEMBK75VESS5A4OZ43DGFDPO5RBUOPYUKDLGN35GNFCIKSFN4Z"
+      }
+    },
+    {
+      "id": "GD6TXWROHQBMFH74ZKN7ZPGB4ZT3U63E4F2UJZW5BGY2YWW4LE3I4KF4",
+      "type": "account",
+      "address": "GD6TXWROHQBMFH74ZKN7ZPGB4ZT3U63E4F2UJZW5BGY2YWW4LE3I4KF4",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Ordinary testnet wallet; peer payments and TUSD use only.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-wallet-08",
+      "rationale": "Funded by Friendbot and used only for ordinary activity in this run: peer XLM payments, TUSD trustline and payments, DEX trades. It never interacts with a labelled suspicious or malicious persona as a recipient of their funds.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "eb6fae30ba19e84c675fc5dbd43b209a0fa8462e494efaa41594bf0af61a0ae6",
+        "evidence_txs": [
+          "00970f2b923aee25a2ba02a77c30c046ff682ed7415eed8d8415d0192e08556d",
+          "c1d2f6da5232e006e77d3ba3bb4592df326e8535c9d934add3e5d19b87e2e2fe"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GD6TXWROHQBMFH74ZKN7ZPGB4ZT3U63E4F2UJZW5BGY2YWW4LE3I4KF4"
+      }
+    },
+    {
+      "id": "GAIPD6UEUSWFUQYGIE6TY6YHA33PW55C7I6CRK7WUYRCXKAEDLA6FJBO",
+      "type": "account",
+      "address": "GAIPD6UEUSWFUQYGIE6TY6YHA33PW55C7I6CRK7WUYRCXKAEDLA6FJBO",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Ordinary testnet wallet; peer payments and TUSD use only.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-wallet-09",
+      "rationale": "Funded by Friendbot and used only for ordinary activity in this run: peer XLM payments, TUSD trustline and payments, DEX trades. It never interacts with a labelled suspicious or malicious persona as a recipient of their funds.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "74a7fea6c66c3d3bd39e36d345d2f393aab7f6628cfdb442b44f637c52797c49",
+        "evidence_txs": [
+          "00970f2b923aee25a2ba02a77c30c046ff682ed7415eed8d8415d0192e08556d",
+          "d96ee2f5741f6fd1cae756cd774d24e2b17589fc3bc14b3e1c554372237167c9"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GAIPD6UEUSWFUQYGIE6TY6YHA33PW55C7I6CRK7WUYRCXKAEDLA6FJBO"
+      }
+    },
+    {
+      "id": "GC4UTYN5MKNDQ75Z72OL4Z6L2CRCHLGTKEAHW4HRZNK6Y5S5LN5PGFZQ",
+      "type": "account",
+      "address": "GC4UTYN5MKNDQ75Z72OL4Z6L2CRCHLGTKEAHW4HRZNK6Y5S5LN5PGFZQ",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Ordinary testnet wallet; peer payments and TUSD use only.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-wallet-10",
+      "rationale": "Funded by Friendbot and used only for ordinary activity in this run: peer XLM payments, TUSD trustline and payments, DEX trades. It never interacts with a labelled suspicious or malicious persona as a recipient of their funds.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "d65004006d57dcda6b0c66da2dd311672fe37b7dedb7f7b8beee232a722eb00b",
+        "evidence_txs": [
+          "e1f3e71d5f540d47a9e87f098a3a4aaee97bf7a478439e8ee230aa6dd666e4fb",
+          "d96ee2f5741f6fd1cae756cd774d24e2b17589fc3bc14b3e1c554372237167c9"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GC4UTYN5MKNDQ75Z72OL4Z6L2CRCHLGTKEAHW4HRZNK6Y5S5LN5PGFZQ"
+      }
+    },
+    {
+      "id": "GDDR64QMBH6N3FK2WHNSXJSQTR3R3BXDZHOQLET4CDMPLPXBHNXR3ZGD",
+      "type": "account",
+      "address": "GDDR64QMBH6N3FK2WHNSXJSQTR3R3BXDZHOQLET4CDMPLPXBHNXR3ZGD",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Ordinary testnet wallet; peer payments and TUSD use only.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-wallet-11",
+      "rationale": "Funded by Friendbot and used only for ordinary activity in this run: peer XLM payments, TUSD trustline and payments, DEX trades. It never interacts with a labelled suspicious or malicious persona as a recipient of their funds.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "7c884bc9707ef7f94c21364249eb2bf6ebce7c9dd5c36fed02dffec648d2af8f",
+        "evidence_txs": [
+          "e1f3e71d5f540d47a9e87f098a3a4aaee97bf7a478439e8ee230aa6dd666e4fb",
+          "bdf477d51cf91e1df11f86a45c1ad00f5dba292b61822f6ce29e034e2c2d9e35"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GDDR64QMBH6N3FK2WHNSXJSQTR3R3BXDZHOQLET4CDMPLPXBHNXR3ZGD"
+      }
+    },
+    {
+      "id": "GAW2UG4BGR6ZUXCM32WSJGXGRYDGZUD4RXIWCFKDBFKPBZFW7H4BMVIB",
+      "type": "account",
+      "address": "GAW2UG4BGR6ZUXCM32WSJGXGRYDGZUD4RXIWCFKDBFKPBZFW7H4BMVIB",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Ordinary testnet wallet; peer payments and TUSD use only.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-wallet-12",
+      "rationale": "Funded by Friendbot and used only for ordinary activity in this run: peer XLM payments, TUSD trustline and payments, DEX trades. It never interacts with a labelled suspicious or malicious persona as a recipient of their funds.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "567e5168a2ab74c561bc44c5f62c58cde322531150836314f74a07881b36c075",
+        "evidence_txs": [
+          "6ceb354493ff3b699ed9c96a581d245445313c2744329c2aadc62261c6cb4013",
+          "12a139c385756a233e2d9c484f2fecb68c370bdd15c2c301ccd7fdafc02168b0",
+          "36574f5d2aae8041b4f9d0e32d3752cccc4acac3dc0c02353c30474cc7364861"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GAW2UG4BGR6ZUXCM32WSJGXGRYDGZUD4RXIWCFKDBFKPBZFW7H4BMVIB"
+      }
+    },
+    {
+      "id": "GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+      "type": "account",
+      "address": "GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Issuer of the TUSD test stablecoin.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-issuer-tusd",
+      "rationale": "Issues TUSD and distributes it only to the TUSD distributor. Its asset is widely held by clean wallets in this run.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "b5bcb5f7a5750b5c51cf67d910a383c3296308cc70bd285c9d13f40e92377936",
+        "evidence_txs": [
+          "d77f08a0ad07d081f81846e39d8b4afbeeb81b8503048d7012219900adbf658e",
+          "8f9dda91b95cbe84b3e91968264afb6494959f435a35b616ddd507431c425d48"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ"
+      }
+    },
+    {
+      "id": "GBHSSCCU5DCXQILE3C6KH2PYAGDYZ3NEDQJ4D6ZYB2AKUFHE72W4MFAM",
+      "type": "account",
+      "address": "GBHSSCCU5DCXQILE3C6KH2PYAGDYZ3NEDQJ4D6ZYB2AKUFHE72W4MFAM",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "TUSD distributor and DEX market maker.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-distributor-tusd",
+      "rationale": "Receives TUSD from the issuer, distributes it to clean wallets, posts a two-sided TUSD/XLM market and creates a TUSD claimable balance for a clean wallet.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "a5130fb280982928150c289b74a05adbe0185c6accfb3c1f2b01110e07f04cc6",
+        "evidence_txs": [
+          "3e4401f4bbeff2d09010f97856ea7a6916afadd6eb30020356599ba39008dc9e",
+          "d77f08a0ad07d081f81846e39d8b4afbeeb81b8503048d7012219900adbf658e",
+          "0829fdbf2208c7835f34ae9f08b4ada22566133100af0b6249a3f42e547a50f2",
+          "4429133889fb64614f08d156e07edb8d13810d431bf8f40a4c3be102a4e724c4",
+          "12a139c385756a233e2d9c484f2fecb68c370bdd15c2c301ccd7fdafc02168b0"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GBHSSCCU5DCXQILE3C6KH2PYAGDYZ3NEDQJ4D6ZYB2AKUFHE72W4MFAM"
+      }
+    },
+    {
+      "id": "GBGWSHSIYNLZJXRZXQ62OUKLOYJDKWK245QKONDSP74SFPWPLZ3EH3CW",
+      "type": "account",
+      "address": "GBGWSHSIYNLZJXRZXQ62OUKLOYJDKWK245QKONDSP74SFPWPLZ3EH3CW",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Exchange-style hot wallet that receives deposits tagged with a memo id.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-exchange-hot",
+      "rationale": "Receives deposits from clean wallets with memo-id routing tags, which is how custodial exchanges are normally paid.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "b34af15a223cb150cf172bc082d9c4b80df73bff2da83fb38a9e8884e0e4ac72",
+        "evidence_txs": [
+          "e187b1a36a9f430c494ea3ca18818126e8ee485335b56516627dd38241337d36"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GBGWSHSIYNLZJXRZXQ62OUKLOYJDKWK245QKONDSP74SFPWPLZ3EH3CW"
+      }
+    },
+    {
+      "id": "GBXNFWT7LD4QV7KFHEZC6XE2PUILW3IKC3JCJVZOFC5NLZOIXUKOMCEY",
+      "type": "account",
+      "address": "GBXNFWT7LD4QV7KFHEZC6XE2PUILW3IKC3JCJVZOFC5NLZOIXUKOMCEY",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Merchant receiving TUSD payments.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-merchant-1",
+      "rationale": "Receives TUSD payments for goods from clean wallets.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "1154d2b95461b0d6d9c85355b7df6bd20699e69db42c259b0237e11e5e20f907",
+        "evidence_txs": [
+          "0a47646efaeaa44d5b6a0137c8481b8059352040586b833fc742b6ea6adc5c8e",
+          "789e7d95ad366512c9190e32489e40c3da88aefc5939406790aacdefdbbd7445",
+          "52d4395fb909a2ccb4a33e36a546a4b74b2bc8f89a0b1d3707c597bdaac41d4c"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GBXNFWT7LD4QV7KFHEZC6XE2PUILW3IKC3JCJVZOFC5NLZOIXUKOMCEY"
+      }
+    },
+    {
+      "id": "GDHOVLDRWGYRKAW3ZNYPBKW2AZWLO5G6E3IFB4YOMJV7J646S5BATJZU",
+      "type": "account",
+      "address": "GDHOVLDRWGYRKAW3ZNYPBKW2AZWLO5G6E3IFB4YOMJV7J646S5BATJZU",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Merchant receiving path payments in TUSD.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-merchant-2",
+      "rationale": "Receives strict-receive path payments that settle in TUSD.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "d07d1f638773251f64cc2e58386c1c50d70f2558698e8048c93e9851aefd61e9",
+        "evidence_txs": [
+          "30ba48454574de9918031be66fa54528da21a9fc3738a44fd31453c7efd03050",
+          "c1d2f6da5232e006e77d3ba3bb4592df326e8535c9d934add3e5d19b87e2e2fe"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GDHOVLDRWGYRKAW3ZNYPBKW2AZWLO5G6E3IFB4YOMJV7J646S5BATJZU"
+      }
+    },
+    {
+      "id": "GBWUBEGIUFNJTHKDNAJU6TARNR75W3PM2NJJH7ASWHT33XOT44XZZMCN",
+      "type": "account",
+      "address": "GBWUBEGIUFNJTHKDNAJU6TARNR75W3PM2NJJH7ASWHT33XOT44XZZMCN",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Fee-bump relayer that pays fees for clean users.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-relayer",
+      "rationale": "Sponsors network fees for a clean payment via a fee-bump envelope. A fee-bump is not itself a risk signal.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "0f9c9eef08bb073d405371698c4005f33bb4a798d17def8e4b261737c22a49e6",
+        "evidence_txs": [
+          "d96ee2f5741f6fd1cae756cd774d24e2b17589fc3bc14b3e1c554372237167c9"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GBWUBEGIUFNJTHKDNAJU6TARNR75W3PM2NJJH7ASWHT33XOT44XZZMCN"
+      }
+    },
+    {
+      "id": "GB276PXQMDGDN7YA4PD2K3KRRQWK5SGQR46VH2CJU2T5CTS2CYF433OJ",
+      "type": "account",
+      "address": "GB276PXQMDGDN7YA4PD2K3KRRQWK5SGQR46VH2CJU2T5CTS2CYF433OJ",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "notes": "Co-signer added to a clean wallet as a 2-of-2 multisig key.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-cosigner",
+      "rationale": "Added as a signer by clean-wallet-04, the same operation shape as a signer takeover, but the signing wallet raises its thresholds so it keeps control. Scored elevated on purpose: a reputation oracle that only sees \"newly added signer\" would plausibly flag it, so it measures false positives.",
+      "score_rationale": "Deliberately outside the clean band (0-25): models an oracle that over-weights this attack-shaped behaviour, so the eval can measure false positives.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "47ddc5ef73704b78acd045d6d274a03a2def6b1168ddf50a3be9fdbb2952be67",
+        "evidence_txs": [
+          "62ef443d4293a814565ad8f65d6a7dafb5c0f176a9565652e499ed6ed0cd7411"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GB276PXQMDGDN7YA4PD2K3KRRQWK5SGQR46VH2CJU2T5CTS2CYF433OJ"
+      }
+    },
+    {
+      "id": "GBV6FR3VVU6CF2LUXQE7X47WDAVVGLB3VCZTP5HC3BD7VAWZXSIGEWXL",
+      "type": "account",
+      "address": "GBV6FR3VVU6CF2LUXQE7X47WDAVVGLB3VCZTP5HC3BD7VAWZXSIGEWXL",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "notes": "dApp spender granted a small, short-lived Soroban token allowance.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-dapp-spender",
+      "rationale": "Granted a 10 TUSD allowance that expires within ~1 hour. Same operation shape as an approval drain, but bounded in amount and time. Scored elevated on purpose to measure false positives.",
+      "score_rationale": "Deliberately outside the clean band (0-25): models an oracle that over-weights this attack-shaped behaviour, so the eval can measure false positives.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "d2cb71edb989ef835c030e5426d436f6b05ef6c98150913ceae5e0b270e58421",
+        "evidence_txs": [
+          "a35722fbfce49a7e483583ff9f8808f8d9af73601ddb2df094f13469169ff364"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GBV6FR3VVU6CF2LUXQE7X47WDAVVGLB3VCZTP5HC3BD7VAWZXSIGEWXL"
+      }
+    },
+    {
+      "id": "GC45RHY6HTN7FADJXMJ2JOKN7RLX2S3CI4V2E3OMO6DHXPMRKB65DCLN",
+      "type": "account",
+      "address": "GC45RHY6HTN7FADJXMJ2JOKN7RLX2S3CI4V2E3OMO6DHXPMRKB65DCLN",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "notes": "Savings account that receives an account merge from its owner's old wallet.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-savings",
+      "rationale": "Receives an account merge from clean-closer, which is owned by the same synthetic user and is closing an old account. Same operation shape as a merge drain.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "74103bed0b9cc44f4010acd4d74e70cb4235b045e53b2420492ae892eae21884",
+        "evidence_txs": [
+          "7a19f1cf9bb22f4fbccbae2ba75e812b26bf0dfe9d70d9dcc800e8bda2093827"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GC45RHY6HTN7FADJXMJ2JOKN7RLX2S3CI4V2E3OMO6DHXPMRKB65DCLN"
+      }
+    },
+    {
+      "id": "GAZFRP5KJV6S6SVPQH2U5JILZ6BBVBUXT54Z7LOFKDH6JZJA2I5FFYWA",
+      "type": "account",
+      "address": "GAZFRP5KJV6S6SVPQH2U5JILZ6BBVBUXT54Z7LOFKDH6JZJA2I5FFYWA",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "notes": "Payroll wallet that sends multi-op batch payouts to many clean wallets.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-high-velocity",
+      "rationale": "Sends one multi-operation payroll batch to five clean wallets. High outgoing velocity is a common pass-through feature, so it is scored elevated to measure false positives.",
+      "score_rationale": "Deliberately outside the clean band (0-25): models an oracle that over-weights this attack-shaped behaviour, so the eval can measure false positives.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "6aa83f8f812effc228fce0ce9f3e837aced4b869029a7553ab2f08a531d31e02",
+        "evidence_txs": [
+          "0ab00f358150d9e488d0e7fb9c8e0c83197e8db7ae017d4109fa95c400b966fb"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GAZFRP5KJV6S6SVPQH2U5JILZ6BBVBUXT54Z7LOFKDH6JZJA2I5FFYWA"
+      }
+    },
+    {
+      "id": "GBOWLGAUYCVB7N3BKWBSH5PWBRHJHBL3VSJ4DV6WAQBFHMHUEXPSZUUN",
+      "type": "account",
+      "address": "GBOWLGAUYCVB7N3BKWBSH5PWBRHJHBL3VSJ4DV6WAQBFHMHUEXPSZUUN",
+      "label": "clean",
+      "risk_pattern": "cold-start",
+      "notes": "Freshly funded clean wallet with no history.",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-new-user",
+      "rationale": "Funded by Friendbot and receives one ordinary payment. It has no history, which is the clean counterpart of the cold-start scam personas.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "4fc91729d07bd29b8974c8998a922abbe416c3373d9d8433074bb08ff26a2953",
+        "evidence_txs": [
+          "916b95ea75acca035a484efc34048c5b4010c97a24514ca2cdb3e6330e0f8eac"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GBOWLGAUYCVB7N3BKWBSH5PWBRHJHBL3VSJ4DV6WAQBFHMHUEXPSZUUN"
+      }
+    },
+    {
+      "id": "GD42RV27HMRMSRM7AYY4SEI2LKI4NHBTV4ITV3MTYP2FGMAMZ7WNHKHI",
+      "type": "account",
+      "address": "GD42RV27HMRMSRM7AYY4SEI2LKI4NHBTV4ITV3MTYP2FGMAMZ7WNHKHI",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Clean wallet scored exactly on the low/elevated boundary (20).",
+      "fixture_status": "synthetic-only",
+      "persona": "clean-boundary",
+      "rationale": "Ordinary peer payments only. Its score sits on the extension's tier boundary (<= 20 is low) to catch off-by-one errors in tiering.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "cef106b7d892f11fb3de207fc5e2dfc9a90778170cda7277af5c6edd5e48ebde",
+        "evidence_txs": [
+          "92c7dcccbed019986cf0927ea66a3dc881a96e3815be3f017d734299b4f99218",
+          "96cbf9f3911f7b6cffeb3b2ff4f893ec37cf9a81bb5f17ed58ee7fe87cb9cf23"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GD42RV27HMRMSRM7AYY4SEI2LKI4NHBTV4ITV3MTYP2FGMAMZ7WNHKHI"
+      }
+    },
+    {
+      "id": "GDZN4Q4BTNTE235EK63K6HQUDLACTXLIBJ3ZLZFD2QIRPM44PU7NSGZT",
+      "type": "account",
+      "address": "GDZN4Q4BTNTE235EK63K6HQUDLACTXLIBJ3ZLZFD2QIRPM44PU7NSGZT",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "notes": "Forwards incoming funds to a sweeper within the same minute.",
+      "fixture_status": "synthetic-only",
+      "persona": "pass-through-1",
+      "rationale": "Receives a payment from a victim and immediately forwards it to a malicious sweeper. It is a laundering hop, not the final beneficiary, so it is labelled suspicious rather than malicious.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "ea24c1b54bba0d31662d42bc92d30c32a2c5cf77729dd7dfacda80896c0fc632",
+        "evidence_txs": [
+          "385cd1c14d1ad115aff01e95ace09c23b90c1ad62aade4abb687cff72a440fa2",
+          "c777152ed87ad1b34fa78d37f34a5e90b19de8b5e1e0793e746bfc67e841fd04"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GDZN4Q4BTNTE235EK63K6HQUDLACTXLIBJ3ZLZFD2QIRPM44PU7NSGZT"
+      }
+    },
+    {
+      "id": "GDTMMIJ34PPVMEBL25RBUYXD7TEZJVZZFXIIUBH7LHHI4TIUO3EPXR7N",
+      "type": "account",
+      "address": "GDTMMIJ34PPVMEBL25RBUYXD7TEZJVZZFXIIUBH7LHHI4TIUO3EPXR7N",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "notes": "Forwards incoming funds to a sweeper within the same minute.",
+      "fixture_status": "synthetic-only",
+      "persona": "pass-through-2",
+      "rationale": "Receives a payment from a victim and immediately forwards it to a malicious sweeper. It is a laundering hop, not the final beneficiary, so it is labelled suspicious rather than malicious.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "e06dcfbcfb90c1bf552a7a0e79c51bef09e2df096d50894d8fa3f971a110d5d5",
+        "evidence_txs": [
+          "2a2adbef514ab984326a51a56745545fc2dde40ee0f786fd9af206400c486039",
+          "87bb6d08b795b206c1ba1145ab1efaa9b6468dbebb71b355af780c5ead6dff0f",
+          "f3e17bd1c2eadedfbcb29746e3cd8dd679ddfe4f4f2c1131d2dabcb54401bd8d"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GDTMMIJ34PPVMEBL25RBUYXD7TEZJVZZFXIIUBH7LHHI4TIUO3EPXR7N"
+      }
+    },
+    {
+      "id": "GA2BUDKBBV5HIRJROI7AIK27SOCMPK52PHTBOMNHL7TR4GEUCSXCCANL",
+      "type": "account",
+      "address": "GA2BUDKBBV5HIRJROI7AIK27SOCMPK52PHTBOMNHL7TR4GEUCSXCCANL",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "notes": "Forwards incoming funds to a sweeper within the same minute.",
+      "fixture_status": "synthetic-only",
+      "persona": "pass-through-3",
+      "rationale": "Receives a payment from a victim and immediately forwards it to a malicious sweeper. It is a laundering hop, not the final beneficiary, so it is labelled suspicious rather than malicious.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "663f88aaf4b164a086b374c69f44cff75015e55b6889c71ee717cee415b6cfdf",
+        "evidence_txs": [
+          "e6585b1c1ede5f70695a0cfed2b270696627ba1327d3c0d92473964d07f9afbe",
+          "1842fe5db134f4f848653b6a82c20fab61271f5069aed72877520a7e944e12f7"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GA2BUDKBBV5HIRJROI7AIK27SOCMPK52PHTBOMNHL7TR4GEUCSXCCANL"
+      }
+    },
+    {
+      "id": "GCGNNVUBVI6L4N7BI7UHC7JTWN6DLL5PDQ3B3IUFLKOVUQXEXF2I7J6O",
+      "type": "account",
+      "address": "GCGNNVUBVI6L4N7BI7UHC7JTWN6DLL5PDQ3B3IUFLKOVUQXEXF2I7J6O",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "notes": "Pass-through wallet scored one point above the elevated/high boundary.",
+      "fixture_status": "synthetic-only",
+      "persona": "pass-through-boundary",
+      "rationale": "Receives a victim payment and forwards it to a sweeper. Its score of 51 sits just across the elevated/high boundary to stress tiering.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "b1a361f855c80c6a8cdd6d1dc3808951420f1b9161c51be4d3ee811f51467c7e",
+        "evidence_txs": [
+          "f1bc9d05a270e6e576bd31b7f92486433e833200cce450205c9f1bf59728c144",
+          "220eabd809ee8b3a37f850b35d6903ee8549665333c52f6a3dc1b38ca08d4ebf"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GCGNNVUBVI6L4N7BI7UHC7JTWN6DLL5PDQ3B3IUFLKOVUQXEXF2I7J6O"
+      }
+    },
+    {
+      "id": "GDDUZFV6RNTMBKGUUVHKZJ7HTQBFQIVPHKBZUJEKZRVSXXBPCKBLVNPM",
+      "type": "account",
+      "address": "GDDUZFV6RNTMBKGUUVHKZJ7HTQBFQIVPHKBZUJEKZRVSXXBPCKBLVNPM",
+      "label": "suspicious",
+      "risk_pattern": "scam-trustline",
+      "notes": "Holds a trustline to the RUGX rug-pull asset and nothing else.",
+      "fixture_status": "synthetic-only",
+      "persona": "scam-trustline-holder-1",
+      "rationale": "Its only activity is opening a trustline to RUGX, the rug-pull asset. That is a common profile for wallets seeded by a token promoter.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "736fafd1c4b71bcd7d5c9a9a3a8bc683e569799aaf442eb7a3ff8270d2461d8c",
+        "evidence_txs": [
+          "b25f50726af0cb44e721a29277e43859cf028ab32abb49af4f3305e8e3ae9985"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GDDUZFV6RNTMBKGUUVHKZJ7HTQBFQIVPHKBZUJEKZRVSXXBPCKBLVNPM"
+      }
+    },
+    {
+      "id": "GDX5FIUEZBKCNPNNHGUG4JQ2PHIZHF65AQS6HFVHWYOBJXNWLO3MSQKF",
+      "type": "account",
+      "address": "GDX5FIUEZBKCNPNNHGUG4JQ2PHIZHF65AQS6HFVHWYOBJXNWLO3MSQKF",
+      "label": "suspicious",
+      "risk_pattern": "scam-trustline",
+      "notes": "Holds a trustline to the RUGX rug-pull asset and nothing else.",
+      "fixture_status": "synthetic-only",
+      "persona": "scam-trustline-holder-2",
+      "rationale": "Its only activity is opening a trustline to RUGX, the rug-pull asset. That is a common profile for wallets seeded by a token promoter.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "9e1c6b57d7b1bd83eba37aea7da7c3ae4fbb2d59d7939749904ed47a81f6b2e3",
+        "evidence_txs": [
+          "528c8560a80741f0ad70c8260c03a9e8a367dacbcfa95b14304daf016f50ba4b"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GDX5FIUEZBKCNPNNHGUG4JQ2PHIZHF65AQS6HFVHWYOBJXNWLO3MSQKF"
+      }
+    },
+    {
+      "id": "GC55SEG6OFH45ZEYD3X3JUOF7TWYBKT7MNLNHVFG3WVZ445TQICP73XO",
+      "type": "account",
+      "address": "GC55SEG6OFH45ZEYD3X3JUOF7TWYBKT7MNLNHVFG3WVZ445TQICP73XO",
+      "label": "suspicious",
+      "risk_pattern": "sponsored-mule",
+      "notes": "Account created with reserves sponsored by malicious-sponsor.",
+      "fixture_status": "synthetic-only",
+      "persona": "sponsored-mule-1",
+      "rationale": "Created by malicious-sponsor through begin/endSponsoringFutureReserves, so the mule holds no XLM of its own and depends on an attacker-controlled sponsor. sponsored-mule-3 is scored low on purpose: the oracle has not yet linked it to its sponsor (blind spot).",
+      "provenance": {
+        "kind": "testnet",
+        "funded": false,
+        "funding_tx": null,
+        "evidence_txs": [
+          "7c5c3240e364aaa6545b17762b4e1b60c2a7cdb2deb52b8f2e71827783db8bcd"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GC55SEG6OFH45ZEYD3X3JUOF7TWYBKT7MNLNHVFG3WVZ445TQICP73XO"
+      }
+    },
+    {
+      "id": "GDADZAAGDIHTG7AFVE2UWIXGAOUGQUT5KST7FE2YDAJD2XELF3CIONQB",
+      "type": "account",
+      "address": "GDADZAAGDIHTG7AFVE2UWIXGAOUGQUT5KST7FE2YDAJD2XELF3CIONQB",
+      "label": "suspicious",
+      "risk_pattern": "sponsored-mule",
+      "notes": "Account created with reserves sponsored by malicious-sponsor.",
+      "fixture_status": "synthetic-only",
+      "persona": "sponsored-mule-2",
+      "rationale": "Created by malicious-sponsor through begin/endSponsoringFutureReserves, so the mule holds no XLM of its own and depends on an attacker-controlled sponsor. sponsored-mule-3 is scored low on purpose: the oracle has not yet linked it to its sponsor (blind spot).",
+      "provenance": {
+        "kind": "testnet",
+        "funded": false,
+        "funding_tx": null,
+        "evidence_txs": [
+          "e59d47e9b64a728c0a0be86fddafa797f8ea2b6ad383420aaf35c59a7f071018"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GDADZAAGDIHTG7AFVE2UWIXGAOUGQUT5KST7FE2YDAJD2XELF3CIONQB"
+      }
+    },
+    {
+      "id": "GDHFMEK3B2CFAM7GZ7D3MR5UNYNZLYXITY3B6UZBTZI26EFY334SMVPY",
+      "type": "account",
+      "address": "GDHFMEK3B2CFAM7GZ7D3MR5UNYNZLYXITY3B6UZBTZI26EFY334SMVPY",
+      "label": "suspicious",
+      "risk_pattern": "sponsored-mule",
+      "notes": "Account created with reserves sponsored by malicious-sponsor.",
+      "fixture_status": "synthetic-only",
+      "persona": "sponsored-mule-3",
+      "rationale": "Created by malicious-sponsor through begin/endSponsoringFutureReserves, so the mule holds no XLM of its own and depends on an attacker-controlled sponsor. sponsored-mule-3 is scored low on purpose: the oracle has not yet linked it to its sponsor (blind spot).",
+      "score_rationale": "Deliberately outside the suspicious band (40-70): models an oracle that has not yet linked this mule to its sponsor (blind spot).",
+      "provenance": {
+        "kind": "testnet",
+        "funded": false,
+        "funding_tx": null,
+        "evidence_txs": [
+          "6e8f3925c2ba73e729fbb62291596c7950275ab6233c2581d484c21168cb7400"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GDHFMEK3B2CFAM7GZ7D3MR5UNYNZLYXITY3B6UZBTZI26EFY334SMVPY"
+      }
+    },
+    {
+      "id": "GAVRLCQLYBWYVMVP3GPUA25UW7LRYR5PND2SA7XKQ5EBI7FUQV7337IG",
+      "type": "account",
+      "address": "GAVRLCQLYBWYVMVP3GPUA25UW7LRYR5PND2SA7XKQ5EBI7FUQV7337IG",
+      "label": "suspicious",
+      "risk_pattern": "memo-impersonation",
+      "notes": "Sends dust payments with support/refund memos, then asks victims for a fee.",
+      "fixture_status": "synthetic-only",
+      "persona": "memo-impersonator-1",
+      "rationale": "Sends 0.0000001 XLM dust payments whose memo impersonates an exchange support desk (\"Claim refund: x.invalid\") and receives a \"verification fee\" from a victim. This is social-engineering impersonation; the fees are small, so it is suspicious rather than malicious.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "4d4288f494ed1f6f5d7c5de3b940af650d18697469118e1ea77f1cfa56b7f62c",
+        "evidence_txs": [
+          "cb06b29a7f8e52358a9b3c188b99ba391bd7915080ec8883d5b7d1a8e8b0a1bb",
+          "98ac73d117c8d047e0f147750995a1f0bc0394c178db422c883dc8af2cf860d8"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GAVRLCQLYBWYVMVP3GPUA25UW7LRYR5PND2SA7XKQ5EBI7FUQV7337IG"
+      }
+    },
+    {
+      "id": "GB7LRM52TIH4XNETWIMIQJU4TJIQPYVLVVM52BKHNC4WMATMM4XE7NRN",
+      "type": "account",
+      "address": "GB7LRM52TIH4XNETWIMIQJU4TJIQPYVLVVM52BKHNC4WMATMM4XE7NRN",
+      "label": "suspicious",
+      "risk_pattern": "memo-impersonation",
+      "notes": "Sends dust payments with support/refund memos, then asks victims for a fee.",
+      "fixture_status": "synthetic-only",
+      "persona": "memo-impersonator-2",
+      "rationale": "Sends 0.0000001 XLM dust payments whose memo impersonates an exchange support desk (\"Claim refund: x.invalid\") and receives a \"verification fee\" from a victim. This is social-engineering impersonation; the fees are small, so it is suspicious rather than malicious.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "8bed9a876cbe024925c979eaf23849aa38a92398ce21a56aa3a88d445c2f68e1",
+        "evidence_txs": [
+          "8d0451ec755537266c8fdfd8612b9160bad2ae863d852cd0b476bfa7278875ef"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GB7LRM52TIH4XNETWIMIQJU4TJIQPYVLVVM52BKHNC4WMATMM4XE7NRN"
+      }
+    },
+    {
+      "id": "GAKZPSMQ5I57CHXEBDCXERM7NP6BKHH5EE7ER453D4H2OC5U7QBBSUAC",
+      "type": "account",
+      "address": "GAKZPSMQ5I57CHXEBDCXERM7NP6BKHH5EE7ER453D4H2OC5U7QBBSUAC",
+      "label": "suspicious",
+      "risk_pattern": "clawback-enabled",
+      "notes": "Issuer of CLAW, an asset with AUTH_REVOCABLE and AUTH_CLAWBACK_ENABLED set.",
+      "fixture_status": "synthetic-only",
+      "persona": "claw-issuer",
+      "rationale": "Sets AUTH_REVOCABLE | AUTH_CLAWBACK_ENABLED, issues CLAW to a holder and claws part of it back. Clawback has legitimate (regulated-asset) uses, so holders are exposed to issuer discretion but not to theft. Suspicious, not malicious.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "d12c9b142a8f12fe641f9aa47f28b6773b67ce50c686d78543e46b0b62ec6796",
+        "evidence_txs": [
+          "a24e68378d61b5518861f384a22cfb889a984ed07a076f46216439dcd04d77f4",
+          "1d5ebf382f67ec5c584467911dfdee14734ec6a3318df67172b7247539621f01",
+          "d1a5a3e2c9a7cf319e7915d6984d4ceb30b4529c770962306abe914fb43c9ca4"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GAKZPSMQ5I57CHXEBDCXERM7NP6BKHH5EE7ER453D4H2OC5U7QBBSUAC"
+      }
+    },
+    {
+      "id": "GCVPYQ3XTA5BQPMTEW6UQ5YAJFFZPRQ7FZ4WDPK2NOJNQSRXYK2OYNLL",
+      "type": "account",
+      "address": "GCVPYQ3XTA5BQPMTEW6UQ5YAJFFZPRQ7FZ4WDPK2NOJNQSRXYK2OYNLL",
+      "label": "malicious",
+      "risk_pattern": "sweep",
+      "notes": "Final collection wallet for funds forwarded by pass-through hops.",
+      "fixture_status": "synthetic-only",
+      "persona": "sweeper-1",
+      "rationale": "Receives forwarded victim funds from pass-through wallets and path payments from victims. sweeper-3 is scored 72 (high, not critical) on purpose: the warning still fires but at the wrong severity.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "ddd5c91131a850493e6140e54cb214d7fa849234c17e9f8749fed873ae20236a",
+        "evidence_txs": [
+          "bcbc1c08dbcab826b2d9b34ca4cb98b0d482a9b1a96502e0c37c2a867889376e",
+          "c777152ed87ad1b34fa78d37f34a5e90b19de8b5e1e0793e746bfc67e841fd04",
+          "ebc76ecca01c3a1f5598d88550541fb6b829ef090ca68f6ec6880788ca8d3db1"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GCVPYQ3XTA5BQPMTEW6UQ5YAJFFZPRQ7FZ4WDPK2NOJNQSRXYK2OYNLL"
+      }
+    },
+    {
+      "id": "GA5DJT4EJK245OC76KO4SR5HGKWSU4DQEEWYOEE3VK5FC5IT3WURHBKT",
+      "type": "account",
+      "address": "GA5DJT4EJK245OC76KO4SR5HGKWSU4DQEEWYOEE3VK5FC5IT3WURHBKT",
+      "label": "malicious",
+      "risk_pattern": "sweep",
+      "notes": "Final collection wallet for funds forwarded by pass-through hops.",
+      "fixture_status": "synthetic-only",
+      "persona": "sweeper-2",
+      "rationale": "Receives forwarded victim funds from pass-through wallets and path payments from victims. sweeper-3 is scored 72 (high, not critical) on purpose: the warning still fires but at the wrong severity.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "be4a6ecdccb92c63698cd4453bdeb13854bb3867c4978d38f3d7f9c17f3c356a",
+        "evidence_txs": [
+          "058080dea5e53972d0582a668d6c3cf5eac865ea608af76eb274c9c45a2e5e5e",
+          "f3e17bd1c2eadedfbcb29746e3cd8dd679ddfe4f4f2c1131d2dabcb54401bd8d",
+          "764abf622ad529ccde8778fa27cc0cd88b608d38f253c247cabc58383764b78f"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GA5DJT4EJK245OC76KO4SR5HGKWSU4DQEEWYOEE3VK5FC5IT3WURHBKT"
+      }
+    },
+    {
+      "id": "GBJKRDZJKYJSTZJFD4ULXURD7HXQNCY3LF2Y5MPUCYVQNAUKHBUSX34F",
+      "type": "account",
+      "address": "GBJKRDZJKYJSTZJFD4ULXURD7HXQNCY3LF2Y5MPUCYVQNAUKHBUSX34F",
+      "label": "malicious",
+      "risk_pattern": "sweep",
+      "notes": "Final collection wallet for funds forwarded by pass-through hops.",
+      "fixture_status": "synthetic-only",
+      "persona": "sweeper-3",
+      "rationale": "Receives forwarded victim funds from pass-through wallets and path payments from victims. sweeper-3 is scored 72 (high, not critical) on purpose: the warning still fires but at the wrong severity.",
+      "score_rationale": "Deliberately outside the malicious band (75-100): models an under-confident oracle, so the warning fires at the wrong severity (high instead of critical).",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "e6b2d41b26021beca686b89ac5de89ab2f9f114bde174ec3c6c1c37d33c1460a",
+        "evidence_txs": [
+          "1842fe5db134f4f848653b6a82c20fab61271f5069aed72877520a7e944e12f7",
+          "220eabd809ee8b3a37f850b35d6903ee8549665333c52f6a3dc1b38ca08d4ebf",
+          "87a180b305258e0e128df63cff13b214bf5f335584ce2507b60cdac38b24e917"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GBJKRDZJKYJSTZJFD4ULXURD7HXQNCY3LF2Y5MPUCYVQNAUKHBUSX34F"
+      }
+    },
+    {
+      "id": "GBW5SCORDKP5OXJ6C5WJOH3JG56MVJID6J23YHQ6NPNWQMCYJWBC2NTL",
+      "type": "account",
+      "address": "GBW5SCORDKP5OXJ6C5WJOH3JG56MVJID6J23YHQ6NPNWQMCYJWBC2NTL",
+      "label": "malicious",
+      "risk_pattern": "account-merge-drain",
+      "notes": "Receives accountMerge operations that close victim accounts.",
+      "fixture_status": "synthetic-only",
+      "persona": "merge-drainer-1",
+      "rationale": "Is the destination of accountMerge operations signed by victims, which transfer the victim's entire XLM balance and delete the account.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "5e0c3c220a1a38cfeb8d94345b8ed929ad596efa855b2486464018d712c03b29",
+        "evidence_txs": [
+          "30627b7d23419f13b2373c3bdd01916d021d811df9155a09ed29b1529f835e01"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GBW5SCORDKP5OXJ6C5WJOH3JG56MVJID6J23YHQ6NPNWQMCYJWBC2NTL"
+      }
+    },
+    {
+      "id": "GAR4BJKBE4T347HKAV3G5HUXQYRIVFQKYBRBXP3OA43XLUTVF4L2R6SN",
+      "type": "account",
+      "address": "GAR4BJKBE4T347HKAV3G5HUXQYRIVFQKYBRBXP3OA43XLUTVF4L2R6SN",
+      "label": "malicious",
+      "risk_pattern": "account-merge-drain",
+      "notes": "Receives accountMerge operations that close victim accounts.",
+      "fixture_status": "synthetic-only",
+      "persona": "merge-drainer-2",
+      "rationale": "Is the destination of accountMerge operations signed by victims, which transfer the victim's entire XLM balance and delete the account.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "fa6fb3dba5d553839e8068a205a5b3c65b3f13702982f014819b9dbfaeb7ead4",
+        "evidence_txs": [
+          "52d4395fb909a2ccb4a33e36a546a4b74b2bc8f89a0b1d3707c597bdaac41d4c"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GAR4BJKBE4T347HKAV3G5HUXQYRIVFQKYBRBXP3OA43XLUTVF4L2R6SN"
+      }
+    },
+    {
+      "id": "GD6LSHONMBWCVJHRGTZ6KYUQ6OGOZBUB55FM5NO7WSX2Z5475C3CR5ZS",
+      "type": "account",
+      "address": "GD6LSHONMBWCVJHRGTZ6KYUQ6OGOZBUB55FM5NO7WSX2Z5475C3CR5ZS",
+      "label": "malicious",
+      "risk_pattern": "account-merge-drain",
+      "notes": "Receives accountMerge operations that close victim accounts.",
+      "fixture_status": "synthetic-only",
+      "persona": "merge-drainer-3",
+      "rationale": "Is the destination of accountMerge operations signed by victims, which transfer the victim's entire XLM balance and delete the account.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "700e42fdbd146eb21517df091c1c5b33ff948103eb39ff12587f3c57a23b3d53",
+        "evidence_txs": [
+          "4621fe1266ce67b07aa07c5a762cb8ceb2d14ad02899583fa619d9b610c5e009"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GD6LSHONMBWCVJHRGTZ6KYUQ6OGOZBUB55FM5NO7WSX2Z5475C3CR5ZS"
+      }
+    },
+    {
+      "id": "GAIYX5ASWINTHEZJYYJXPOUJBDPHTSK32I3YERSYXUDKBMIX5DKMJ4BW",
+      "type": "account",
+      "address": "GAIYX5ASWINTHEZJYYJXPOUJBDPHTSK32I3YERSYXUDKBMIX5DKMJ4BW",
+      "label": "malicious",
+      "risk_pattern": "signer-takeover",
+      "notes": "Key added as a signer on victim accounts, then used to drain them.",
+      "fixture_status": "synthetic-only",
+      "persona": "takeover-attacker-1",
+      "rationale": "Is added as a high-weight signer on victim accounts via setOptions. takeover-attacker-1 then signs a payment that drains its victim, proving control on-chain.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "94424f9a21f1f6d54e9234d7a9738d698591c05845c4dd2d73f6b0dd65fe3bb9",
+        "evidence_txs": [
+          "9fc77173abd2b5a23cb3a94dd27e56100e08344e4e01415446e751e6c9a8f6ff",
+          "c900362eaba30b6d28509cb9c9fc3e61dacbb0f3f0ff439890d4b052ea9831ae"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GAIYX5ASWINTHEZJYYJXPOUJBDPHTSK32I3YERSYXUDKBMIX5DKMJ4BW"
+      }
+    },
+    {
+      "id": "GCCF57IS6YC6JNLJZOCYIW3NKI2PNB6SFTZR6G2VAQ2SX3WSSKCIJNOR",
+      "type": "account",
+      "address": "GCCF57IS6YC6JNLJZOCYIW3NKI2PNB6SFTZR6G2VAQ2SX3WSSKCIJNOR",
+      "label": "malicious",
+      "risk_pattern": "signer-takeover",
+      "notes": "Key added as a signer on victim accounts, then used to drain them.",
+      "fixture_status": "synthetic-only",
+      "persona": "takeover-attacker-2",
+      "rationale": "Is added as a high-weight signer on victim accounts via setOptions. takeover-attacker-1 then signs a payment that drains its victim, proving control on-chain.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "a03761f3e615f6a1d5b2762f86d966c62b8ac547a5bbf428dccfea0e351788f7",
+        "evidence_txs": [
+          "9ec4838e58e6061f586b7abdcc002617e862afdbfe59560c6028979d3036f166"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GCCF57IS6YC6JNLJZOCYIW3NKI2PNB6SFTZR6G2VAQ2SX3WSSKCIJNOR"
+      }
+    },
+    {
+      "id": "GBYHGCXYWOUTFTIAOTAXXP27JNTBMGRIHK66XKCNKHXW5JCYTADHTSZX",
+      "type": "account",
+      "address": "GBYHGCXYWOUTFTIAOTAXXP27JNTBMGRIHK66XKCNKHXW5JCYTADHTSZX",
+      "label": "malicious",
+      "risk_pattern": "signer-takeover",
+      "notes": "Key added as a signer on victim accounts, then used to drain them.",
+      "fixture_status": "synthetic-only",
+      "persona": "takeover-attacker-3",
+      "rationale": "Is added as a high-weight signer on victim accounts via setOptions. takeover-attacker-1 then signs a payment that drains its victim, proving control on-chain.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "374a3ed6e6caa3172e044979258072888c5edbaf74681c5996b0e019b65de860",
+        "evidence_txs": [
+          "87a180b305258e0e128df63cff13b214bf5f335584ce2507b60cdac38b24e917"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GBYHGCXYWOUTFTIAOTAXXP27JNTBMGRIHK66XKCNKHXW5JCYTADHTSZX"
+      }
+    },
+    {
+      "id": "GANEF5PKENDRBIPY44IFZL4IQBYSOTUZLTMZEFPPZLA6TGRI4PXSIV2X",
+      "type": "account",
+      "address": "GANEF5PKENDRBIPY44IFZL4IQBYSOTUZLTMZEFPPZLA6TGRI4PXSIV2X",
+      "label": "malicious",
+      "risk_pattern": "phishing-drainer",
+      "notes": "Sends dust \"test\" payments to targets, then receives a large drain.",
+      "fixture_status": "synthetic-only",
+      "persona": "phishing-drainer-1",
+      "rationale": "Sends 0.0000001 XLM test payments to targets before receiving a large payment from a victim. phishing-drainer-2 also pays the fee-bump fee on the drain (\"gasless\" lure).",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "f403838e3acc6b0007a3c4fd9e8a8b87aab287d4cfefd4fb114cdf2cbaed9ca7",
+        "evidence_txs": [
+          "ee2a9f674a9d5aff45baa51e26cac1ae83a98683a17a94276c019398dc0e12d4",
+          "5faafd1e6872102509df34dd3f08889b93fcfafffd3fb6214ecb2d329936117b"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GANEF5PKENDRBIPY44IFZL4IQBYSOTUZLTMZEFPPZLA6TGRI4PXSIV2X"
+      }
+    },
+    {
+      "id": "GD6LERCQFQQ5OL3KJT4W2NVQWXRDDW5CGWS7IF6KJ7DNSG7O6DJF6B6S",
+      "type": "account",
+      "address": "GD6LERCQFQQ5OL3KJT4W2NVQWXRDDW5CGWS7IF6KJ7DNSG7O6DJF6B6S",
+      "label": "malicious",
+      "risk_pattern": "phishing-drainer",
+      "notes": "Sends dust \"test\" payments to targets, then receives a large drain.",
+      "fixture_status": "synthetic-only",
+      "persona": "phishing-drainer-2",
+      "rationale": "Sends 0.0000001 XLM test payments to targets before receiving a large payment from a victim. phishing-drainer-2 also pays the fee-bump fee on the drain (\"gasless\" lure).",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "835060abccf2205bf482334ee9274c8c019ffd66d665da1dcc6bb1f1bac9301a",
+        "evidence_txs": [
+          "9b81d96feef9ef8a285a5a6704221066f9d917d91f2d64a5fa5e346ba0d4268c",
+          "5faafd1e6872102509df34dd3f08889b93fcfafffd3fb6214ecb2d329936117b",
+          "282c523c8bfb8e0055ce6608f82d81a2f8db47de450bf50e02300eb91c362057"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GD6LERCQFQQ5OL3KJT4W2NVQWXRDDW5CGWS7IF6KJ7DNSG7O6DJF6B6S"
+      }
+    },
+    {
+      "id": "GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+      "type": "account",
+      "address": "GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+      "label": "malicious",
+      "risk_pattern": "rug-pull",
+      "notes": "Issuer of RUGX; holds all supply and sells it on the DEX.",
+      "fixture_status": "synthetic-only",
+      "persona": "rug-issuer",
+      "rationale": "Issues RUGX, keeps the whole supply in its own control and posts sell offers so victims can buy a token with no outside liquidity.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "72eeabe26b107accf764d783b433a5367fcd731dc0d861b88bc48902784b1016",
+        "evidence_txs": [
+          "f5f9e3fbb752cbfd15c13a3f8fa73ab7724c8009a646fcc0dafe99d8a126b93a",
+          "85acb2cab7a626c17a5848660163b7e80c9eca8e29af6f6440fdaf8d60295b83"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP"
+      }
+    },
+    {
+      "id": "GCEEOBWVRSYQCMNIXOWFFXRQGNLIUERY753NYY4TPM6AU36DQLNUVVTP",
+      "type": "account",
+      "address": "GCEEOBWVRSYQCMNIXOWFFXRQGNLIUERY753NYY4TPM6AU36DQLNUVVTP",
+      "label": "malicious",
+      "risk_pattern": "claimable-balance-spam",
+      "notes": "Issuer of AIRDROP; sprays unsolicited claimable balances at targets.",
+      "fixture_status": "synthetic-only",
+      "persona": "airdrop-issuer",
+      "rationale": "Creates unsolicited claimable balances of its own AIRDROP asset for targets so they open a trustline and engage. Airdrop spam is a lure for follow-on phishing.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "d23b025658f9d9477ac90d686d22fb479a509c4b56bd59b118b9f14abb505b8e",
+        "evidence_txs": [
+          "7e946e1b6d4d2db9836f50f349cede6f54377e51d0ecb6649954fad61a325ffe"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GCEEOBWVRSYQCMNIXOWFFXRQGNLIUERY753NYY4TPM6AU36DQLNUVVTP"
+      }
+    },
+    {
+      "id": "GC4X3SL3SG6LAHMXPYNBMDSTPE67UIM5UWOTQP5RDOIFCOV4J7NXN5KP",
+      "type": "account",
+      "address": "GC4X3SL3SG6LAHMXPYNBMDSTPE67UIM5UWOTQP5RDOIFCOV4J7NXN5KP",
+      "label": "malicious",
+      "risk_pattern": "soroban-approval-drain",
+      "notes": "Unknown Soroban spender that receives large allowances, then calls transfer_from.",
+      "fixture_status": "synthetic-only",
+      "persona": "approval-drainer-1",
+      "rationale": "Receives a near-unlimited Soroban token approve() from a victim, then calls transfer_from to move the victim's balance to itself, executed on-chain.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "648b09bfdce12ee2369ba47bb546959c0526975adf9c64dd48efbd1d6ae8f5d4",
+        "evidence_txs": [
+          "7e5a0c6c53003cbaac6ed8f58a09e5de9946e53c797edb3786210f18ec25407b",
+          "480bb0f082a99d3a12350677ada3178a49efedb08dff39d45574fe7fab419338",
+          "06b3be6f5736fdb4ca6991be9eb11cfe6fe5763e4f1a9e16bad9471ca73006e1"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GC4X3SL3SG6LAHMXPYNBMDSTPE67UIM5UWOTQP5RDOIFCOV4J7NXN5KP"
+      }
+    },
+    {
+      "id": "GBIRZS2KE6HTNQXHOUBCXR5OYGSMB6MKQEYPOPLMZSIM57B4FPH3XUJE",
+      "type": "account",
+      "address": "GBIRZS2KE6HTNQXHOUBCXR5OYGSMB6MKQEYPOPLMZSIM57B4FPH3XUJE",
+      "label": "malicious",
+      "risk_pattern": "soroban-approval-drain",
+      "notes": "Unknown Soroban spender that receives large allowances, then calls transfer_from.",
+      "fixture_status": "synthetic-only",
+      "persona": "approval-drainer-2",
+      "rationale": "Receives a near-unlimited Soroban token approve() from a victim, then calls transfer_from to move the victim's balance to itself, executed on-chain.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "c234e47e9be82b70b6aea8dbd72e5496b3f1e59b0545334794e5167ad1f91c08",
+        "evidence_txs": [
+          "d1aeb732721dabbb61c12a27b58c93f8217425f8e0d10b4c921e58eada6aea56",
+          "968066731c1b4c6b1cf21137fd0fb915948017dce07317067e77636750620269"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GBIRZS2KE6HTNQXHOUBCXR5OYGSMB6MKQEYPOPLMZSIM57B4FPH3XUJE"
+      }
+    },
+    {
+      "id": "GCRZEOWD6J5TTYGK7QLCLUKFSQFJSK3PGJTTTZ7GICT35LNHNH6GRYPA",
+      "type": "account",
+      "address": "GCRZEOWD6J5TTYGK7QLCLUKFSQFJSK3PGJTTTZ7GICT35LNHNH6GRYPA",
+      "label": "malicious",
+      "risk_pattern": "cold-start",
+      "notes": "Freshly funded scam collection wallet with no history.",
+      "fixture_status": "synthetic-only",
+      "persona": "cold-start-scam-1",
+      "rationale": "Designated by the scenario as a scam collection wallet but funded moments before use, with no history. Its label is ground truth by construction. Its stub score is deliberately low to model the oracle's cold-start blind spot, so these fixtures are expected misses that measure that gap.",
+      "score_rationale": "Deliberately outside the malicious band (75-100): a reputation oracle has no history for a freshly funded wallet (cold-start blind spot). These fixtures measure that gap.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "099b714b28b495626c07dd61802d753277452c97e2e24e45530eff96a6e42592",
+        "evidence_txs": [
+          "1b011f69ae40129ad5a40abb9c6830b0a0310b02c148d3e54beecfd1a932f19e"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GCRZEOWD6J5TTYGK7QLCLUKFSQFJSK3PGJTTTZ7GICT35LNHNH6GRYPA"
+      }
+    },
+    {
+      "id": "GBOMQDX24COQOKU3KVLDXKBRGM5ZANX6PO43AXUR4AM3CX7MX5OW6GNP",
+      "type": "account",
+      "address": "GBOMQDX24COQOKU3KVLDXKBRGM5ZANX6PO43AXUR4AM3CX7MX5OW6GNP",
+      "label": "malicious",
+      "risk_pattern": "cold-start",
+      "notes": "Freshly funded scam collection wallet with no history.",
+      "fixture_status": "synthetic-only",
+      "persona": "cold-start-scam-2",
+      "rationale": "Designated by the scenario as a scam collection wallet but funded moments before use, with no history. Its label is ground truth by construction. Its stub score is deliberately low to model the oracle's cold-start blind spot, so these fixtures are expected misses that measure that gap.",
+      "score_rationale": "Deliberately outside the malicious band (75-100): a reputation oracle has no history for a freshly funded wallet (cold-start blind spot). These fixtures measure that gap.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "c712542f70df3be20722d5e1356a32e4b887a7cbb24c055f6c2fabdbda97e535",
+        "evidence_txs": [],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GBOMQDX24COQOKU3KVLDXKBRGM5ZANX6PO43AXUR4AM3CX7MX5OW6GNP"
+      }
+    },
+    {
+      "id": "GCHW7QBOMDOC452S5EAX7CVDE76JDN7P7752ZIGWRL72CPMYA5V2ZSIL",
+      "type": "account",
+      "address": "GCHW7QBOMDOC452S5EAX7CVDE76JDN7P7752ZIGWRL72CPMYA5V2ZSIL",
+      "label": "malicious",
+      "risk_pattern": "cold-start",
+      "notes": "Freshly funded scam collection wallet with no history.",
+      "fixture_status": "synthetic-only",
+      "persona": "cold-start-scam-3",
+      "rationale": "Designated by the scenario as a scam collection wallet but funded moments before use, with no history. Its label is ground truth by construction. Its stub score is deliberately low to model the oracle's cold-start blind spot, so these fixtures are expected misses that measure that gap.",
+      "score_rationale": "Deliberately outside the malicious band (75-100): a reputation oracle has no history for a freshly funded wallet (cold-start blind spot). These fixtures measure that gap.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "8040ddab4030c3e8f39f19ac5813db7e690787b6281a84378e9fcfa66ea4a642",
+        "evidence_txs": [],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GCHW7QBOMDOC452S5EAX7CVDE76JDN7P7752ZIGWRL72CPMYA5V2ZSIL"
+      }
+    },
+    {
+      "id": "GCTCSJRFEGW3Y247ZLK4P76DNKARYR7SADKGFQGNHVZ2C4RI3JG7TKVJ",
+      "type": "account",
+      "address": "GCTCSJRFEGW3Y247ZLK4P76DNKARYR7SADKGFQGNHVZ2C4RI3JG7TKVJ",
+      "label": "malicious",
+      "risk_pattern": "sponsored-mule",
+      "notes": "Sponsors reserves for mule accounts it controls.",
+      "fixture_status": "synthetic-only",
+      "persona": "malicious-sponsor",
+      "rationale": "Creates and sponsors the reserves of three mule accounts, so they hold no XLM of their own. This builds mule infrastructure.",
+      "provenance": {
+        "kind": "testnet",
+        "funded": true,
+        "funding_tx": "6c9a2b792b9b87fbb0280b0021699fa4b00368ce95bf8388f2f5d4c95ffb1f6f",
+        "evidence_txs": [
+          "e59d47e9b64a728c0a0be86fddafa797f8ea2b6ad383420aaf35c59a7f071018",
+          "6e8f3925c2ba73e729fbb62291596c7950275ab6233c2581d484c21168cb7400",
+          "7c5c3240e364aaa6545b17762b4e1b60c2a7cdb2deb52b8f2e71827783db8bcd"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/account/GCTCSJRFEGW3Y247ZLK4P76DNKARYR7SADKGFQGNHVZ2C4RI3JG7TKVJ"
+      }
+    },
+    {
+      "id": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+      "type": "asset",
+      "asset_code": "TUSD",
+      "asset_issuer": "GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Synthetic test stablecoin held by many clean wallets.",
+      "fixture_status": "synthetic-only",
+      "persona": "asset-tusd",
+      "rationale": "Issued by a clean issuer, distributed widely and traded on a two-sided market.",
+      "provenance": {
+        "kind": "testnet",
+        "evidence_txs": [
+          "3e4401f4bbeff2d09010f97856ea7a6916afadd6eb30020356599ba39008dc9e",
+          "d77f08a0ad07d081f81846e39d8b4afbeeb81b8503048d7012219900adbf658e",
+          "937d607dd0dcdbcce5a242b8a60fc25ff139b4fe0da18faf2b6dcef7f9d624f5",
+          "30ba48454574de9918031be66fa54528da21a9fc3738a44fd31453c7efd03050",
+          "7e5a0c6c53003cbaac6ed8f58a09e5de9946e53c797edb3786210f18ec25407b",
+          "bcbc1c08dbcab826b2d9b34ca4cb98b0d482a9b1a96502e0c37c2a867889376e",
+          "dc79491a5ec07b55297623dc23e5679cfc3f14010264be2eef09acb115628e02",
+          "2a2adbef514ab984326a51a56745545fc2dde40ee0f786fd9af206400c486039",
+          "31571ba71499522e4850944f0f103ecb1994bb4816fe85e02b8de061feb0470c",
+          "0a47646efaeaa44d5b6a0137c8481b8059352040586b833fc742b6ea6adc5c8e",
+          "6ceb354493ff3b699ed9c96a581d245445313c2744329c2aadc62261c6cb4013",
+          "058080dea5e53972d0582a668d6c3cf5eac865ea608af76eb274c9c45a2e5e5e",
+          "7014792a5b88dc1f6aaa27f05c842a731adadba30876d44d36f8f07bba855042",
+          "238aa041e269e194579507f0ae2859b2fee94471e41d8f89e85e64d025dcbb3e",
+          "0829fdbf2208c7835f34ae9f08b4ada22566133100af0b6249a3f42e547a50f2",
+          "4429133889fb64614f08d156e07edb8d13810d431bf8f40a4c3be102a4e724c4",
+          "12a139c385756a233e2d9c484f2fecb68c370bdd15c2c301ccd7fdafc02168b0",
+          "789e7d95ad366512c9190e32489e40c3da88aefc5939406790aacdefdbbd7445",
+          "9cbd300d6a4ff2037fd8374959f24cad7cfe6259219f43142964410c334a5c0a",
+          "c1d2f6da5232e006e77d3ba3bb4592df326e8535c9d934add3e5d19b87e2e2fe",
+          "bdf477d51cf91e1df11f86a45c1ad00f5dba292b61822f6ce29e034e2c2d9e35",
+          "6a55e65ebb9fd443e9b394beaed12aedd964e0297e85713d0b9f27a12162b442",
+          "87bb6d08b795b206c1ba1145ab1efaa9b6468dbebb71b355af780c5ead6dff0f",
+          "f3e17bd1c2eadedfbcb29746e3cd8dd679ddfe4f4f2c1131d2dabcb54401bd8d",
+          "ebc76ecca01c3a1f5598d88550541fb6b829ef090ca68f6ec6880788ca8d3db1"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/asset/TUSD-GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ"
+      }
+    },
+    {
+      "id": "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+      "type": "contract",
+      "address": "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+      "contract_kind": "stellar-asset-contract",
+      "wraps_asset": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+      "label": "clean",
+      "risk_pattern": "none",
+      "notes": "Stellar Asset Contract (SAC) for TUSD. Synthetic test stablecoin held by many clean wallets.",
+      "fixture_status": "synthetic-only",
+      "persona": "sac-tusd",
+      "rationale": "SAC wrapper inherits the asset's label. Issued by a clean issuer, distributed widely and traded on a two-sided market.",
+      "provenance": {
+        "kind": "testnet",
+        "evidence_txs": [
+          "77cbd3c37d749737d10bbe16830fe9c67ee58bb0d93e39c327f3d7407c2ebe51",
+          "a35722fbfce49a7e483583ff9f8808f8d9af73601ddb2df094f13469169ff364",
+          "764abf622ad529ccde8778fa27cc0cd88b608d38f253c247cabc58383764b78f",
+          "480bb0f082a99d3a12350677ada3178a49efedb08dff39d45574fe7fab419338",
+          "06b3be6f5736fdb4ca6991be9eb11cfe6fe5763e4f1a9e16bad9471ca73006e1"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/contract/CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH"
+      }
+    },
+    {
+      "id": "CLAW:GAKZPSMQ5I57CHXEBDCXERM7NP6BKHH5EE7ER453D4H2OC5U7QBBSUAC",
+      "type": "asset",
+      "asset_code": "CLAW",
+      "asset_issuer": "GAKZPSMQ5I57CHXEBDCXERM7NP6BKHH5EE7ER453D4H2OC5U7QBBSUAC",
+      "label": "suspicious",
+      "risk_pattern": "clawback-enabled",
+      "notes": "Asset with AUTH_CLAWBACK_ENABLED; the issuer can reclaim holder balances.",
+      "fixture_status": "synthetic-only",
+      "persona": "asset-claw",
+      "rationale": "Issued with AUTH_REVOCABLE | AUTH_CLAWBACK_ENABLED, and a clawback is executed on-chain against a holder. A user trusting it should be told the issuer can take the balance back.",
+      "provenance": {
+        "kind": "testnet",
+        "evidence_txs": [
+          "48f1820db8093cd0e7406d08a6df7da0dced0480d4c715bb5ad4d845041fe874",
+          "1d5ebf382f67ec5c584467911dfdee14734ec6a3318df67172b7247539621f01",
+          "d1a5a3e2c9a7cf319e7915d6984d4ceb30b4529c770962306abe914fb43c9ca4"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/asset/CLAW-GAKZPSMQ5I57CHXEBDCXERM7NP6BKHH5EE7ER453D4H2OC5U7QBBSUAC"
+      }
+    },
+    {
+      "id": "RUGX:GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+      "type": "asset",
+      "asset_code": "RUGX",
+      "asset_issuer": "GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+      "label": "malicious",
+      "risk_pattern": "rug-pull",
+      "notes": "Rug-pull token: all supply with the issuer, sold to victims on the DEX.",
+      "fixture_status": "synthetic-only",
+      "persona": "asset-rugx",
+      "rationale": "All supply is held and sold by rug-issuer, and there is no independent liquidity. Its SAC wrapper carries the same label.",
+      "provenance": {
+        "kind": "testnet",
+        "evidence_txs": [
+          "528c8560a80741f0ad70c8260c03a9e8a367dacbcfa95b14304daf016f50ba4b",
+          "b25f50726af0cb44e721a29277e43859cf028ab32abb49af4f3305e8e3ae9985",
+          "f5f9e3fbb752cbfd15c13a3f8fa73ab7724c8009a646fcc0dafe99d8a126b93a",
+          "047effb6f722e3b4785308885aec431ef7a86e74d2562a68cee6a10e298727b2",
+          "87a180b305258e0e128df63cff13b214bf5f335584ce2507b60cdac38b24e917",
+          "41adabd455a78665219a9f8082435be7bd828e244a31d4b6ab3b6fef422fe54b"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/asset/RUGX-GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP"
+      }
+    },
+    {
+      "id": "CA7ILM2HOASK5XR4GCKYH5M7BCP2FXHZRPFN3RF57XUN75UCO562DTYS",
+      "type": "contract",
+      "address": "CA7ILM2HOASK5XR4GCKYH5M7BCP2FXHZRPFN3RF57XUN75UCO562DTYS",
+      "contract_kind": "stellar-asset-contract",
+      "wraps_asset": "RUGX:GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+      "label": "malicious",
+      "risk_pattern": "rug-pull",
+      "notes": "Stellar Asset Contract (SAC) for RUGX. Rug-pull token: all supply with the issuer, sold to victims on the DEX.",
+      "fixture_status": "synthetic-only",
+      "persona": "sac-rugx",
+      "rationale": "SAC wrapper inherits the asset's label. All supply is held and sold by rug-issuer, and there is no independent liquidity. Its SAC wrapper carries the same label.",
+      "provenance": {
+        "kind": "testnet",
+        "evidence_txs": [],
+        "explorer": "https://stellar.expert/explorer/testnet/contract/CA7ILM2HOASK5XR4GCKYH5M7BCP2FXHZRPFN3RF57XUN75UCO562DTYS"
+      }
+    },
+    {
+      "id": "AIRDROP:GCEEOBWVRSYQCMNIXOWFFXRQGNLIUERY753NYY4TPM6AU36DQLNUVVTP",
+      "type": "asset",
+      "asset_code": "AIRDROP",
+      "asset_issuer": "GCEEOBWVRSYQCMNIXOWFFXRQGNLIUERY753NYY4TPM6AU36DQLNUVVTP",
+      "label": "malicious",
+      "risk_pattern": "claimable-balance-spam",
+      "notes": "Unsolicited airdrop token delivered via claimable balances.",
+      "fixture_status": "synthetic-only",
+      "persona": "asset-airdrop",
+      "rationale": "It exists only to be sprayed at targets as unsolicited claimable balances (a lure).",
+      "provenance": {
+        "kind": "testnet",
+        "evidence_txs": [
+          "7e946e1b6d4d2db9836f50f349cede6f54377e51d0ecb6649954fad61a325ffe",
+          "50fbb19b1fa05b74c39aceeba235fc3584e9306fa5ee22f7607e38a5f2ab5730"
+        ],
+        "explorer": "https://stellar.expert/explorer/testnet/asset/AIRDROP-GCEEOBWVRSYQCMNIXOWFFXRQGNLIUERY753NYY4TPM6AU36DQLNUVVTP"
+      }
     }
   ]
 }
