@@ -77,6 +77,16 @@ Scores within a band are intentionally spread to give the evaluator distinct val
 against. Avoid assigning the same score to two different destinations unless they are genuinely
 equivalent risk.
 
+**Out-of-band scores.** `scores.json` models an oracle, not the labels (see
+[docs/LABELS.md](docs/LABELS.md#stub-scores-are-a-simulated-oracle-not-the-labels)). A few fixtures
+are scored outside their label's band on purpose, to model known oracle blind spots: cold-start scams,
+attack-shaped clean accounts, an under-confident sweeper. The validator accepts a score outside
+its band (clean 0–25, suspicious 40–70, malicious 75–100) **only** when the destination carries a
+`score_rationale` explaining the deliberate deviation.
+
+**Transaction labels** follow the rubric in [docs/LABELS.md](docs/LABELS.md#rubric-for-transaction-labels):
+label by the harm of signing for the signer, worst operation wins, and trustlines and claims move no value.
+
 ---
 
 ## Required fields for a new fixture PR
@@ -86,13 +96,22 @@ Every new entry in `destinations.json` must include:
 | Field | Required | Description |
 |-------|----------|-------------|
 | `id` | ✅ | Unique identifier — either the Stellar public key (G…) for accounts, or `ASSET_CODE:ISSUER_KEY` for assets |
-| `type` | ✅ | `"account"` or `"asset"` |
+| `type` | ✅ | `"account"`, `"asset"` or `"contract"` (Soroban `C…` address) |
 | `address` | ✅ (accounts) | The Stellar public key (G…) |
 | `asset_code` | ✅ (assets) | The asset code |
 | `asset_issuer` | ✅ (assets) | The issuing account's public key |
 | `label` | ✅ | One of `clean`, `suspicious`, `malicious` |
 | `fixture_status` | ✅ | Lifecycle status; currently must be `"synthetic-only"` |
-| `notes` | ✅ | A one-sentence rationale explaining *why* this label was chosen, referencing the specific pattern. This is what downstream reviewers and evaluators read to verify the label is defensible. |
+| `notes` | ✅ | A one-sentence description of the destination, referencing the specific pattern. |
+| `rationale` | ✅ | Why this label: the behaviour (on testnet: the transactions) that justifies it. Reviewers and evaluators read this to check the label is defensible. |
+| `risk_pattern` | ✅ | One of the patterns in [docs/LABELS.md](docs/LABELS.md#risk-patterns) |
+| `provenance` | ✅ | `{ "kind": "testnet", ... }` (written by the generator, with evidence tx hashes and an explorer link) or `{ "kind": "offline-synthetic" }` |
+| `score_rationale` | when out of band | Required when the stub score is outside the label's band (see Scoring notes) |
+
+Testnet fixtures should be added through the generator, not by hand: see
+[README → Adding a fixture](README.md#adding-a-fixture). Every transaction fixture in
+`transactions/index.json` needs `id`, `label`, `risk_pattern`, `rationale`, `provenance` and the
+`counterparties` that `scripts/lib/stellar.mjs` extracts, all checked by `npm run validate`.
 
 Every fixture is synthetic-only: it is not a record of live Horizon state and must not be used to infer network activity. The validator rejects missing or unknown `fixture_status` values. Future network-visible fixtures must be introduced with an explicitly supported status and coordinated adapter-schema change.
 
@@ -103,9 +122,10 @@ Every new entry must have a matching entry in `scores.json` with an integer scor
 ## How to run everything locally
 
 ```bash
-npm install
+npm ci                              # Node 22+ (.nvmrc)
 npm run validate
 npm test
+npm run eval -- --oracle fixtures   # evaluation report -> reports/latest-fixtures.{json,md}
 ```
 
 `npm run validate` checks:
@@ -114,9 +134,14 @@ npm test
 - Every label is one of `clean`, `suspicious`, or `malicious`
 - Every destination has `fixture_status: "synthetic-only"` (unknown or missing statuses fail validation)
 - No extra entries in `scores.json` without a matching destination
+- Every destination has a `rationale`, a valid `type` and `provenance`; out-of-band scores carry a `score_rationale`
+- Every `transactions/*.xdr` is indexed, decodes under the testnet passphrase, and matches its recorded hash, envelope type, source, operation types and extracted counterparties; testnet fixtures link to their hash on stellar.expert
 - Every scenario in `scenarios/` passes schema, reference, and ordering validation
 
-`npm test` runs the test suite with Node's built-in test runner (no dependencies).
+`npm run verify:testnet` additionally confirms every testnet hash on Horizon (network access).
+
+`npm test` runs the test suite with Node's built-in test runner. It includes a check that
+`docs/FIXTURES.md` is regenerated (`npm run docs`) whenever fixtures change.
 
 To replay a single scenario offline: `npm run replay -- scenarios/<file>.json`.
 

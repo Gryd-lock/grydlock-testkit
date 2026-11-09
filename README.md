@@ -5,98 +5,112 @@
 [![CI](https://github.com/Gryd-lock/grydlock-testkit/actions/workflows/ci.yml/badge.svg)](https://github.com/Gryd-lock/grydlock-testkit/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Testnet fixtures and score stubs for evaluating Gryd Lock - so the tool can be tested end to end without a live scoring backend.
+A labelled **Stellar testnet evaluation dataset** for [Gryd Lock](https://github.com/Gryd-lock), the pre-signing fraud warning layer. It contains destinations and transaction XDRs, each labelled `clean`, `suspicious` or `malicious` with a written rationale. Most were executed on testnet, so their hashes can be checked on [stellar.expert](https://stellar.expert/explorer/testnet). It also ships stub oracle scores and an evaluation runner that reports precision, recall, false-positive rate and latency.
 
-## Overview
+| | |
+| --- | --- |
+| Destinations | **73** — 12 offline seed + 61 testnet (accounts, issued assets, Soroban asset contracts) |
+| Transaction XDRs | **41** — 4 offline seed + 37 executed on testnet |
+| Covers | clean & path payments, fee bumps, `setOptions` signer takeover, account-merge drains, scam trustlines, clawback-enabled assets, claimable-balance spam, sponsored mules, memo impersonation, Soroban `transfer` / `approve` to unknown spenders, multi-op bundles, and clean look-alikes of each attack |
+| Labels | [docs/LABELS.md](docs/LABELS.md) (taxonomy and rubric) · [docs/FIXTURES.md](docs/FIXTURES.md) (every fixture with its rationale and explorer link) |
+| Baseline | [reports/baseline-fixtures.md](reports/baseline-fixtures.md) · [reports/baseline-soroban.md](reports/baseline-soroban.md) |
 
-Gryd Lock's warning layer is only useful if it can be measured. This repo provides the labelled inputs and stub scores that make the evaluation in grydlock-research actually executable on Stellar testnet.
+> **Everything here is synthetic.** Testnet personas are random keypairs funded by Friendbot for this dataset alone. Seed fixtures are random, never-funded addresses. No fixture is, or is derived from, a real person or entity, and no secret key is ever written to disk. Testnet is reset periodically: recorded hashes stop resolving on explorers after a reset, but they remain the reproducible record of the run (see [Regenerating](#regenerating-the-testnet-fixtures)).
 
-## Features
+## Quick start (3 commands)
 
-- Per-fixture lifecycle status: every destination declares `fixture_status: "synthetic-only"`
-- Labelled Destinations: Stellar testnet addresses and assets tagged clean, suspicious, or malicious
-- Sample Transactions: unsigned transaction XDRs covering payment, path payment, change trust
-- Score Stubs: lookup table mapping each destination to a 0-100 score for deterministic offline scoring
-- Scenario Bundles: versioned, ordered multi-transaction attack workflows that replay deterministically offline
+```sh
+npm ci                                   # Node 22+ (see .nvmrc)
+npm run validate && npm test             # decode every XDR, check hashes, labels, scores, scenarios
+npm run eval -- --oracle fixtures        # score everything -> reports/latest-fixtures.{json,md}
+```
 
-## Repository Structure
+To evaluate a live Soroban risk oracle instead of the stub scores:
 
-grydlock-testkit/
-  README.md
-  LICENSE
-  package.json
-  .github/workflows/ci.yml
-  destinations.json
-  scores.json
-  scripts/
-    validate-fixtures.mjs
-    validate-scenarios.mjs
-    replay-scenario.mjs
-    lib/scenario.mjs
-    lib/taxonomy.mjs
-  scenarios/
-    phishing-drain.json
-    README.md
-  transactions/
-    payment.xdr
-    path_payment.xdr
-    change_trust.xdr
-  tests/
-    scenario-validation.test.mjs
-    scenario-replay.test.mjs
-    backward-compat.test.mjs
+```sh
+npm run eval -- --oracle soroban:CA42XDMAPI3QXA4XP6HEBPWD3IHZQ3YJB4MABSURASGGOVYU5QCWSC2M
+```
 
-## Validating Fixtures
+The runner scores every destination directly. For each transaction it decodes the XDR, extracts every counterparty (destinations, assets, contracts, Soroban address arguments, new signers, sponsored accounts, fee-bump payers) and takes the riskiest score. It maps scores to tiers with the extension's thresholds. The output is per-tier precision/recall/F1, warning false-positive rate, coverage, a confusion matrix, per-risk-pattern recall, a list of misclassified fixtures, and p50/p95 latency, written as JSON and Markdown. `--out reports/<name>` changes the output path.
 
-npm run validate
+`npm run verify:testnet` confirms every recorded hash exists on testnet via Horizon.
 
-Checks that every destination in destinations.json has a matching entry in scores.json, every score is an integer in 0-100, and every label is one of clean, suspicious, or malicious, and every destination declares the supported `fixture_status` (`"synthetic-only"`). It also validates every scenario bundle under scenarios/ (schema version, references, and step ordering).
+## Using it from another repo
 
-Other commands:
+The package is `grydlock-testkit` and has no runtime dependencies. Pin a release; never track `main`.
 
-- `npm run validate:scenarios` — validate only the scenario bundles
-- `npm run replay -- scenarios/phishing-drain.json` — deterministically replay a scenario offline
-- `npm test` — run the test suite (Node's built-in test runner, no dependencies)
+```jsonc
+// package.json — any one of:
+"grydlock-testkit": "https://github.com/Gryd-lock/grydlock-testkit/releases/download/v0.2.0/grydlock-testkit-0.2.0.tgz",
+"grydlock-testkit": "npm:@gryd-lock/grydlock-testkit@0.2.0",   // GitHub Packages (needs a read:packages token)
+"grydlock-testkit": "0.2.0"                                     // npmjs, when published there
+```
 
-## Scenario Bundles
+```js
+import { loadDestinations, loadScores, loadTransactions, readTransactionXdr, NETWORK_PASSPHRASE } from 'grydlock-testkit';
+import { TransactionBuilder } from '@stellar/stellar-sdk';
 
-Scenario bundles group existing point fixtures into ordered multi-transaction attack workflows whose risk emerges from the sequence of steps. They are versioned, validated, and replayable offline (no network access, no live indexer). See [scenarios/README.md](scenarios/README.md) for the full schema, validation rules, and a complete example.
+const tx = TransactionBuilder.fromXDR(readTransactionXdr('mal_account_merge_drain'), NETWORK_PASSPHRASE);
+```
 
-## How It's Used
+Raw files are exported too (`grydlock-testkit/destinations.json`, `grydlock-testkit/transactions/<id>.xdr`, `grydlock-testkit/transactions/index.json`, …), so `require.resolve` lookups keep working. `grydlock-extension`'s demo server uses them this way. `grydlock-oracle-adapter`'s `StubOracle` vendors `scores.json` / `destinations.json`.
 
-- grydlock-oracle-adapter loads scores.json in its StubOracle to return scores without a live backend
-- The extension is pointed at the stub oracle during development, so the full path - decode, score, tier, warning - runs entirely offline
-- grydlock-research runs the extension across every entry in destinations.json and measures how often the assigned tier matches the label
+Releases are cut by pushing a `vX.Y.Z` tag that matches `package.json`. [`release.yml`](.github/workflows/release.yml) then validates and tests, attaches the tarball and its SHA-256 to a GitHub Release, and publishes to GitHub Packages (plus npmjs if an `NPM_TOKEN` secret is configured). The weekly [consumer contract test](.github/workflows/consumer-contract-test.yml) installs the *packed tarball* into `grydlock-oracle-adapter` (pinned ref, `ORACLE_ADAPTER_REF`) and into a scratch project that resolves files the way the extension does. This catches a consumer-breaking change before it is released.
 
-## Consumer Contract Test
+## Adding a fixture
 
-`grydlock-oracle-adapter`'s `StubOracle` reads a *vendored copy* of `scores.json`/`destinations.json` (checked in under its own `src/fixtures/testkit/`, shape-checked at module load). A change here - a new entity type, a schema-versioning change, a scores.json shape change - could break `StubOracle`'s assumptions in a way nothing in this repo would otherwise catch, since this repo has no automated way to exercise that downstream code.
+Testnet fixtures come from code, not hand-written base64:
 
-`.github/workflows/consumer-contract-test.yml` is a "consumer contract test": it checks out `grydlock-oracle-adapter` at a pinned commit, copies this repo's *current* `scores.json`/`destinations.json` over the adapter's vendored copies, and runs a small `vitest` check asserting `StubOracle.getScore()` resolves to a finite 0-100 number for every destination in `destinations.json` with no throw.
+1. **Persona** (a new destination): add an entry to [`scripts/testnet/personas.mjs`](scripts/testnet/personas.mjs) with `label`, `risk_pattern`, `score`, `notes` and a `rationale` that names the on-chain behaviour justifying the label.
+2. **Behaviour** (a new transaction): append a recipe to [`scripts/testnet/recipes.mjs`](scripts/testnet/recipes.mjs):
+   ```js
+   fixture('mal_example_drain', 'malicious', 'sweep',
+     'What the transaction does.',
+     'Why signing it earns this label.',
+     (c) => c.classic('victim-1', [Operation.payment({ destination: c.pub('sweeper-1'), asset: Asset.native(), amount: '10' })])),
+   ```
+   Use `c.invoke(...)` for Soroban calls and `c.feeBump(...)` for fee-bump envelopes. Add `setup` / `evidence` recipes for the state your fixture needs and the follow-up that proves its label. The id must match `^[a-z_]+$`.
+3. **Generate, validate, document:**
+   ```sh
+   npm run generate:testnet   # ~15 min; funds personas, executes recipes, rewrites the dataset
+   npm run docs               # regenerate docs/FIXTURES.md
+   npm run validate && npm test
+   npm run eval -- --oracle fixtures --out reports/baseline-fixtures
+   ```
+4. Add a `CHANGELOG.md` entry under `[Unreleased]` (CI requires it for fixture changes) and follow the labelling rubric in [docs/LABELS.md](docs/LABELS.md) and the reviewer checklist in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-- **Trigger:** manual (`workflow_dispatch`) or a weekly schedule - deliberately not on every push, to avoid a hard cross-repo CI coupling on every PR here.
-- **Purpose:** catch a testkit change that's breaking-for-consumers before it ships in a tagged release, rather than discovering it later in `grydlock-oracle-adapter` or `grydlock-research`.
-- **Limitations:** it's only as good as the pinned `grydlock-oracle-adapter` ref (`ORACLE_ADAPTER_REF` in the workflow file) - it does not track that repo's `main` branch, so it can miss adapter-side changes made after the pin. It also only checks the fixture *shape* the adapter expects, not scoring correctness (that's `grydlock-research`'s job).
-- **Updating the pin:** edit `ORACLE_ADAPTER_REF` at the top of `.github/workflows/consumer-contract-test.yml` to a new commit SHA (or tag) of `grydlock-oracle-adapter`, ideally whenever that repo cuts a release or changes its fixture-loading code.
+A run generates fresh personas, so regenerating changes every testnet address and hash. Treat it as a new dataset version (minor bump). Seed fixtures (`provenance.kind: "offline-synthetic"`) are never touched by the generator.
 
-## Pinning to a Release
+### Regenerating the testnet fixtures
 
-Consumers should pin to a specific tagged release rather than tracking the main branch. This ensures fixture changes do not silently alter evaluation results.
+`npm run generate:testnet` writes `destinations.json`, `scores.json`, `transactions/*.xdr`, `transactions/index.json` and `dataset/testnet-run.json`, the full audit trail of every setup, fixture and evidence transaction. Each stored XDR is the *unsigned* envelope of a submitted transaction. A Stellar transaction hash does not cover signatures, so the hash equals the on-chain hash. (Fee bumps keep the inner signature, because the outer hash covers it.) If a run fails after the on-chain phase, `npm run generate:testnet -- --from-checkpoint dataset/.checkpoint.json` rebuilds the outputs without touching the network.
 
-Example: grydlock-oracle-adapter pins to v0.1.0 by referencing the tag in its dependency configuration or downloading the release asset:
+## Repository layout
 
-git clone --branch v0.1.0 https://github.com/Gryd-lock/grydlock-testkit.git
+```
+destinations.json            labelled destinations (accounts, assets, contracts)
+scores.json                  stub oracle scores (simulated oracle; see docs/LABELS.md)
+transactions/                <id>.xdr envelopes + index.json (labels, hashes, provenance, expected counterparties)
+scenarios/                   ordered multi-transaction attack bundles (scenarios/README.md)
+dataset/testnet-run.json     audit trail of the testnet generation run
+reports/                     committed baseline evaluation reports
+docs/                        LABELS.md, FIXTURES.md (generated), spikes
+scripts/testnet/             generator: personas.mjs, recipes.mjs, generate.mjs
+scripts/eval.mjs             evaluation runner
+scripts/validate-*.mjs       fixture, transaction and scenario validators
+index.mjs, index.d.ts        package entry point
+```
 
-Releases are tagged with semantic versions matching package.json and CHANGELOG.md. Each release includes notes from the corresponding CHANGELOG section.
+Other commands: `npm run validate:scenarios`, `npm run replay -- scenarios/phishing-drain.json` (deterministic offline scenario replay; see [scenarios/README.md](scenarios/README.md)).
 
-## Gryd Lock Organization
+## Gryd Lock organization
 
 | Repo | Role |
-|------|------|
+| --- | --- |
 | grydlock-extension | Browser extension that warns before signing risky Stellar transactions |
-| grydlock-oracle-adapter | Fetches on-chain risk scores via Soroban; StubOracle reads scores.json from this repo |
+| grydlock-oracle-adapter | Fetches on-chain risk scores via Soroban; `StubOracle` reads `scores.json` from this repo |
 | grydlock-research | Design study, threat model, and evaluation methodology |
-| grydlock-testkit (this repo) | Testnet fixtures, labelled destinations, and score stubs |
+| grydlock-testkit (this repo) | Labelled testnet dataset, stub scores and evaluation runner |
 
 ## License
 

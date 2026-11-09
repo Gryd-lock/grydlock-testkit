@@ -14,6 +14,30 @@ Version numbers track the fixture dataset, not a software release.
 
 ## [Unreleased]
 
+Target version: **0.2.0** (`package.json`). To release, rename this heading to `## [0.2.0] — <date>` and push tag `v0.2.0`.
+
+### Added — Testnet-verified dataset
+- `scripts/testnet/` generator: Friendbot-funded synthetic personas execute an ordered on-chain script on Stellar testnet (issued assets, trustlines, DEX markets, claimable balances, sponsored reserves, clawback, SAC deploys, Soroban `transfer` / `approve` / `transfer_from`, signer takeovers, merge drains). Every fixture's unsigned envelope hash equals its on-chain hash; full audit trail in `dataset/testnet-run.json`.
+- 61 testnet destinations (24 clean, 12 suspicious, 19 malicious, including 4 issued assets and 2 Stellar Asset Contracts). Total: 73.
+- 37 testnet transaction XDRs (16 clean, 8 suspicious, 13 malicious): clean/path payments, fee bumps, signer takeovers, account-merge drains, scam and clawback trustlines, claimable-balance spam, sponsored mules, memo impersonation, Soroban transfers and approvals, multi-op bundles, and clean look-alikes of each attack. Total: 41.
+- Risk patterns `account-merge-drain`, `clawback-enabled`, `soroban-approval-drain`, `claimable-balance-spam`; destination type `contract`.
+- `docs/LABELS.md` (taxonomy, transaction-label rubric, stub-score design) and generated `docs/FIXTURES.md` (every fixture with its rationale and explorer link).
+
+### Added — Evaluation
+- `npm run eval -- --oracle <fixtures|soroban:CONTRACT_ID>`: per-tier precision/recall/F1, warning false-positive rate, coverage, confusion matrix, per-pattern results, misclassifications, p50/p95 latency, as JSON and Markdown. Baselines in `reports/`.
+
+### Added — Validation
+- `scripts/validate-transactions.mjs` (part of `npm run validate`): every XDR decodes and matches its recorded hash, envelope type, source, operation types and expected counterparties. `npm run verify:testnet` checks every hash on Horizon.
+- Destinations require `rationale` and `provenance`; scores outside the label's band require a `score_rationale`.
+
+### Changed — Destinations, scores and transactions
+- Seed destinations gained `persona`, `rationale` and `provenance: { kind: "offline-synthetic" }`. Seed transactions gained `id`, `label`, `risk_pattern`, `rationale`, `provenance` and `counterparties`. Ids, addresses, scores and XDRs are unchanged.
+- Out-of-band stub scores model oracle blind spots (cold-start scams, attack-shaped clean accounts); see `docs/LABELS.md`.
+
+### Changed — Packaging
+- Published as a versioned package (`grydlock-testkit`, zero runtime deps, ESM loaders + raw-file exports). `release.yml` publishes the tarball and SHA-256 to GitHub Releases and GitHub Packages (`@gryd-lock/grydlock-testkit`), and to npmjs when `NPM_TOKEN` is set. The consumer contract test now installs the packed tarball and also checks extension-style resolution.
+- Development requires Node 22+ (`@stellar/stellar-sdk` 17, dev-only); CI now runs `npm ci` and `npm test`.
+
 ### Changed — Destinations
 - Added the required per-fixture `fixture_status` field; all existing destinations are marked `synthetic-only`.
 
