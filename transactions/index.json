@@ -4,10 +4,21 @@
   "passphrase": "Test SDF Network ; September 2015",
   "fixtures": [
     {
+      "id": "payment",
       "file": "transactions/payment.xdr",
       "envelopeType": "envelopeTypeTx",
       "signed": false,
       "stellarHashTestnet": "f8310e15760cc1c233efef19dec99146cad5ba9f8e61947d3e36d76d5d7e6636",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "rationale": "Sends XLM to suspicious_wallet_1, a pass-through wallet. No funds are lost to a known attacker, but the destination is a likely laundering hop.",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "submitted": false
+      },
+      "counterparties": [
+        "GCRNKXJJLZNDLK2EWPX25JISTORCXCF2HYUXMYKF7XWKHMEOHCXVGP4J"
+      ],
       "source": "GCRRYBV5IY7DSI54DKW33ZELC2LWYCAHC43TXAM2A2HTFN5GWOFWXPC2",
       "description": "Plain payment from clean_wallet_1 to suspicious_wallet_1. Tests basic payment decode.",
       "operations": [
@@ -21,10 +32,22 @@
       ]
     },
     {
+      "id": "path_payment",
       "file": "transactions/path_payment.xdr",
       "envelopeType": "envelopeTypeTx",
       "signed": false,
       "stellarHashTestnet": "1877a9c875a93739f36ea36edb55d9a65dd8848f046ba9339fb6569d9c3feec0",
+      "label": "malicious",
+      "risk_pattern": "sweep",
+      "rationale": "Delivers funds to malicious_wallet_1, a sweep wallet that drains deposits within seconds.",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "submitted": false
+      },
+      "counterparties": [
+        "GD7XPB2A7CG5Z4ICV24B3LXCRHAEJRFEK4OEW3ZIOQAPJOHAXBB7QHGE",
+        "USDC:GBWPMNXNRLA3VMBTWZHWN7VLUZPXBZUEOMPD6OIQKYCZNDJ2SY4ACC5B"
+      ],
       "source": "GCRRYBV5IY7DSI54DKW33ZELC2LWYCAHC43TXAM2A2HTFN5GWOFWXPC2",
       "description": "Path payment strict-send (XLM → USDC) from clean_wallet_1 to malicious_wallet_1. Tests multi-hop decode.",
       "operations": [
@@ -41,10 +64,21 @@
       ]
     },
     {
+      "id": "change_trust",
       "file": "transactions/change_trust.xdr",
       "envelopeType": "envelopeTypeTx",
       "signed": false,
       "stellarHashTestnet": "2cfea90bd307d103e0dec8c999ffdc224d2eff89f0c022cafc2e0a187ed0272f",
+      "label": "suspicious",
+      "risk_pattern": "scam-trustline",
+      "rationale": "Opens a trustline to the SCAM rug-pull asset. A trustline alone moves no funds, so the transaction is suspicious rather than malicious; it is the first step of a rug-pull purchase.",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "submitted": false
+      },
+      "counterparties": [
+        "SCAM:GAJLLIIPHII6OCG4KQJIGPCHVN6DNCRBXHX6DEUTPE7MQ6OONAYBRLET"
+      ],
       "source": "GCRNKXJJLZNDLK2EWPX25JISTORCXCF2HYUXMYKF7XWKHMEOHCXVGP4J",
       "description": "Change trust to add the SCAM asset trustline from suspicious_wallet_1. Tests trustline-establishment decode.",
       "operations": [
@@ -57,10 +91,22 @@
       ]
     },
     {
+      "id": "fee_bump_payment",
       "file": "transactions/fee_bump_payment.xdr",
       "envelopeType": "envelopeTypeTxFeeBump",
       "signed": false,
       "stellarHashTestnet": "7ab7ae0df710a6d37484f403f7d2ccd14b88832c843b961cd5f52311a027876f",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "rationale": "Same inner payment as payment.xdr (to a pass-through wallet), wrapped in a fee bump paid by clean_wallet_2. The fee source is clean, so the label follows the inner payment.",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "submitted": false
+      },
+      "counterparties": [
+        "GA4HFFSHZ7PADQWOFCZGYV2HE437LQ2WDILWCGC33BMJUQ6OBO5HKI5D",
+        "GCRNKXJJLZNDLK2EWPX25JISTORCXCF2HYUXMYKF7XWKHMEOHCXVGP4J"
+      ],
       "feeBumpSource": "GA4HFFSHZ7PADQWOFCZGYV2HE437LQ2WDILWCGC33BMJUQ6OBO5HKI5D",
       "source": "GCRRYBV5IY7DSI54DKW33ZELC2LWYCAHC43TXAM2A2HTFN5GWOFWXPC2",
       "description": "Fee-bump wrapping payment.xdr. Outer fee source is clean_wallet_2; inner tx source is clean_wallet_1. Tests fee-bump envelope decode — a decoder must traverse into the inner transaction to extract operations and source; reading the top-level source gives the fee-bump source, not the transaction initiator.",

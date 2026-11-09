@@ -8,7 +8,13 @@
       "label": "clean",
       "risk_pattern": "none",
       "notes": "Established testnet wallet with regular payment history; no red flags.",
-      "fixture_status": "synthetic-only"
+      "fixture_status": "synthetic-only",
+      "persona": "clean_wallet_1",
+      "rationale": "Hand-authored seed fixture (v0.1.0). Label asserted by the fixture author from the described behaviour: Established testnet wallet with regular payment history; no red flags.",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "funded": false
+      }
     },
     {
       "id": "GA4HFFSHZ7PADQWOFCZGYV2HE437LQ2WDILWCGC33BMJUQ6OBO5HKI5D",
@@ -17,7 +23,13 @@
       "label": "clean",
       "risk_pattern": "none",
       "notes": "Long-lived wallet, low transaction velocity, no shared funding source with flagged accounts.",
-      "fixture_status": "synthetic-only"
+      "fixture_status": "synthetic-only",
+      "persona": "clean_wallet_2",
+      "rationale": "Hand-authored seed fixture (v0.1.0). Label asserted by the fixture author from the described behaviour: Long-lived wallet, low transaction velocity, no shared funding source with flagged accounts.",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "funded": false
+      }
     },
     {
       "id": "GCER76PMMAKI2S6UUCPOFXC4SMY3IEILVE5MKSX4CTNDXXIZMFDXJJVS",
@@ -26,7 +38,13 @@
       "label": "clean",
       "risk_pattern": "none",
       "notes": "Holds a USDC trustline against usdc_issuer below; normal trading activity.",
-      "fixture_status": "synthetic-only"
+      "fixture_status": "synthetic-only",
+      "persona": "clean_wallet_3",
+      "rationale": "Hand-authored seed fixture (v0.1.0). Label asserted by the fixture author from the described behaviour: Holds a USDC trustline against usdc_issuer below; normal trading activity.",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "funded": false
+      }
     },
     {
       "id": "GBWPMNXNRLA3VMBTWZHWN7VLUZPXBZUEOMPD6OIQKYCZNDJ2SY4ACC5B",
@@ -35,7 +53,13 @@
       "label": "clean",
       "risk_pattern": "none",
       "notes": "Fixture stand-in for a well-known, long-lived asset issuer (issues USDC below).",
-      "fixture_status": "synthetic-only"
+      "fixture_status": "synthetic-only",
+      "persona": "usdc_issuer",
+      "rationale": "Hand-authored seed fixture (v0.1.0). Label asserted by the fixture author from the described behaviour: Fixture stand-in for a well-known, long-lived asset issuer (issues USDC below).",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "funded": false
+      }
     },
     {
       "id": "GCRNKXJJLZNDLK2EWPX25JISTORCXCF2HYUXMYKF7XWKHMEOHCXVGP4J",
@@ -44,7 +68,13 @@
       "label": "suspicious",
       "risk_pattern": "pass-through",
       "notes": "Funded seconds before a large outgoing payment burst; pattern consistent with a pass-through wallet.",
-      "fixture_status": "synthetic-only"
+      "fixture_status": "synthetic-only",
+      "persona": "suspicious_wallet_1",
+      "rationale": "Hand-authored seed fixture (v0.1.0). Label asserted by the fixture author from the described behaviour: Funded seconds before a large outgoing payment burst; pattern consistent with a pass-through wallet.",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "funded": false
+      }
     },
     {
       "id": "GDL4JRQOHLJARTSQMZCBANXJ6GI6BN2QG2TX6ZPC5KSHKJCDEM735BYJ",
@@ -53,7 +83,13 @@
       "label": "suspicious",
       "risk_pattern": "pass-through",
       "notes": "Shares a funding source with malicious_wallet_1 and malicious_wallet_2 below.",
-      "fixture_status": "synthetic-only"
+      "fixture_status": "synthetic-only",
+      "persona": "suspicious_wallet_2",
+      "rationale": "Hand-authored seed fixture (v0.1.0). Label asserted by the fixture author from the described behaviour: Shares a funding source with malicious_wallet_1 and malicious_wallet_2 below.",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "funded": false
+      }
     },
     {
       "id": "GCHYSQ57SVW6LFLGLQ4P77ZDQJ7BPQIM3QOCPIBIZKXGZGAQMJQZRFMS",
@@ -62,7 +98,13 @@
       "label": "suspicious",
       "risk_pattern": "scam-trustline",
       "notes": "Holds a trustline to the SCAM asset listed below; no other activity.",
-      "fixture_status": "synthetic-only"
+      "fixture_status": "synthetic-only",
+      "persona": "suspicious_wallet_3",
+      "rationale": "Hand-authored seed fixture (v0.1.0). Label asserted by the fixture author from the described behaviour: Holds a trustline to the SCAM asset listed below; no other activity.",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "funded": false
+      }
     },
     {
       "id": "GD7XPB2A7CG5Z4ICV24B3LXCRHAEJRFEK4OEW3ZIOQAPJOHAXBB7QHGE",
@@ -71,7 +113,13 @@
       "label": "malicious",
       "risk_pattern": "sweep",
       "notes": "Path-payment sweep pattern: drains newly funded wallets within seconds of receiving deposits.",
-      "fixture_status": "synthetic-only"
+      "fixture_status": "synthetic-only",
+      "persona": "malicious_wallet_1",
+      "rationale": "Hand-authored seed fixture (v0.1.0). Label asserted by the fixture author from the described behaviour: Path-payment sweep pattern: drains newly funded wallets within seconds of receiving deposits.",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "funded": false
+      }
     },
     {
       "id": "GCAMGLMB5EN55ICM26RYDGZSE5P4GKMK6TD6ZB7LACMVE7IEDTWVYZDF",
@@ -80,7 +128,13 @@
       "label": "malicious",
       "risk_pattern": "phishing-drainer",
       "notes": "Repeated small 'test' payments precede a large drain; matches a known phishing-drainer shape.",
-      "fixture_status": "synthetic-only"
+      "fixture_status": "synthetic-only",
+      "persona": "malicious_wallet_2",
+      "rationale": "Hand-authored seed fixture (v0.1.0). Label asserted by the fixture author from the described behaviour: Repeated small 'test' payments precede a large drain; matches a known phishing-drainer shape.",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "funded": false
+      }
     },
     {
       "id": "GDQPZVGOJY6Q4PPASHZBIFN3PTIBD6WCRDCCAIFIPHZIYKSDQ7PZWPNJ",
@@ -89,7 +143,13 @@
       "label": "malicious",
       "risk_pattern": "rug-pull",
       "notes": "Destination of multiple change-trust + immediate max-sell patterns typical of rug-pull collection wallets.",
-      "fixture_status": "synthetic-only"
+      "fixture_status": "synthetic-only",
+      "persona": "malicious_wallet_3",
+      "rationale": "Hand-authored seed fixture (v0.1.0). Label asserted by the fixture author from the described behaviour: Destination of multiple change-trust + immediate max-sell patterns typical of rug-pull collection wallets.",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "funded": false
+      }
     },
     {
       "id": "GAJLLIIPHII6OCG4KQJIGPCHVN6DNCRBXHX6DEUTPE7MQ6OONAYBRLET",
@@ -98,7 +158,13 @@
       "label": "malicious",
       "risk_pattern": "rug-pull",
       "notes": "Issuer of the SCAM asset below; no distributed supply outside the issuer's own control.",
-      "fixture_status": "synthetic-only"
+      "fixture_status": "synthetic-only",
+      "persona": "scam_issuer",
+      "rationale": "Hand-authored seed fixture (v0.1.0). Label asserted by the fixture author from the described behaviour: Issuer of the SCAM asset below; no distributed supply outside the issuer's own control.",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "funded": false
+      }
     },
     {
       "id": "SCAM:GAJLLIIPHII6OCG4KQJIGPCHVN6DNCRBXHX6DEUTPE7MQ6OONAYBRLET",
@@ -108,7 +174,13 @@
       "label": "malicious",
       "risk_pattern": "rug-pull",
       "notes": "Newly issued token with no liquidity outside the issuer; classic rug-pull setup.",
-      "fixture_status": "synthetic-only"
+      "fixture_status": "synthetic-only",
+      "persona": "scam_asset",
+      "rationale": "Hand-authored seed fixture (v0.1.0). Label asserted by the fixture author from the described behaviour: Newly issued token with no liquidity outside the issuer; classic rug-pull setup.",
+      "provenance": {
+        "kind": "offline-synthetic",
+        "funded": false
+      }
     }
   ]
 }

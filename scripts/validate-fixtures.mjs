@@ -1,6 +1,11 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { VALID_LABELS, VALID_RISK_PATTERNS } from './lib/taxonomy.mjs';
+import {
+  VALID_LABELS,
+  VALID_RISK_PATTERNS,
+  VALID_PROVENANCE_KINDS,
+  VALID_DESTINATION_TYPES
+} from './lib/taxonomy.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const destinations = JSON.parse(readFileSync(root + '/destinations.json', 'utf-8')).destinations;
@@ -19,7 +24,27 @@ export function validateFixtureStatus(destination) {
   return null;
 }
 
+export function validateDestinationMetadata(d) {
+  const problems = [];
+  if (!VALID_DESTINATION_TYPES.includes(d.type)) problems.push(`invalid type "${d.type}"`);
+  if (typeof d.notes !== 'string' || d.notes.length === 0) problems.push('missing notes');
+  if (typeof d.rationale !== 'string' || d.rationale.length < 20) problems.push('missing or too-short rationale');
+  const kind = d.provenance?.kind;
+  if (!VALID_PROVENANCE_KINDS.includes(kind)) problems.push(`invalid provenance.kind "${kind}"`);
+  if (kind === 'testnet') {
+    if (!Array.isArray(d.provenance.evidence_txs)) problems.push('testnet provenance needs evidence_txs');
+    if (!String(d.provenance.explorer ?? '').startsWith('https://stellar.expert/explorer/testnet/')) {
+      problems.push('testnet provenance needs a stellar.expert testnet explorer URL');
+    }
+  }
+  return problems;
+}
+
+const seenIds = new Set();
 for (const d of destinations) {
+  if (seenIds.has(d.id)) errors.push(d.id + ': duplicate id');
+  seenIds.add(d.id);
+  for (const problem of validateDestinationMetadata(d)) errors.push(d.id + ': ' + problem);
   const fixtureStatusError = validateFixtureStatus(d);
   if (fixtureStatusError) errors.push(d.id + ': ' + fixtureStatusError);
   if (!VALID_LABEL_SET.has(d.label)) {

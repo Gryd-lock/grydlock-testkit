@@ -18,8 +18,20 @@ export const VALID_RISK_PATTERNS = [
   'sponsored-mule',
   'cold-start',
   'adversarial-clean',
+  'account-merge-drain',
+  'clawback-enabled',
+  'soroban-approval-drain',
+  'claimable-balance-spam',
   'none'
 ];
+
+// Where a fixture came from. `testnet` fixtures were executed on Stellar
+// testnet by scripts/testnet/generate.mjs and carry a verifiable tx hash;
+// `offline-synthetic` fixtures are the original hand-made seed set whose
+// addresses were never funded.
+export const VALID_PROVENANCE_KINDS = ['testnet', 'offline-synthetic'];
+
+export const VALID_DESTINATION_TYPES = ['account', 'asset', 'contract'];
 
 // Risk patterns that represent an actual warning signal. `none` is a
 // destination with no red flags and therefore never produces a warning.

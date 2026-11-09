@@ -5,11 +5,15 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "validate": "node scripts/validate-fixtures.mjs && node scripts/validate-scenarios.mjs",
+    "validate": "node scripts/validate-fixtures.mjs && node scripts/validate-transactions.mjs && node scripts/validate-scenarios.mjs",
     "validate:fixtures": "node scripts/validate-fixtures.mjs",
     "validate:scenarios": "node scripts/validate-scenarios.mjs",
     "replay": "node scripts/replay-scenario.mjs",
-    "test": "node --test"
+    "test": "node --test",
+    "generate:testnet": "node scripts/testnet/generate.mjs",
+    "validate:transactions": "node scripts/validate-transactions.mjs",
+    "verify:testnet": "node scripts/validate-transactions.mjs --online",
+    "eval": "node scripts/eval.mjs"
   },
   "devDependencies": {
     "@stellar/stellar-sdk": "17.2.1"
