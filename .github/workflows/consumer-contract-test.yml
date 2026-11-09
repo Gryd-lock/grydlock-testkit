@@ -44,10 +44,23 @@ jobs:
         working-directory: oracle-adapter
         run: npm ci
 
+      # Consume the fixtures exactly as published: from the npm tarball, not
+      # the working tree, so a file missing from package.json "files" fails here.
+      - name: Pack grydlock-testkit
+        working-directory: testkit
+        run: |
+          npm pack
+          mkdir -p ../testkit-pkg && tar -xzf grydlock-testkit-*.tgz -C ../testkit-pkg
+
       - name: Point StubOracle at this repo's current fixtures
         run: |
-          cp testkit/scores.json oracle-adapter/src/fixtures/testkit/scores.json
-          cp testkit/destinations.json oracle-adapter/src/fixtures/testkit/destinations.json
+          cp testkit-pkg/package/scores.json oracle-adapter/src/fixtures/testkit/scores.json
+          cp testkit-pkg/package/destinations.json oracle-adapter/src/fixtures/testkit/destinations.json
+          # The adapter loads fixtures through generated *.text.ts modules
+          # when its ref has them; regenerate so the test sees the new data.
+          if [ -f oracle-adapter/scripts/generate-fixture-text.mjs ]; then
+            (cd oracle-adapter && node scripts/generate-fixture-text.mjs)
+          fi
 
       - name: Write consumer contract test
         run: |
@@ -83,3 +96,42 @@ jobs:
       - name: Run consumer contract test
         working-directory: oracle-adapter
         run: npx vitest run tests/testkit-consumer-contract.test.ts
+
+  package-consumer:
+    name: Packed tarball resolves the way grydlock-extension uses it
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: testkit
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Pack grydlock-testkit
+        working-directory: testkit
+        run: npm pack --pack-destination ..
+      - name: Install the tarball into a scratch consumer
+        run: |
+          mkdir consumer && cd consumer && npm init -y >/dev/null
+          npm install ../grydlock-testkit-*.tgz
+      - name: Resolve fixtures like grydlock-extension's demo server and the ESM loaders
+        working-directory: consumer
+        run: |
+          cat > check.cjs <<'EOF'
+          // Mirrors grydlock-extension/demo/server.mjs: require.resolve the
+          // index, then read <id>.xdr for ids matching /^[a-z_]+$/.
+          const fs = require('node:fs');
+          const path = require('node:path');
+          const indexPath = require.resolve('grydlock-testkit/transactions/index.json');
+          const index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
+          for (const f of index.fixtures) {
+            const id = path.basename(f.file, '.xdr');
+            if (!/^[a-z_]+$/.test(id)) throw new Error(`id ${id} is not servable by the extension demo`);
+            const xdr = fs.readFileSync(path.join(path.dirname(indexPath), `${id}.xdr`), 'utf8').trim();
+            if (!xdr) throw new Error(`${id}.xdr is empty`);
+          }
+          for (const f of ['destinations.json', 'scores.json']) require.resolve(`grydlock-testkit/${f}`);
+          console.log(`ok: ${index.fixtures.length} transaction fixtures resolvable`);
+          EOF
+          node check.cjs
+          node --input-type=module -e "import * as t from 'grydlock-testkit'; const d = t.loadDestinations().destinations; const s = t.loadScores(); if (!d.every((x) => x.id in s)) throw new Error('score missing'); console.log('ok: v' + t.datasetVersion, d.length, 'destinations')"

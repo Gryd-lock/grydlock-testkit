@@ -1,9 +1,52 @@
 {
   "name": "grydlock-testkit",
-  "version": "0.1.0",
-  "description": "Testnet fixtures and score stubs for evaluating Gryd Lock.",
+  "version": "0.2.0",
+  "description": "Labelled Stellar testnet evaluation dataset for Gryd Lock: destinations, transaction XDRs verifiable on stellar.expert, stub scores and an evaluation runner.",
   "license": "MIT",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gryd-lock/grydlock-testkit.git"
+  },
+  "homepage": "https://github.com/Gryd-lock/grydlock-testkit#readme",
+  "keywords": [
+    "stellar",
+    "soroban",
+    "testnet",
+    "fixtures",
+    "fraud",
+    "evaluation",
+    "gryd-lock"
+  ],
+  "type": "module",
+  "main": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.mjs"
+    },
+    "./destinations.json": "./destinations.json",
+    "./scores.json": "./scores.json",
+    "./transactions/*": "./transactions/*",
+    "./scenarios/*": "./scenarios/*",
+    "./dataset/*": "./dataset/*",
+    "./docs/*": "./docs/*",
+    "./reports/*": "./reports/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.mjs",
+    "index.d.ts",
+    "destinations.json",
+    "scores.json",
+    "transactions/",
+    "scenarios/*.json",
+    "dataset/testnet-run.json",
+    "docs/LABELS.md",
+    "docs/FIXTURES.md",
+    "reports/baseline-*",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "validate": "node scripts/validate-fixtures.mjs && node scripts/validate-transactions.mjs && node scripts/validate-scenarios.mjs",
     "validate:fixtures": "node scripts/validate-fixtures.mjs",
@@ -13,12 +56,13 @@
     "generate:testnet": "node scripts/testnet/generate.mjs",
     "validate:transactions": "node scripts/validate-transactions.mjs",
     "verify:testnet": "node scripts/validate-transactions.mjs --online",
-    "eval": "node scripts/eval.mjs"
+    "eval": "node scripts/eval.mjs",
+    "docs": "node scripts/render-catalog.mjs"
   },
   "devDependencies": {
     "@stellar/stellar-sdk": "17.2.1"
   },
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=18"
   }
 }

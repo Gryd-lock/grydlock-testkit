@@ -1,0 +1,73 @@
+name: Release
+
+# Publishes a versioned dataset when a v* tag is pushed:
+#   1. GitHub Release with the npm tarball + SHA-256 (no auth needed to install):
+#        npm i https://github.com/Gryd-lock/grydlock-testkit/releases/download/vX.Y.Z/grydlock-testkit-X.Y.Z.tgz
+#   2. GitHub Packages as @gryd-lock/grydlock-testkit (GitHub Packages requires
+#      a scope; consumers alias it: "grydlock-testkit": "npm:@gryd-lock/grydlock-testkit@X.Y.Z")
+#   3. npmjs.com as grydlock-testkit, only if the NPM_TOKEN secret is set.
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+  packages: write
+  id-token: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/check-secrets.mjs
+      - run: npm run validate
+      - run: npm test
+
+      - name: Tag must match package.json version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if [ "v$VERSION" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::tag $GITHUB_REF_NAME does not match package.json version $VERSION"
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Pack
+        run: |
+          npm pack
+          sha256sum "grydlock-testkit-$VERSION.tgz" > "grydlock-testkit-$VERSION.tgz.sha256"
+          cat "grydlock-testkit-$VERSION.tgz.sha256"
+
+      - name: GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          awk -v v="$VERSION" '$0 ~ "^## \\[" v "\\]"{f=1; next} f && /^## \[/{exit} f{print}' CHANGELOG.md > notes.md
+          gh release create "$GITHUB_REF_NAME" \
+            "grydlock-testkit-$VERSION.tgz" "grydlock-testkit-$VERSION.tgz.sha256" \
+            --title "grydlock-testkit $GITHUB_REF_NAME" --notes-file notes.md
+
+      - name: Publish to GitHub Packages (@gryd-lock/grydlock-testkit)
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir gpr && tar -xzf "grydlock-testkit-$VERSION.tgz" -C gpr
+          cd gpr/package
+          node -e "const f='package.json';const p=JSON.parse(require('fs').readFileSync(f));p.name='@gryd-lock/grydlock-testkit';require('fs').writeFileSync(f,JSON.stringify(p,null,2))"
+          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
+          npm publish --registry https://npm.pkg.github.com
+
+      - name: Publish to npmjs (grydlock-testkit)
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        if: env.NODE_AUTH_TOKEN != ''
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+          npm publish "grydlock-testkit-$VERSION.tgz" --provenance --access public
