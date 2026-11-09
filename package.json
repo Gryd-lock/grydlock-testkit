@@ -10,5 +10,11 @@
     "validate:scenarios": "node scripts/validate-scenarios.mjs",
     "replay": "node scripts/replay-scenario.mjs",
     "test": "node --test"
+  },
+  "devDependencies": {
+    "@stellar/stellar-sdk": "17.2.1"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }
