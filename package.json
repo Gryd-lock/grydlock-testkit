@@ -4,6 +4,9 @@
   "description": "Testnet fixtures and score stubs for evaluating Gryd Lock.",
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "validate": "node scripts/validate-fixtures.mjs && node scripts/validate-scenarios.mjs",
     "validate:fixtures": "node scripts/validate-fixtures.mjs",

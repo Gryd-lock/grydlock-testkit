@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { join, dirname } from 'node:path';
+import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
 
@@ -27,7 +27,7 @@ for (const file of files) {
         found = true;
       }
     }
-  } catch (e) {
+  } catch {
     // skip binary files
   }
 }
@@ -39,7 +39,7 @@ if (found) {
 
 console.log('No Stellar secret seeds found — CI check passed.');
 
-// Validate Ed25519 secret seed checksum (last byte is CRC16-XModem of first 55 bytes)
+// Validate Ed25519 secret seed checksum (last 2 bytes are CRC16-XModem of the payload)
 function isValidEd25519SecretSeed(seed) {
   try {
     // Decode base32
