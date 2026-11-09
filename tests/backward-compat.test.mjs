@@ -79,3 +79,18 @@ test('fixture status validation: rejects an unknown status', () => {
     'invalid fixture_status "network-visible"'
   );
 });
+
+import { validateScoreBand } from '../scripts/validate-fixtures.mjs';
+
+test('score band: in-band scores need no justification', () => {
+  assert.equal(validateScoreBand({ label: 'malicious' }, 90), null);
+  assert.equal(validateScoreBand({ label: 'clean' }, 25), null);
+});
+
+test('score band: out-of-band scores require a score_rationale', () => {
+  assert.match(validateScoreBand({ label: 'malicious' }, 8), /outside the malicious band/);
+  assert.equal(
+    validateScoreBand({ label: 'malicious', score_rationale: 'Modelled cold-start blind spot of the oracle.' }, 8),
+    null
+  );
+});

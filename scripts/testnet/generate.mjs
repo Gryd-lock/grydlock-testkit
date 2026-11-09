@@ -90,8 +90,15 @@ const sac = (code) =>
 
 // ---------------------------------------------------------------- funding
 async function friendbot(name) {
-  for (let attempt = 1; attempt <= 6; attempt++) {
-    const res = await fetch(`${FRIENDBOT_URL}/?addr=${encodeURIComponent(pub(name))}`);
+  for (let attempt = 1; attempt <= 8; attempt++) {
+    let res;
+    try {
+      res = await fetch(`${FRIENDBOT_URL}/?addr=${encodeURIComponent(pub(name))}`, { signal: AbortSignal.timeout(60_000) });
+    } catch (err) {
+      log(`friendbot ${name} attempt ${attempt} -> ${err.name}; retrying`);
+      await sleep(5000 * attempt);
+      continue;
+    }
     if (res.ok) {
       const body = await res.json();
       return body.hash ?? body.id;
@@ -214,7 +221,8 @@ const latestLedger = async () => {
   const res = await fetch(RPC_URL, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'getLatestLedger' })
+    body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'getLatestLedger' }),
+    signal: AbortSignal.timeout(30_000)
   });
   return (await res.json()).result.sequence;
 };
@@ -251,6 +259,7 @@ function buildDestinations(fundingTx) {
     out.push({
       id, type: 'account', address: id, label: p.label, risk_pattern: p.risk_pattern, notes: p.notes,
       fixture_status: 'synthetic-only', persona: p.name, rationale: p.rationale,
+      ...(p.score_rationale ? { score_rationale: p.score_rationale } : {}),
       provenance: {
         kind: 'testnet', funded: p.fund !== false,
         funding_tx: fundingTx.get(p.name) ?? null,

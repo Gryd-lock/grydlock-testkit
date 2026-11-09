@@ -4,7 +4,8 @@ import {
   VALID_LABELS,
   VALID_RISK_PATTERNS,
   VALID_PROVENANCE_KINDS,
-  VALID_DESTINATION_TYPES
+  VALID_DESTINATION_TYPES,
+  SCORE_BANDS
 } from './lib/taxonomy.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
@@ -40,11 +41,22 @@ export function validateDestinationMetadata(d) {
   return problems;
 }
 
+export function validateScoreBand(d, score) {
+  const band = SCORE_BANDS[d.label];
+  if (!band || typeof score !== 'number') return null;
+  const [lo, hi] = band;
+  if (score >= lo && score <= hi) return null;
+  if (typeof d.score_rationale === 'string' && d.score_rationale.length >= 20) return null;
+  return `score ${score} is outside the ${d.label} band ${lo}-${hi}; add a score_rationale explaining the deliberate deviation`;
+}
+
 const seenIds = new Set();
 for (const d of destinations) {
   if (seenIds.has(d.id)) errors.push(d.id + ': duplicate id');
   seenIds.add(d.id);
   for (const problem of validateDestinationMetadata(d)) errors.push(d.id + ': ' + problem);
+  const bandError = validateScoreBand(d, scores[d.id]);
+  if (bandError) errors.push(d.id + ': ' + bandError);
   const fixtureStatusError = validateFixtureStatus(d);
   if (fixtureStatusError) errors.push(d.id + ': ' + fixtureStatusError);
   if (!VALID_LABEL_SET.has(d.label)) {

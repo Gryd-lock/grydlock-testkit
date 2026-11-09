@@ -50,11 +50,11 @@ export const PERSONAS = [
   clean('clean-cosigner', 28,
     'Co-signer added to a clean wallet as a 2-of-2 multisig key.',
     'Added as a signer by clean-wallet-04, the same operation shape as a signer takeover, but the signing wallet raises its thresholds so it keeps control. Scored elevated on purpose: a reputation oracle that only sees "newly added signer" would plausibly flag it, so it measures false positives.',
-    { risk_pattern: 'adversarial-clean' }),
+    { risk_pattern: 'adversarial-clean', score_rationale: 'Deliberately outside the clean band (0-25): models an oracle that over-weights this attack-shaped behaviour, so the eval can measure false positives.' }),
   clean('clean-dapp-spender', 34,
     'dApp spender granted a small, short-lived Soroban token allowance.',
     'Granted a 10 TUSD allowance that expires within ~1 hour. Same operation shape as an approval drain, but bounded in amount and time. Scored elevated on purpose to measure false positives.',
-    { risk_pattern: 'adversarial-clean' }),
+    { risk_pattern: 'adversarial-clean', score_rationale: 'Deliberately outside the clean band (0-25): models an oracle that over-weights this attack-shaped behaviour, so the eval can measure false positives.' }),
   clean('clean-savings', 15,
     'Savings account that receives an account merge from its owner\'s old wallet.',
     'Receives an account merge from clean-closer, which is owned by the same synthetic user and is closing an old account. Same operation shape as a merge drain.',
@@ -62,7 +62,7 @@ export const PERSONAS = [
   clean('clean-high-velocity', 41,
     'Payroll wallet that sends multi-op batch payouts to many clean wallets.',
     'Sends one multi-operation payroll batch to five clean wallets. High outgoing velocity is a common pass-through feature, so it is scored elevated to measure false positives.',
-    { risk_pattern: 'adversarial-clean' }),
+    { risk_pattern: 'adversarial-clean', score_rationale: 'Deliberately outside the clean band (0-25): models an oracle that over-weights this attack-shaped behaviour, so the eval can measure false positives.' }),
   clean('clean-new-user', 18,
     'Freshly funded clean wallet with no history.',
     'Funded by Friendbot and receives one ordinary payment. It has no history, which is the clean counterpart of the cold-start scam personas.',
@@ -90,6 +90,7 @@ export const PERSONAS = [
   ...[1, 2, 3].map((i) => ({
     name: `sponsored-mule-${i}`, label: 'suspicious', risk_pattern: 'sponsored-mule', fund: false,
     score: [60, 57, 15][i - 1],
+    ...(i === 3 ? { score_rationale: 'Deliberately outside the suspicious band (40-70): models an oracle that has not yet linked this mule to its sponsor (blind spot).' } : {}),
     notes: 'Account created with reserves sponsored by malicious-sponsor.',
     rationale: 'Created by malicious-sponsor through begin/endSponsoringFutureReserves, so the mule holds no XLM of its own and depends on an attacker-controlled sponsor. sponsored-mule-3 is scored low on purpose: the oracle has not yet linked it to its sponsor (blind spot).'
   })),
@@ -107,6 +108,7 @@ export const PERSONAS = [
   ...[1, 2, 3].map((i) => ({
     name: `sweeper-${i}`, label: 'malicious', risk_pattern: 'sweep',
     score: [92, 88, 72][i - 1],
+    ...(i === 3 ? { score_rationale: 'Deliberately outside the malicious band (75-100): models an under-confident oracle, so the warning fires at the wrong severity (high instead of critical).' } : {}),
     notes: 'Final collection wallet for funds forwarded by pass-through hops.',
     rationale: 'Receives forwarded victim funds from pass-through wallets and path payments from victims. sweeper-3 is scored 72 (high, not critical) on purpose: the warning still fires but at the wrong severity.'
   })),
@@ -143,6 +145,7 @@ export const PERSONAS = [
   ...[1, 2, 3].map((i) => ({
     name: `cold-start-scam-${i}`, label: 'malicious', risk_pattern: 'cold-start',
     score: [8, 12, 5][i - 1],
+    score_rationale: 'Deliberately outside the malicious band (75-100): a reputation oracle has no history for a freshly funded wallet (cold-start blind spot). These fixtures measure that gap.',
     notes: 'Freshly funded scam collection wallet with no history.',
     rationale: 'Designated by the scenario as a scam collection wallet but funded moments before use, with no history. Its label is ground truth by construction. Its stub score is deliberately low to model the oracle\'s cold-start blind spot, so these fixtures are expected misses that measure that gap.'
   })),

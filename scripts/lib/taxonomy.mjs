@@ -45,3 +45,12 @@ export const TIER_RANK = Object.freeze({
   suspicious: 1,
   malicious: 2
 });
+
+// Expected stub-score band per label (CONTRIBUTING.md rubric). A score outside
+// its label's band is allowed only with a `score_rationale` explaining the
+// deliberate deviation (e.g. a modelled oracle blind spot).
+export const SCORE_BANDS = Object.freeze({
+  clean: [0, 25],
+  suspicious: [40, 70],
+  malicious: [75, 100]
+});
