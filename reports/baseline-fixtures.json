@@ -1,0 +1,2172 @@
+{
+  "meta": {
+    "oracle": "fixtures",
+    "oracleDescription": "Stub scores from scores.json (simulated oracle; see docs/LABELS.md)",
+    "generatedAt": "2026-11-09T19:43:15.540Z",
+    "dataset": "0.2.0",
+    "tierBands": [
+      {
+        "tier": "low",
+        "max": 20
+      },
+      {
+        "tier": "elevated",
+        "max": 50
+      },
+      {
+        "tier": "high",
+        "max": 75
+      },
+      {
+        "tier": "critical",
+        "max": 100
+      }
+    ],
+    "tierToLabel": {
+      "low": "clean",
+      "elevated": "suspicious",
+      "high": "suspicious",
+      "critical": "malicious",
+      "unscored": "unscored"
+    },
+    "counts": {
+      "destinations": 73,
+      "transactions": 41
+    }
+  },
+  "metrics": {
+    "overall": {
+      "n": 114,
+      "accuracy": 0.868421052631579,
+      "coverage": 0.9912280701754386,
+      "unscored": 1,
+      "perTier": {
+        "clean": {
+          "support": 46,
+          "predicted": 45,
+          "tp": 40,
+          "precision": 0.8888888888888888,
+          "recall": 0.8695652173913043,
+          "f1": 0.8791208791208792
+        },
+        "suspicious": {
+          "support": 27,
+          "predicted": 29,
+          "tp": 23,
+          "precision": 0.7931034482758621,
+          "recall": 0.8518518518518519,
+          "f1": 0.8214285714285715
+        },
+        "malicious": {
+          "support": 41,
+          "predicted": 39,
+          "tp": 36,
+          "precision": 0.9230769230769231,
+          "recall": 0.8780487804878049,
+          "f1": 0.9
+        }
+      },
+      "warn": {
+        "tp": 63,
+        "fp": 5,
+        "fn": 5,
+        "tn": 41,
+        "precision": 0.9264705882352942,
+        "recall": 0.9264705882352942,
+        "falsePositiveRate": 0.10869565217391304,
+        "falseNegativeRate": 0.07352941176470588
+      },
+      "confusion": {
+        "clean": {
+          "clean": 40,
+          "suspicious": 5,
+          "malicious": 0,
+          "unscored": 1
+        },
+        "suspicious": {
+          "clean": 1,
+          "suspicious": 23,
+          "malicious": 3,
+          "unscored": 0
+        },
+        "malicious": {
+          "clean": 4,
+          "suspicious": 1,
+          "malicious": 36,
+          "unscored": 0
+        }
+      },
+      "byRiskPattern": {
+        "none": {
+          "support": 36,
+          "exact": 35,
+          "warned": 0,
+          "unscored": 1,
+          "label": "clean"
+        },
+        "pass-through": {
+          "support": 11,
+          "exact": 11,
+          "warned": 11,
+          "unscored": 0,
+          "label": "suspicious"
+        },
+        "scam-trustline": {
+          "support": 5,
+          "exact": 3,
+          "warned": 5,
+          "unscored": 0,
+          "label": "suspicious"
+        },
+        "sweep": {
+          "support": 7,
+          "exact": 6,
+          "warned": 7,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "phishing-drainer": {
+          "support": 5,
+          "exact": 5,
+          "warned": 5,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "rug-pull": {
+          "support": 7,
+          "exact": 7,
+          "warned": 7,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "adversarial-clean": {
+          "support": 8,
+          "exact": 3,
+          "warned": 5,
+          "unscored": 0,
+          "label": "clean"
+        },
+        "cold-start": {
+          "support": 6,
+          "exact": 2,
+          "warned": 0,
+          "unscored": 0,
+          "label": "clean/malicious"
+        },
+        "sponsored-mule": {
+          "support": 5,
+          "exact": 4,
+          "warned": 4,
+          "unscored": 0,
+          "label": "malicious/suspicious"
+        },
+        "memo-impersonation": {
+          "support": 3,
+          "exact": 3,
+          "warned": 3,
+          "unscored": 0,
+          "label": "suspicious"
+        },
+        "clawback-enabled": {
+          "support": 3,
+          "exact": 3,
+          "warned": 3,
+          "unscored": 0,
+          "label": "suspicious"
+        },
+        "account-merge-drain": {
+          "support": 5,
+          "exact": 5,
+          "warned": 5,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "signer-takeover": {
+          "support": 6,
+          "exact": 6,
+          "warned": 6,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "claimable-balance-spam": {
+          "support": 3,
+          "exact": 2,
+          "warned": 3,
+          "unscored": 0,
+          "label": "malicious/suspicious"
+        },
+        "soroban-approval-drain": {
+          "support": 4,
+          "exact": 4,
+          "warned": 4,
+          "unscored": 0,
+          "label": "malicious"
+        }
+      }
+    },
+    "destinations": {
+      "n": 73,
+      "accuracy": 0.8904109589041096,
+      "coverage": 1,
+      "unscored": 0,
+      "perTier": {
+        "clean": {
+          "support": 30,
+          "predicted": 31,
+          "tp": 27,
+          "precision": 0.8709677419354839,
+          "recall": 0.9,
+          "f1": 0.8852459016393444
+        },
+        "suspicious": {
+          "support": 16,
+          "predicted": 19,
+          "tp": 15,
+          "precision": 0.7894736842105263,
+          "recall": 0.9375,
+          "f1": 0.8571428571428572
+        },
+        "malicious": {
+          "support": 27,
+          "predicted": 23,
+          "tp": 23,
+          "precision": 1,
+          "recall": 0.8518518518518519,
+          "f1": 0.92
+        }
+      },
+      "warn": {
+        "tp": 39,
+        "fp": 3,
+        "fn": 4,
+        "tn": 27,
+        "precision": 0.9285714285714286,
+        "recall": 0.9069767441860465,
+        "falsePositiveRate": 0.1,
+        "falseNegativeRate": 0.09302325581395349
+      },
+      "confusion": {
+        "clean": {
+          "clean": 27,
+          "suspicious": 3,
+          "malicious": 0,
+          "unscored": 0
+        },
+        "suspicious": {
+          "clean": 1,
+          "suspicious": 15,
+          "malicious": 0,
+          "unscored": 0
+        },
+        "malicious": {
+          "clean": 3,
+          "suspicious": 1,
+          "malicious": 23,
+          "unscored": 0
+        }
+      },
+      "byRiskPattern": {
+        "none": {
+          "support": 25,
+          "exact": 25,
+          "warned": 0,
+          "unscored": 0,
+          "label": "clean"
+        },
+        "pass-through": {
+          "support": 6,
+          "exact": 6,
+          "warned": 6,
+          "unscored": 0,
+          "label": "suspicious"
+        },
+        "scam-trustline": {
+          "support": 3,
+          "exact": 3,
+          "warned": 3,
+          "unscored": 0,
+          "label": "suspicious"
+        },
+        "sweep": {
+          "support": 4,
+          "exact": 3,
+          "warned": 4,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "phishing-drainer": {
+          "support": 3,
+          "exact": 3,
+          "warned": 3,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "rug-pull": {
+          "support": 6,
+          "exact": 6,
+          "warned": 6,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "adversarial-clean": {
+          "support": 4,
+          "exact": 1,
+          "warned": 3,
+          "unscored": 0,
+          "label": "clean"
+        },
+        "cold-start": {
+          "support": 4,
+          "exact": 1,
+          "warned": 0,
+          "unscored": 0,
+          "label": "clean/malicious"
+        },
+        "sponsored-mule": {
+          "support": 4,
+          "exact": 3,
+          "warned": 3,
+          "unscored": 0,
+          "label": "malicious/suspicious"
+        },
+        "memo-impersonation": {
+          "support": 2,
+          "exact": 2,
+          "warned": 2,
+          "unscored": 0,
+          "label": "suspicious"
+        },
+        "clawback-enabled": {
+          "support": 2,
+          "exact": 2,
+          "warned": 2,
+          "unscored": 0,
+          "label": "suspicious"
+        },
+        "account-merge-drain": {
+          "support": 3,
+          "exact": 3,
+          "warned": 3,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "signer-takeover": {
+          "support": 3,
+          "exact": 3,
+          "warned": 3,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "claimable-balance-spam": {
+          "support": 2,
+          "exact": 2,
+          "warned": 2,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "soroban-approval-drain": {
+          "support": 2,
+          "exact": 2,
+          "warned": 2,
+          "unscored": 0,
+          "label": "malicious"
+        }
+      }
+    },
+    "transactions": {
+      "n": 41,
+      "accuracy": 0.8292682926829268,
+      "coverage": 0.975609756097561,
+      "unscored": 1,
+      "perTier": {
+        "clean": {
+          "support": 16,
+          "predicted": 14,
+          "tp": 13,
+          "precision": 0.9285714285714286,
+          "recall": 0.8125,
+          "f1": 0.8666666666666666
+        },
+        "suspicious": {
+          "support": 11,
+          "predicted": 10,
+          "tp": 8,
+          "precision": 0.8,
+          "recall": 0.7272727272727273,
+          "f1": 0.761904761904762
+        },
+        "malicious": {
+          "support": 14,
+          "predicted": 16,
+          "tp": 13,
+          "precision": 0.8125,
+          "recall": 0.9285714285714286,
+          "f1": 0.8666666666666666
+        }
+      },
+      "warn": {
+        "tp": 24,
+        "fp": 2,
+        "fn": 1,
+        "tn": 14,
+        "precision": 0.9230769230769231,
+        "recall": 0.96,
+        "falsePositiveRate": 0.125,
+        "falseNegativeRate": 0.04
+      },
+      "confusion": {
+        "clean": {
+          "clean": 13,
+          "suspicious": 2,
+          "malicious": 0,
+          "unscored": 1
+        },
+        "suspicious": {
+          "clean": 0,
+          "suspicious": 8,
+          "malicious": 3,
+          "unscored": 0
+        },
+        "malicious": {
+          "clean": 1,
+          "suspicious": 0,
+          "malicious": 13,
+          "unscored": 0
+        }
+      },
+      "byRiskPattern": {
+        "pass-through": {
+          "support": 5,
+          "exact": 5,
+          "warned": 5,
+          "unscored": 0,
+          "label": "suspicious"
+        },
+        "sweep": {
+          "support": 3,
+          "exact": 3,
+          "warned": 3,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "scam-trustline": {
+          "support": 2,
+          "exact": 0,
+          "warned": 2,
+          "unscored": 0,
+          "label": "suspicious"
+        },
+        "none": {
+          "support": 11,
+          "exact": 10,
+          "warned": 0,
+          "unscored": 1,
+          "label": "clean"
+        },
+        "adversarial-clean": {
+          "support": 4,
+          "exact": 2,
+          "warned": 2,
+          "unscored": 0,
+          "label": "clean"
+        },
+        "cold-start": {
+          "support": 2,
+          "exact": 1,
+          "warned": 0,
+          "unscored": 0,
+          "label": "clean/malicious"
+        },
+        "memo-impersonation": {
+          "support": 1,
+          "exact": 1,
+          "warned": 1,
+          "unscored": 0,
+          "label": "suspicious"
+        },
+        "clawback-enabled": {
+          "support": 1,
+          "exact": 1,
+          "warned": 1,
+          "unscored": 0,
+          "label": "suspicious"
+        },
+        "sponsored-mule": {
+          "support": 1,
+          "exact": 1,
+          "warned": 1,
+          "unscored": 0,
+          "label": "suspicious"
+        },
+        "claimable-balance-spam": {
+          "support": 1,
+          "exact": 0,
+          "warned": 1,
+          "unscored": 0,
+          "label": "suspicious"
+        },
+        "phishing-drainer": {
+          "support": 2,
+          "exact": 2,
+          "warned": 2,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "signer-takeover": {
+          "support": 3,
+          "exact": 3,
+          "warned": 3,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "account-merge-drain": {
+          "support": 2,
+          "exact": 2,
+          "warned": 2,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "soroban-approval-drain": {
+          "support": 2,
+          "exact": 2,
+          "warned": 2,
+          "unscored": 0,
+          "label": "malicious"
+        },
+        "rug-pull": {
+          "support": 1,
+          "exact": 1,
+          "warned": 1,
+          "unscored": 0,
+          "label": "malicious"
+        }
+      }
+    }
+  },
+  "latencyMs": {
+    "oracleCall": {
+      "n": 134,
+      "p50": 0.0029220000000123036,
+      "p95": 0.009940000000028704,
+      "max": 0.04329500000000053
+    },
+    "perFixture": {
+      "n": 114,
+      "p50": 0.0032320000000254367,
+      "p95": 0.8970669999999927,
+      "max": 3.9466469999999845
+    }
+  },
+  "errors": [
+    {
+      "kind": "destination",
+      "id": "GB276PXQMDGDN7YA4PD2K3KRRQWK5SGQR46VH2CJU2T5CTS2CYF433OJ",
+      "persona": "clean-cosigner",
+      "label": "clean",
+      "predicted": "suspicious",
+      "score": 28,
+      "risk_pattern": "adversarial-clean",
+      "direction": "over-warn"
+    },
+    {
+      "kind": "destination",
+      "id": "GBV6FR3VVU6CF2LUXQE7X47WDAVVGLB3VCZTP5HC3BD7VAWZXSIGEWXL",
+      "persona": "clean-dapp-spender",
+      "label": "clean",
+      "predicted": "suspicious",
+      "score": 34,
+      "risk_pattern": "adversarial-clean",
+      "direction": "over-warn"
+    },
+    {
+      "kind": "destination",
+      "id": "GAZFRP5KJV6S6SVPQH2U5JILZ6BBVBUXT54Z7LOFKDH6JZJA2I5FFYWA",
+      "persona": "clean-high-velocity",
+      "label": "clean",
+      "predicted": "suspicious",
+      "score": 41,
+      "risk_pattern": "adversarial-clean",
+      "direction": "over-warn"
+    },
+    {
+      "kind": "destination",
+      "id": "GDHFMEK3B2CFAM7GZ7D3MR5UNYNZLYXITY3B6UZBTZI26EFY334SMVPY",
+      "persona": "sponsored-mule-3",
+      "label": "suspicious",
+      "predicted": "clean",
+      "score": 15,
+      "risk_pattern": "sponsored-mule",
+      "direction": "under-warn"
+    },
+    {
+      "kind": "destination",
+      "id": "GBJKRDZJKYJSTZJFD4ULXURD7HXQNCY3LF2Y5MPUCYVQNAUKHBUSX34F",
+      "persona": "sweeper-3",
+      "label": "malicious",
+      "predicted": "suspicious",
+      "score": 72,
+      "risk_pattern": "sweep",
+      "direction": "under-warn"
+    },
+    {
+      "kind": "destination",
+      "id": "GCRZEOWD6J5TTYGK7QLCLUKFSQFJSK3PGJTTTZ7GICT35LNHNH6GRYPA",
+      "persona": "cold-start-scam-1",
+      "label": "malicious",
+      "predicted": "clean",
+      "score": 8,
+      "risk_pattern": "cold-start",
+      "direction": "under-warn"
+    },
+    {
+      "kind": "destination",
+      "id": "GBOMQDX24COQOKU3KVLDXKBRGM5ZANX6PO43AXUR4AM3CX7MX5OW6GNP",
+      "persona": "cold-start-scam-2",
+      "label": "malicious",
+      "predicted": "clean",
+      "score": 12,
+      "risk_pattern": "cold-start",
+      "direction": "under-warn"
+    },
+    {
+      "kind": "destination",
+      "id": "GCHW7QBOMDOC452S5EAX7CVDE76JDN7P7752ZIGWRL72CPMYA5V2ZSIL",
+      "persona": "cold-start-scam-3",
+      "label": "malicious",
+      "predicted": "clean",
+      "score": 5,
+      "risk_pattern": "cold-start",
+      "direction": "under-warn"
+    },
+    {
+      "kind": "transaction",
+      "id": "change_trust",
+      "label": "suspicious",
+      "predicted": "malicious",
+      "score": 97,
+      "risk_pattern": "scam-trustline",
+      "direction": "over-warn"
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_claim_claimable_tusd",
+      "label": "clean",
+      "predicted": "unscored",
+      "score": null,
+      "risk_pattern": "none",
+      "direction": "unscored"
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_soroban_approve_bounded",
+      "label": "clean",
+      "predicted": "suspicious",
+      "score": 34,
+      "risk_pattern": "adversarial-clean",
+      "direction": "over-warn"
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_set_options_cosigner",
+      "label": "clean",
+      "predicted": "suspicious",
+      "score": 28,
+      "risk_pattern": "adversarial-clean",
+      "direction": "over-warn"
+    },
+    {
+      "kind": "transaction",
+      "id": "susp_change_trust_scam_asset",
+      "label": "suspicious",
+      "predicted": "malicious",
+      "score": 96,
+      "risk_pattern": "scam-trustline",
+      "direction": "over-warn"
+    },
+    {
+      "kind": "transaction",
+      "id": "susp_claim_airdrop_spam",
+      "label": "suspicious",
+      "predicted": "malicious",
+      "score": 85,
+      "risk_pattern": "claimable-balance-spam",
+      "direction": "over-warn"
+    },
+    {
+      "kind": "transaction",
+      "id": "mal_payment_cold_start_scam",
+      "label": "malicious",
+      "predicted": "clean",
+      "score": 8,
+      "risk_pattern": "cold-start",
+      "direction": "under-warn"
+    }
+  ],
+  "results": [
+    {
+      "kind": "destination",
+      "id": "GCRRYBV5IY7DSI54DKW33ZELC2LWYCAHC43TXAM2A2HTFN5GWOFWXPC2",
+      "persona": "clean_wallet_1",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 4,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GA4HFFSHZ7PADQWOFCZGYV2HE437LQ2WDILWCGC33BMJUQ6OBO5HKI5D",
+      "persona": "clean_wallet_2",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 6,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GCER76PMMAKI2S6UUCPOFXC4SMY3IEILVE5MKSX4CTNDXXIZMFDXJJVS",
+      "persona": "clean_wallet_3",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 3,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GBWPMNXNRLA3VMBTWZHWN7VLUZPXBZUEOMPD6OIQKYCZNDJ2SY4ACC5B",
+      "persona": "usdc_issuer",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 2,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GCRNKXJJLZNDLK2EWPX25JISTORCXCF2HYUXMYKF7XWKHMEOHCXVGP4J",
+      "persona": "suspicious_wallet_1",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "score": 55,
+      "tier": "high",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GDL4JRQOHLJARTSQMZCBANXJ6GI6BN2QG2TX6ZPC5KSHKJCDEM735BYJ",
+      "persona": "suspicious_wallet_2",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "score": 62,
+      "tier": "high",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GCHYSQ57SVW6LFLGLQ4P77ZDQJ7BPQIM3QOCPIBIZKXGZGAQMJQZRFMS",
+      "persona": "suspicious_wallet_3",
+      "label": "suspicious",
+      "risk_pattern": "scam-trustline",
+      "score": 58,
+      "tier": "high",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GD7XPB2A7CG5Z4ICV24B3LXCRHAEJRFEK4OEW3ZIOQAPJOHAXBB7QHGE",
+      "persona": "malicious_wallet_1",
+      "label": "malicious",
+      "risk_pattern": "sweep",
+      "score": 92,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GCAMGLMB5EN55ICM26RYDGZSE5P4GKMK6TD6ZB7LACMVE7IEDTWVYZDF",
+      "persona": "malicious_wallet_2",
+      "label": "malicious",
+      "risk_pattern": "phishing-drainer",
+      "score": 89,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GDQPZVGOJY6Q4PPASHZBIFN3PTIBD6WCRDCCAIFIPHZIYKSDQ7PZWPNJ",
+      "persona": "malicious_wallet_3",
+      "label": "malicious",
+      "risk_pattern": "rug-pull",
+      "score": 85,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GAJLLIIPHII6OCG4KQJIGPCHVN6DNCRBXHX6DEUTPE7MQ6OONAYBRLET",
+      "persona": "scam_issuer",
+      "label": "malicious",
+      "risk_pattern": "rug-pull",
+      "score": 95,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "SCAM:GAJLLIIPHII6OCG4KQJIGPCHVN6DNCRBXHX6DEUTPE7MQ6OONAYBRLET",
+      "persona": "scam_asset",
+      "label": "malicious",
+      "risk_pattern": "rug-pull",
+      "score": 97,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GBFU36X3NYV466DBHBAWGC5VQ2HYU32PXD7TEFQAFHOB7JAEVSHNBFOS",
+      "persona": "clean-wallet-01",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 3,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA",
+      "persona": "clean-wallet-02",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 5,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GD2EI4OMHBP3ZJRJ3F4UX7BRDI53Z4TTJOKXZIAF6II75K5LMPOSDM2W",
+      "persona": "clean-wallet-03",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 2,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GDNYI5Z5DV5V3AX6V5X7E2L7C7YICS7VLP6TC36WFKPNDWDZBOKZVRSF",
+      "persona": "clean-wallet-04",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 4,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GAKZOS4PCTUUWIJKUFGK5VO3RN4D6CKGJ2NRAZB77BDJAJCX53AHGQOO",
+      "persona": "clean-wallet-05",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 6,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GAF6FXYAB4CDUCUMZIWHKCNZHPEDIG5U26ZLXX3EVEKZEY63O3IDNWHT",
+      "persona": "clean-wallet-06",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 3,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GAAAPRSEMBK75VESS5A4OZ43DGFDPO5RBUOPYUKDLGN35GNFCIKSFN4Z",
+      "persona": "clean-wallet-07",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 7,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GD6TXWROHQBMFH74ZKN7ZPGB4ZT3U63E4F2UJZW5BGY2YWW4LE3I4KF4",
+      "persona": "clean-wallet-08",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 2,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GAIPD6UEUSWFUQYGIE6TY6YHA33PW55C7I6CRK7WUYRCXKAEDLA6FJBO",
+      "persona": "clean-wallet-09",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 5,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GC4UTYN5MKNDQ75Z72OL4Z6L2CRCHLGTKEAHW4HRZNK6Y5S5LN5PGFZQ",
+      "persona": "clean-wallet-10",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 4,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GDDR64QMBH6N3FK2WHNSXJSQTR3R3BXDZHOQLET4CDMPLPXBHNXR3ZGD",
+      "persona": "clean-wallet-11",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 8,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GAW2UG4BGR6ZUXCM32WSJGXGRYDGZUD4RXIWCFKDBFKPBZFW7H4BMVIB",
+      "persona": "clean-wallet-12",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 3,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+      "persona": "clean-issuer-tusd",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 2,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GBHSSCCU5DCXQILE3C6KH2PYAGDYZ3NEDQJ4D6ZYB2AKUFHE72W4MFAM",
+      "persona": "clean-distributor-tusd",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 4,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GBGWSHSIYNLZJXRZXQ62OUKLOYJDKWK245QKONDSP74SFPWPLZ3EH3CW",
+      "persona": "clean-exchange-hot",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 9,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GBXNFWT7LD4QV7KFHEZC6XE2PUILW3IKC3JCJVZOFC5NLZOIXUKOMCEY",
+      "persona": "clean-merchant-1",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 3,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GDHOVLDRWGYRKAW3ZNYPBKW2AZWLO5G6E3IFB4YOMJV7J646S5BATJZU",
+      "persona": "clean-merchant-2",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 5,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GBWUBEGIUFNJTHKDNAJU6TARNR75W3PM2NJJH7ASWHT33XOT44XZZMCN",
+      "persona": "clean-relayer",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 12,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GB276PXQMDGDN7YA4PD2K3KRRQWK5SGQR46VH2CJU2T5CTS2CYF433OJ",
+      "persona": "clean-cosigner",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "score": 28,
+      "tier": "elevated",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GBV6FR3VVU6CF2LUXQE7X47WDAVVGLB3VCZTP5HC3BD7VAWZXSIGEWXL",
+      "persona": "clean-dapp-spender",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "score": 34,
+      "tier": "elevated",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GC45RHY6HTN7FADJXMJ2JOKN7RLX2S3CI4V2E3OMO6DHXPMRKB65DCLN",
+      "persona": "clean-savings",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "score": 15,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GAZFRP5KJV6S6SVPQH2U5JILZ6BBVBUXT54Z7LOFKDH6JZJA2I5FFYWA",
+      "persona": "clean-high-velocity",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "score": 41,
+      "tier": "elevated",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GBOWLGAUYCVB7N3BKWBSH5PWBRHJHBL3VSJ4DV6WAQBFHMHUEXPSZUUN",
+      "persona": "clean-new-user",
+      "label": "clean",
+      "risk_pattern": "cold-start",
+      "score": 18,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GD42RV27HMRMSRM7AYY4SEI2LKI4NHBTV4ITV3MTYP2FGMAMZ7WNHKHI",
+      "persona": "clean-boundary",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 20,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GDZN4Q4BTNTE235EK63K6HQUDLACTXLIBJ3ZLZFD2QIRPM44PU7NSGZT",
+      "persona": "pass-through-1",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "score": 58,
+      "tier": "high",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GDTMMIJ34PPVMEBL25RBUYXD7TEZJVZZFXIIUBH7LHHI4TIUO3EPXR7N",
+      "persona": "pass-through-2",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "score": 63,
+      "tier": "high",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GA2BUDKBBV5HIRJROI7AIK27SOCMPK52PHTBOMNHL7TR4GEUCSXCCANL",
+      "persona": "pass-through-3",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "score": 47,
+      "tier": "elevated",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GCGNNVUBVI6L4N7BI7UHC7JTWN6DLL5PDQ3B3IUFLKOVUQXEXF2I7J6O",
+      "persona": "pass-through-boundary",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "score": 51,
+      "tier": "high",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GDDUZFV6RNTMBKGUUVHKZJ7HTQBFQIVPHKBZUJEKZRVSXXBPCKBLVNPM",
+      "persona": "scam-trustline-holder-1",
+      "label": "suspicious",
+      "risk_pattern": "scam-trustline",
+      "score": 55,
+      "tier": "high",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GDX5FIUEZBKCNPNNHGUG4JQ2PHIZHF65AQS6HFVHWYOBJXNWLO3MSQKF",
+      "persona": "scam-trustline-holder-2",
+      "label": "suspicious",
+      "risk_pattern": "scam-trustline",
+      "score": 52,
+      "tier": "high",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GC55SEG6OFH45ZEYD3X3JUOF7TWYBKT7MNLNHVFG3WVZ445TQICP73XO",
+      "persona": "sponsored-mule-1",
+      "label": "suspicious",
+      "risk_pattern": "sponsored-mule",
+      "score": 60,
+      "tier": "high",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GDADZAAGDIHTG7AFVE2UWIXGAOUGQUT5KST7FE2YDAJD2XELF3CIONQB",
+      "persona": "sponsored-mule-2",
+      "label": "suspicious",
+      "risk_pattern": "sponsored-mule",
+      "score": 57,
+      "tier": "high",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GDHFMEK3B2CFAM7GZ7D3MR5UNYNZLYXITY3B6UZBTZI26EFY334SMVPY",
+      "persona": "sponsored-mule-3",
+      "label": "suspicious",
+      "risk_pattern": "sponsored-mule",
+      "score": 15,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GAVRLCQLYBWYVMVP3GPUA25UW7LRYR5PND2SA7XKQ5EBI7FUQV7337IG",
+      "persona": "memo-impersonator-1",
+      "label": "suspicious",
+      "risk_pattern": "memo-impersonation",
+      "score": 66,
+      "tier": "high",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GB7LRM52TIH4XNETWIMIQJU4TJIQPYVLVVM52BKHNC4WMATMM4XE7NRN",
+      "persona": "memo-impersonator-2",
+      "label": "suspicious",
+      "risk_pattern": "memo-impersonation",
+      "score": 44,
+      "tier": "elevated",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GAKZPSMQ5I57CHXEBDCXERM7NP6BKHH5EE7ER453D4H2OC5U7QBBSUAC",
+      "persona": "claw-issuer",
+      "label": "suspicious",
+      "risk_pattern": "clawback-enabled",
+      "score": 53,
+      "tier": "high",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GCVPYQ3XTA5BQPMTEW6UQ5YAJFFZPRQ7FZ4WDPK2NOJNQSRXYK2OYNLL",
+      "persona": "sweeper-1",
+      "label": "malicious",
+      "risk_pattern": "sweep",
+      "score": 92,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GA5DJT4EJK245OC76KO4SR5HGKWSU4DQEEWYOEE3VK5FC5IT3WURHBKT",
+      "persona": "sweeper-2",
+      "label": "malicious",
+      "risk_pattern": "sweep",
+      "score": 88,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GBJKRDZJKYJSTZJFD4ULXURD7HXQNCY3LF2Y5MPUCYVQNAUKHBUSX34F",
+      "persona": "sweeper-3",
+      "label": "malicious",
+      "risk_pattern": "sweep",
+      "score": 72,
+      "tier": "high",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GBW5SCORDKP5OXJ6C5WJOH3JG56MVJID6J23YHQ6NPNWQMCYJWBC2NTL",
+      "persona": "merge-drainer-1",
+      "label": "malicious",
+      "risk_pattern": "account-merge-drain",
+      "score": 95,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GAR4BJKBE4T347HKAV3G5HUXQYRIVFQKYBRBXP3OA43XLUTVF4L2R6SN",
+      "persona": "merge-drainer-2",
+      "label": "malicious",
+      "risk_pattern": "account-merge-drain",
+      "score": 90,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GD6LSHONMBWCVJHRGTZ6KYUQ6OGOZBUB55FM5NO7WSX2Z5475C3CR5ZS",
+      "persona": "merge-drainer-3",
+      "label": "malicious",
+      "risk_pattern": "account-merge-drain",
+      "score": 86,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GAIYX5ASWINTHEZJYYJXPOUJBDPHTSK32I3YERSYXUDKBMIX5DKMJ4BW",
+      "persona": "takeover-attacker-1",
+      "label": "malicious",
+      "risk_pattern": "signer-takeover",
+      "score": 97,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GCCF57IS6YC6JNLJZOCYIW3NKI2PNB6SFTZR6G2VAQ2SX3WSSKCIJNOR",
+      "persona": "takeover-attacker-2",
+      "label": "malicious",
+      "risk_pattern": "signer-takeover",
+      "score": 93,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GBYHGCXYWOUTFTIAOTAXXP27JNTBMGRIHK66XKCNKHXW5JCYTADHTSZX",
+      "persona": "takeover-attacker-3",
+      "label": "malicious",
+      "risk_pattern": "signer-takeover",
+      "score": 89,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GANEF5PKENDRBIPY44IFZL4IQBYSOTUZLTMZEFPPZLA6TGRI4PXSIV2X",
+      "persona": "phishing-drainer-1",
+      "label": "malicious",
+      "risk_pattern": "phishing-drainer",
+      "score": 91,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GD6LERCQFQQ5OL3KJT4W2NVQWXRDDW5CGWS7IF6KJ7DNSG7O6DJF6B6S",
+      "persona": "phishing-drainer-2",
+      "label": "malicious",
+      "risk_pattern": "phishing-drainer",
+      "score": 84,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+      "persona": "rug-issuer",
+      "label": "malicious",
+      "risk_pattern": "rug-pull",
+      "score": 94,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GCEEOBWVRSYQCMNIXOWFFXRQGNLIUERY753NYY4TPM6AU36DQLNUVVTP",
+      "persona": "airdrop-issuer",
+      "label": "malicious",
+      "risk_pattern": "claimable-balance-spam",
+      "score": 87,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GC4X3SL3SG6LAHMXPYNBMDSTPE67UIM5UWOTQP5RDOIFCOV4J7NXN5KP",
+      "persona": "approval-drainer-1",
+      "label": "malicious",
+      "risk_pattern": "soroban-approval-drain",
+      "score": 96,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GBIRZS2KE6HTNQXHOUBCXR5OYGSMB6MKQEYPOPLMZSIM57B4FPH3XUJE",
+      "persona": "approval-drainer-2",
+      "label": "malicious",
+      "risk_pattern": "soroban-approval-drain",
+      "score": 90,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "GCRZEOWD6J5TTYGK7QLCLUKFSQFJSK3PGJTTTZ7GICT35LNHNH6GRYPA",
+      "persona": "cold-start-scam-1",
+      "label": "malicious",
+      "risk_pattern": "cold-start",
+      "score": 8,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GBOMQDX24COQOKU3KVLDXKBRGM5ZANX6PO43AXUR4AM3CX7MX5OW6GNP",
+      "persona": "cold-start-scam-2",
+      "label": "malicious",
+      "risk_pattern": "cold-start",
+      "score": 12,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GCHW7QBOMDOC452S5EAX7CVDE76JDN7P7752ZIGWRL72CPMYA5V2ZSIL",
+      "persona": "cold-start-scam-3",
+      "label": "malicious",
+      "risk_pattern": "cold-start",
+      "score": 5,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "GCTCSJRFEGW3Y247ZLK4P76DNKARYR7SADKGFQGNHVZ2C4RI3JG7TKVJ",
+      "persona": "malicious-sponsor",
+      "label": "malicious",
+      "risk_pattern": "sponsored-mule",
+      "score": 82,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+      "persona": "asset-tusd",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 2,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+      "persona": "sac-tusd",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 3,
+      "tier": "low",
+      "predicted": "clean"
+    },
+    {
+      "kind": "destination",
+      "id": "CLAW:GAKZPSMQ5I57CHXEBDCXERM7NP6BKHH5EE7ER453D4H2OC5U7QBBSUAC",
+      "persona": "asset-claw",
+      "label": "suspicious",
+      "risk_pattern": "clawback-enabled",
+      "score": 56,
+      "tier": "high",
+      "predicted": "suspicious"
+    },
+    {
+      "kind": "destination",
+      "id": "RUGX:GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+      "persona": "asset-rugx",
+      "label": "malicious",
+      "risk_pattern": "rug-pull",
+      "score": 96,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "CA7ILM2HOASK5XR4GCKYH5M7BCP2FXHZRPFN3RF57XUN75UCO562DTYS",
+      "persona": "sac-rugx",
+      "label": "malicious",
+      "risk_pattern": "rug-pull",
+      "score": 93,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "destination",
+      "id": "AIRDROP:GCEEOBWVRSYQCMNIXOWFFXRQGNLIUERY753NYY4TPM6AU36DQLNUVVTP",
+      "persona": "asset-airdrop",
+      "label": "malicious",
+      "risk_pattern": "claimable-balance-spam",
+      "score": 85,
+      "tier": "critical",
+      "predicted": "malicious"
+    },
+    {
+      "kind": "transaction",
+      "id": "payment",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "score": 55,
+      "tier": "high",
+      "predicted": "suspicious",
+      "drivenBy": "GCRNKXJJLZNDLK2EWPX25JISTORCXCF2HYUXMYKF7XWKHMEOHCXVGP4J",
+      "counterparties": [
+        {
+          "id": "GCRNKXJJLZNDLK2EWPX25JISTORCXCF2HYUXMYKF7XWKHMEOHCXVGP4J",
+          "score": 55
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "path_payment",
+      "label": "malicious",
+      "risk_pattern": "sweep",
+      "score": 92,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "GD7XPB2A7CG5Z4ICV24B3LXCRHAEJRFEK4OEW3ZIOQAPJOHAXBB7QHGE",
+      "counterparties": [
+        {
+          "id": "GD7XPB2A7CG5Z4ICV24B3LXCRHAEJRFEK4OEW3ZIOQAPJOHAXBB7QHGE",
+          "score": 92
+        },
+        {
+          "id": "USDC:GBWPMNXNRLA3VMBTWZHWN7VLUZPXBZUEOMPD6OIQKYCZNDJ2SY4ACC5B",
+          "score": null
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "change_trust",
+      "label": "suspicious",
+      "risk_pattern": "scam-trustline",
+      "score": 97,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "SCAM:GAJLLIIPHII6OCG4KQJIGPCHVN6DNCRBXHX6DEUTPE7MQ6OONAYBRLET",
+      "counterparties": [
+        {
+          "id": "SCAM:GAJLLIIPHII6OCG4KQJIGPCHVN6DNCRBXHX6DEUTPE7MQ6OONAYBRLET",
+          "score": 97
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "fee_bump_payment",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "score": 55,
+      "tier": "high",
+      "predicted": "suspicious",
+      "drivenBy": "GCRNKXJJLZNDLK2EWPX25JISTORCXCF2HYUXMYKF7XWKHMEOHCXVGP4J",
+      "counterparties": [
+        {
+          "id": "GA4HFFSHZ7PADQWOFCZGYV2HE437LQ2WDILWCGC33BMJUQ6OBO5HKI5D",
+          "score": 6
+        },
+        {
+          "id": "GCRNKXJJLZNDLK2EWPX25JISTORCXCF2HYUXMYKF7XWKHMEOHCXVGP4J",
+          "score": 55
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_payment_xlm",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 5,
+      "tier": "low",
+      "predicted": "clean",
+      "drivenBy": "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA",
+      "counterparties": [
+        {
+          "id": "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA",
+          "score": 5
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_payment_tusd_merchant",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 3,
+      "tier": "low",
+      "predicted": "clean",
+      "drivenBy": "GBXNFWT7LD4QV7KFHEZC6XE2PUILW3IKC3JCJVZOFC5NLZOIXUKOMCEY",
+      "counterparties": [
+        {
+          "id": "GBXNFWT7LD4QV7KFHEZC6XE2PUILW3IKC3JCJVZOFC5NLZOIXUKOMCEY",
+          "score": 3
+        },
+        {
+          "id": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_payment_exchange_memo_id",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 9,
+      "tier": "low",
+      "predicted": "clean",
+      "drivenBy": "GBGWSHSIYNLZJXRZXQ62OUKLOYJDKWK245QKONDSP74SFPWPLZ3EH3CW",
+      "counterparties": [
+        {
+          "id": "GBGWSHSIYNLZJXRZXQ62OUKLOYJDKWK245QKONDSP74SFPWPLZ3EH3CW",
+          "score": 9
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_path_strict_send",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 7,
+      "tier": "low",
+      "predicted": "clean",
+      "drivenBy": "GAAAPRSEMBK75VESS5A4OZ43DGFDPO5RBUOPYUKDLGN35GNFCIKSFN4Z",
+      "counterparties": [
+        {
+          "id": "GAAAPRSEMBK75VESS5A4OZ43DGFDPO5RBUOPYUKDLGN35GNFCIKSFN4Z",
+          "score": 7
+        },
+        {
+          "id": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_path_strict_receive",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 5,
+      "tier": "low",
+      "predicted": "clean",
+      "drivenBy": "GDHOVLDRWGYRKAW3ZNYPBKW2AZWLO5G6E3IFB4YOMJV7J646S5BATJZU",
+      "counterparties": [
+        {
+          "id": "GDHOVLDRWGYRKAW3ZNYPBKW2AZWLO5G6E3IFB4YOMJV7J646S5BATJZU",
+          "score": 5
+        },
+        {
+          "id": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_fee_bump_payment",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 12,
+      "tier": "low",
+      "predicted": "clean",
+      "drivenBy": "GBWUBEGIUFNJTHKDNAJU6TARNR75W3PM2NJJH7ASWHT33XOT44XZZMCN",
+      "counterparties": [
+        {
+          "id": "GBWUBEGIUFNJTHKDNAJU6TARNR75W3PM2NJJH7ASWHT33XOT44XZZMCN",
+          "score": 12
+        },
+        {
+          "id": "GC4UTYN5MKNDQ75Z72OL4Z6L2CRCHLGTKEAHW4HRZNK6Y5S5LN5PGFZQ",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_change_trust_tusd",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 2,
+      "tier": "low",
+      "predicted": "clean",
+      "drivenBy": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+      "counterparties": [
+        {
+          "id": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_claim_claimable_tusd",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": null,
+      "tier": "unscored",
+      "predicted": "unscored",
+      "drivenBy": null,
+      "counterparties": []
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_soroban_sac_transfer",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 5,
+      "tier": "low",
+      "predicted": "clean",
+      "drivenBy": "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA",
+      "counterparties": [
+        {
+          "id": "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+          "score": 3
+        },
+        {
+          "id": "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA",
+          "score": 5
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_soroban_approve_bounded",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "score": 34,
+      "tier": "elevated",
+      "predicted": "suspicious",
+      "drivenBy": "GBV6FR3VVU6CF2LUXQE7X47WDAVVGLB3VCZTP5HC3BD7VAWZXSIGEWXL",
+      "counterparties": [
+        {
+          "id": "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+          "score": 3
+        },
+        {
+          "id": "GBV6FR3VVU6CF2LUXQE7X47WDAVVGLB3VCZTP5HC3BD7VAWZXSIGEWXL",
+          "score": 34
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_set_options_cosigner",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "score": 28,
+      "tier": "elevated",
+      "predicted": "suspicious",
+      "drivenBy": "GB276PXQMDGDN7YA4PD2K3KRRQWK5SGQR46VH2CJU2T5CTS2CYF433OJ",
+      "counterparties": [
+        {
+          "id": "GB276PXQMDGDN7YA4PD2K3KRRQWK5SGQR46VH2CJU2T5CTS2CYF433OJ",
+          "score": 28
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_account_merge_own_wallet",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "score": 15,
+      "tier": "low",
+      "predicted": "clean",
+      "drivenBy": "GC45RHY6HTN7FADJXMJ2JOKN7RLX2S3CI4V2E3OMO6DHXPMRKB65DCLN",
+      "counterparties": [
+        {
+          "id": "GC45RHY6HTN7FADJXMJ2JOKN7RLX2S3CI4V2E3OMO6DHXPMRKB65DCLN",
+          "score": 15
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_multi_op_payroll",
+      "label": "clean",
+      "risk_pattern": "adversarial-clean",
+      "score": 6,
+      "tier": "low",
+      "predicted": "clean",
+      "drivenBy": "GAKZOS4PCTUUWIJKUFGK5VO3RN4D6CKGJ2NRAZB77BDJAJCX53AHGQOO",
+      "counterparties": [
+        {
+          "id": "GBFU36X3NYV466DBHBAWGC5VQ2HYU32PXD7TEFQAFHOB7JAEVSHNBFOS",
+          "score": 3
+        },
+        {
+          "id": "GCJF22UN37T2D72BVMKQZ7XWXVCP7DYQYE6QIJDXZ7B4DKQMZTSLJUPA",
+          "score": 5
+        },
+        {
+          "id": "GD2EI4OMHBP3ZJRJ3F4UX7BRDI53Z4TTJOKXZIAF6II75K5LMPOSDM2W",
+          "score": 2
+        },
+        {
+          "id": "GDNYI5Z5DV5V3AX6V5X7E2L7C7YICS7VLP6TC36WFKPNDWDZBOKZVRSF",
+          "score": 4
+        },
+        {
+          "id": "GAKZOS4PCTUUWIJKUFGK5VO3RN4D6CKGJ2NRAZB77BDJAJCX53AHGQOO",
+          "score": 6
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_dex_sell_offer",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 2,
+      "tier": "low",
+      "predicted": "clean",
+      "drivenBy": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+      "counterparties": [
+        {
+          "id": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_payment_new_user",
+      "label": "clean",
+      "risk_pattern": "cold-start",
+      "score": 18,
+      "tier": "low",
+      "predicted": "clean",
+      "drivenBy": "GBOWLGAUYCVB7N3BKWBSH5PWBRHJHBL3VSJ4DV6WAQBFHMHUEXPSZUUN",
+      "counterparties": [
+        {
+          "id": "GBOWLGAUYCVB7N3BKWBSH5PWBRHJHBL3VSJ4DV6WAQBFHMHUEXPSZUUN",
+          "score": 18
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "clean_payment_boundary_score",
+      "label": "clean",
+      "risk_pattern": "none",
+      "score": 20,
+      "tier": "low",
+      "predicted": "clean",
+      "drivenBy": "GD42RV27HMRMSRM7AYY4SEI2LKI4NHBTV4ITV3MTYP2FGMAMZ7WNHKHI",
+      "counterparties": [
+        {
+          "id": "GD42RV27HMRMSRM7AYY4SEI2LKI4NHBTV4ITV3MTYP2FGMAMZ7WNHKHI",
+          "score": 20
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "susp_payment_pass_through",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "score": 58,
+      "tier": "high",
+      "predicted": "suspicious",
+      "drivenBy": "GDZN4Q4BTNTE235EK63K6HQUDLACTXLIBJ3ZLZFD2QIRPM44PU7NSGZT",
+      "counterparties": [
+        {
+          "id": "GDZN4Q4BTNTE235EK63K6HQUDLACTXLIBJ3ZLZFD2QIRPM44PU7NSGZT",
+          "score": 58
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "susp_path_payment_pass_through",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "score": 63,
+      "tier": "high",
+      "predicted": "suspicious",
+      "drivenBy": "GDTMMIJ34PPVMEBL25RBUYXD7TEZJVZZFXIIUBH7LHHI4TIUO3EPXR7N",
+      "counterparties": [
+        {
+          "id": "GDTMMIJ34PPVMEBL25RBUYXD7TEZJVZZFXIIUBH7LHHI4TIUO3EPXR7N",
+          "score": 63
+        },
+        {
+          "id": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "susp_payment_boundary_pass_through",
+      "label": "suspicious",
+      "risk_pattern": "pass-through",
+      "score": 51,
+      "tier": "high",
+      "predicted": "suspicious",
+      "drivenBy": "GCGNNVUBVI6L4N7BI7UHC7JTWN6DLL5PDQ3B3IUFLKOVUQXEXF2I7J6O",
+      "counterparties": [
+        {
+          "id": "GCGNNVUBVI6L4N7BI7UHC7JTWN6DLL5PDQ3B3IUFLKOVUQXEXF2I7J6O",
+          "score": 51
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "susp_payment_memo_impersonation",
+      "label": "suspicious",
+      "risk_pattern": "memo-impersonation",
+      "score": 66,
+      "tier": "high",
+      "predicted": "suspicious",
+      "drivenBy": "GAVRLCQLYBWYVMVP3GPUA25UW7LRYR5PND2SA7XKQ5EBI7FUQV7337IG",
+      "counterparties": [
+        {
+          "id": "GAVRLCQLYBWYVMVP3GPUA25UW7LRYR5PND2SA7XKQ5EBI7FUQV7337IG",
+          "score": 66
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "susp_change_trust_clawback_asset",
+      "label": "suspicious",
+      "risk_pattern": "clawback-enabled",
+      "score": 56,
+      "tier": "high",
+      "predicted": "suspicious",
+      "drivenBy": "CLAW:GAKZPSMQ5I57CHXEBDCXERM7NP6BKHH5EE7ER453D4H2OC5U7QBBSUAC",
+      "counterparties": [
+        {
+          "id": "CLAW:GAKZPSMQ5I57CHXEBDCXERM7NP6BKHH5EE7ER453D4H2OC5U7QBBSUAC",
+          "score": 56
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "susp_sponsored_mule_creation",
+      "label": "suspicious",
+      "risk_pattern": "sponsored-mule",
+      "score": 60,
+      "tier": "high",
+      "predicted": "suspicious",
+      "drivenBy": "GC55SEG6OFH45ZEYD3X3JUOF7TWYBKT7MNLNHVFG3WVZ445TQICP73XO",
+      "counterparties": [
+        {
+          "id": "GC55SEG6OFH45ZEYD3X3JUOF7TWYBKT7MNLNHVFG3WVZ445TQICP73XO",
+          "score": 60
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "susp_change_trust_scam_asset",
+      "label": "suspicious",
+      "risk_pattern": "scam-trustline",
+      "score": 96,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "RUGX:GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+      "counterparties": [
+        {
+          "id": "RUGX:GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+          "score": 96
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "susp_claim_airdrop_spam",
+      "label": "suspicious",
+      "risk_pattern": "claimable-balance-spam",
+      "score": 85,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "AIRDROP:GCEEOBWVRSYQCMNIXOWFFXRQGNLIUERY753NYY4TPM6AU36DQLNUVVTP",
+      "counterparties": [
+        {
+          "id": "AIRDROP:GCEEOBWVRSYQCMNIXOWFFXRQGNLIUERY753NYY4TPM6AU36DQLNUVVTP",
+          "score": 85
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "mal_path_payment_sweeper",
+      "label": "malicious",
+      "risk_pattern": "sweep",
+      "score": 92,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "GCVPYQ3XTA5BQPMTEW6UQ5YAJFFZPRQ7FZ4WDPK2NOJNQSRXYK2OYNLL",
+      "counterparties": [
+        {
+          "id": "GCVPYQ3XTA5BQPMTEW6UQ5YAJFFZPRQ7FZ4WDPK2NOJNQSRXYK2OYNLL",
+          "score": 92
+        },
+        {
+          "id": "TUSD:GD5GBL7S5B3Q2OSHF4FCBWER2ZEGG634JYLE6FFHI5KW7KFJYZJ5FJQZ",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "mal_fee_bump_gasless_drain",
+      "label": "malicious",
+      "risk_pattern": "phishing-drainer",
+      "score": 91,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "GANEF5PKENDRBIPY44IFZL4IQBYSOTUZLTMZEFPPZLA6TGRI4PXSIV2X",
+      "counterparties": [
+        {
+          "id": "GD6LERCQFQQ5OL3KJT4W2NVQWXRDDW5CGWS7IF6KJ7DNSG7O6DJF6B6S",
+          "score": 84
+        },
+        {
+          "id": "GANEF5PKENDRBIPY44IFZL4IQBYSOTUZLTMZEFPPZLA6TGRI4PXSIV2X",
+          "score": 91
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "mal_set_options_signer_takeover",
+      "label": "malicious",
+      "risk_pattern": "signer-takeover",
+      "score": 97,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "GAIYX5ASWINTHEZJYYJXPOUJBDPHTSK32I3YERSYXUDKBMIX5DKMJ4BW",
+      "counterparties": [
+        {
+          "id": "GAIYX5ASWINTHEZJYYJXPOUJBDPHTSK32I3YERSYXUDKBMIX5DKMJ4BW",
+          "score": 97
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "mal_set_options_threshold_takeover",
+      "label": "malicious",
+      "risk_pattern": "signer-takeover",
+      "score": 93,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "GCCF57IS6YC6JNLJZOCYIW3NKI2PNB6SFTZR6G2VAQ2SX3WSSKCIJNOR",
+      "counterparties": [
+        {
+          "id": "GCCF57IS6YC6JNLJZOCYIW3NKI2PNB6SFTZR6G2VAQ2SX3WSSKCIJNOR",
+          "score": 93
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "mal_account_merge_drain",
+      "label": "malicious",
+      "risk_pattern": "account-merge-drain",
+      "score": 95,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "GBW5SCORDKP5OXJ6C5WJOH3JG56MVJID6J23YHQ6NPNWQMCYJWBC2NTL",
+      "counterparties": [
+        {
+          "id": "GBW5SCORDKP5OXJ6C5WJOH3JG56MVJID6J23YHQ6NPNWQMCYJWBC2NTL",
+          "score": 95
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "mal_soroban_transfer_to_sweeper",
+      "label": "malicious",
+      "risk_pattern": "sweep",
+      "score": 88,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "GA5DJT4EJK245OC76KO4SR5HGKWSU4DQEEWYOEE3VK5FC5IT3WURHBKT",
+      "counterparties": [
+        {
+          "id": "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+          "score": 3
+        },
+        {
+          "id": "GA5DJT4EJK245OC76KO4SR5HGKWSU4DQEEWYOEE3VK5FC5IT3WURHBKT",
+          "score": 88
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "mal_soroban_approve_unlimited",
+      "label": "malicious",
+      "risk_pattern": "soroban-approval-drain",
+      "score": 96,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "GC4X3SL3SG6LAHMXPYNBMDSTPE67UIM5UWOTQP5RDOIFCOV4J7NXN5KP",
+      "counterparties": [
+        {
+          "id": "CCNAXJS5ZQZE3HRLL4VFHY2TU2LKX6NUW72KU7C6EWRO4Y4WKZHWVGSH",
+          "score": 3
+        },
+        {
+          "id": "GC4X3SL3SG6LAHMXPYNBMDSTPE67UIM5UWOTQP5RDOIFCOV4J7NXN5KP",
+          "score": 96
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "mal_soroban_approve_native",
+      "label": "malicious",
+      "risk_pattern": "soroban-approval-drain",
+      "score": 90,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "GBIRZS2KE6HTNQXHOUBCXR5OYGSMB6MKQEYPOPLMZSIM57B4FPH3XUJE",
+      "counterparties": [
+        {
+          "id": "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC",
+          "score": null
+        },
+        {
+          "id": "GBIRZS2KE6HTNQXHOUBCXR5OYGSMB6MKQEYPOPLMZSIM57B4FPH3XUJE",
+          "score": 90
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "mal_multi_op_bundle",
+      "label": "malicious",
+      "risk_pattern": "signer-takeover",
+      "score": 96,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "RUGX:GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+      "counterparties": [
+        {
+          "id": "RUGX:GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+          "score": 96
+        },
+        {
+          "id": "GBJKRDZJKYJSTZJFD4ULXURD7HXQNCY3LF2Y5MPUCYVQNAUKHBUSX34F",
+          "score": 72
+        },
+        {
+          "id": "GBYHGCXYWOUTFTIAOTAXXP27JNTBMGRIHK66XKCNKHXW5JCYTADHTSZX",
+          "score": 89
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "mal_multi_op_hidden_merge",
+      "label": "malicious",
+      "risk_pattern": "account-merge-drain",
+      "score": 90,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "GAR4BJKBE4T347HKAV3G5HUXQYRIVFQKYBRBXP3OA43XLUTVF4L2R6SN",
+      "counterparties": [
+        {
+          "id": "GBXNFWT7LD4QV7KFHEZC6XE2PUILW3IKC3JCJVZOFC5NLZOIXUKOMCEY",
+          "score": 3
+        },
+        {
+          "id": "GAR4BJKBE4T347HKAV3G5HUXQYRIVFQKYBRBXP3OA43XLUTVF4L2R6SN",
+          "score": 90
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "mal_payment_cold_start_scam",
+      "label": "malicious",
+      "risk_pattern": "cold-start",
+      "score": 8,
+      "tier": "low",
+      "predicted": "clean",
+      "drivenBy": "GCRZEOWD6J5TTYGK7QLCLUKFSQFJSK3PGJTTTZ7GICT35LNHNH6GRYPA",
+      "counterparties": [
+        {
+          "id": "GCRZEOWD6J5TTYGK7QLCLUKFSQFJSK3PGJTTTZ7GICT35LNHNH6GRYPA",
+          "score": 8
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "mal_path_buy_rug_token",
+      "label": "malicious",
+      "risk_pattern": "rug-pull",
+      "score": 96,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "RUGX:GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+      "counterparties": [
+        {
+          "id": "RUGX:GCGZPQOH57AX3VMNXEEEPXWMZSRT3UU6BAPOGS4HV6MAMHWVSJ3AM2WP",
+          "score": 96
+        }
+      ]
+    },
+    {
+      "kind": "transaction",
+      "id": "mal_payment_phishing_drainer",
+      "label": "malicious",
+      "risk_pattern": "phishing-drainer",
+      "score": 84,
+      "tier": "critical",
+      "predicted": "malicious",
+      "drivenBy": "GD6LERCQFQQ5OL3KJT4W2NVQWXRDDW5CGWS7IF6KJ7DNSG7O6DJF6B6S",
+      "counterparties": [
+        {
+          "id": "GD6LERCQFQQ5OL3KJT4W2NVQWXRDDW5CGWS7IF6KJ7DNSG7O6DJF6B6S",
+          "score": 84
+        }
+      ]
+    }
+  ]
+}
