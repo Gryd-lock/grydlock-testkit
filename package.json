@@ -60,7 +60,7 @@
     "docs": "node scripts/render-catalog.mjs"
   },
   "devDependencies": {
-    "@stellar/stellar-sdk": "17.2.1"
+    "@stellar/stellar-sdk": "17.4.0"
   },
   "engines": {
     "node": ">=18"
